@@ -1,4 +1,5 @@
 <?php
+
 /*
 namespace mlu\common\functions;
 use XMLReader;
@@ -11,6 +12,9 @@ define('export_namespaces',[
 ]);
 */
 namespace wadl;
+use XMLReader;
+
+error_reporting(E_ALL|E_STRICT);
 
 trait callByRegex {
 	/**
@@ -38,6 +42,71 @@ trait callByRegex {
 				($res=$cb(...$matches,...$args))
 			) return $res;
 		}
+	}
+}
+
+Class XMLNode {
+	function __construct (\XMLReader $xml) {
+		$this->xml=$xml;
+	}
+	function __toString () {
+		return json_encode($this);
+	}
+	function __debugInfo () {
+		$res=(array)$this;unset($res[@xml]);
+		return $res;
+	}
+
+	function read($isRoot=false){
+		static $inElement=0;
+		// $tree=null #some kind of container
+		$tree=($isRoot||$inElement)?$this:new self($this->xml);
+		assert('$tree===$this',static::class."::read($isRoot) \$tree===\$this");
+		#echo "pre-Read-Depth: ".$this->xml->depth;
+
+		while( !($inElement||$isRoot) || $this->xml->read() ) {
+			switch ($this->xml->nodeType) {
+				case XMLReader::END_ELEMENT:
+					$inElement--;
+					return $tree; #$node?
+				case XMLReader::ELEMENT:
+					$node = $isRoot? $this: new static($this->xml);
+					@assert($node===$this,static::class."::read($isRoot) \$node===\$this")
+					||print('.');
+					//$node->nameNS=$this->xml->name;
+					$node->tagName=$this->xml->localName;
+					$node->namespace=$this->xml->prefix;
+					$node->XMLdepth=$this->xml->depth;
+					if(!$this->xml->isEmptyElement) {
+						// has children?
+						$inElement++;
+						$value=$node->read();
+						assert('$value===$node');
+						if(isset($this->children)) {
+							assert('count($this->children)');
+							assert('$value!==$this->children[0]');
+							assert('$value!==($lastChild=array_pop($this->children))&&($this->children[]=$lastChild)');
+						}
+
+						#$inElement=false;
+					}
+					// read attrs
+					if($this->xml->hasAttributes) {
+						while($this->xml->moveToNextAttribute()) {
+							$node->{$this->xml->name} = $this->xml->value;
+						}
+					}
+					assert($node!==$this,"Will not append self to children (d: ".$this->xml->depth.")");
+					$node!==$this&&($tree->children[]=$node);
+
+					break;
+				case XMLReader::TEXT:
+				case XMLReader::CDATA:
+					@$tree->text .= $this->xml->value;
+				break;
+			}
+		}
+		//return $tree;
 	}
 }
 
@@ -184,13 +253,22 @@ class Reader{
 
 function __main() {
 
-	$wadl_file = 'application.wadl';
+	#assert_options(ASSERT_ACTIVE, 1);
+	#assert_options(ASSERT_WARNING, 0);
+	ini_set('zend.assertions',true);
+
+	//ini_set(assert.exception,true)
+	//assert_options(ASSERT_QUIET_EVAL, 1);
+	$wadl_file = 'test.wadl';
 	$reader    = new \XMLReader();
 	$reader->open ( $wadl_file );
 
-	$test = new Reader( $reader ,true );
-
-	echo json_encode($test->debug(5,['nameNS','depth','Child','text','Attrs']),JSON_PRETTY_PRINT);
+	//$test = new Reader( $reader ,true );
+	$test = new XMLNode($reader);
+	$test2=$test->read(true);
+	assert($test==$test2,"retrun equals object called");
+	fwrite(STDERR,print_r($test,true));
+	//echo json_encode($test->debug(5,['nameNS','depth','Child','text','Attrs']),JSON_PRETTY_PRINT);
 	/*print_r($test->eachChild($f=function(Reader $child,$idx,string $parent)use(&$f){
 		return "$parent.$idx # $child->nameNS [\n".implode($child->eachChild($f,"$parent.$idx."))." ],\n";
 	},"## ")->debug(4,['nameNS','Child']));*/
