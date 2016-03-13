@@ -1,0 +1,3747 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:ns1="http://www.w3.org/2005/Atom" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:import namespace="http://www.w3.org/2005/Atom" schemaLocation="xsd0.xsd"/>
+
+  <xs:element name="Notification" type="Notification"/>
+
+  <xs:element name="accessControl" type="accessControl"/>
+
+  <xs:element name="accessControlListUpdate" type="accessControlListUpdate"/>
+
+  <xs:element name="addressBookField" type="addressBookField"/>
+
+  <xs:element name="addressBookView" type="addressBookView"/>
+
+  <xs:element name="administrator" type="administrator"/>
+
+  <xs:element name="apiStatus" type="apiStatus"/>
+
+  <xs:element name="asyncStatus" type="asyncStatus"/>
+
+  <xs:element name="attributeMap" type="attributeMap"/>
+
+  <xs:element name="batchResult" type="batchResult"/>
+
+  <xs:element name="batchupdate" type="simpleAssociationListUpdate"/>
+
+  <xs:element name="calPubHost" type="calPubHost"/>
+
+  <xs:element name="checkOptions" type="checkOptions"/>
+
+  <xs:element name="classOfService" type="classOfService"/>
+
+  <xs:element name="clientOptions" type="clientOptions"/>
+
+  <xs:element name="cosmembership" type="cosmembership"/>
+
+  <xs:element name="csrParams" type="csrParams"/>
+
+  <xs:element name="customAddress" type="customAddress"/>
+
+  <xs:element name="customPreference" type="customPreference"/>
+
+  <xs:element name="dbinfo" type="dbinfo"/>
+
+  <xs:element name="dirImport" type="dirImport"/>
+
+  <xs:element name="dirLink" type="dirLink"/>
+
+  <xs:element name="dirPublish" type="dirPublish"/>
+
+  <xs:element name="directory" type="directory"/>
+
+  <xs:element name="directoryLink" type="directoryLink"/>
+
+  <xs:element name="domain" type="domain"/>
+
+  <xs:element name="domainLink" type="domainLink"/>
+
+  <xs:element name="dominstall" type="dominstall"/>
+
+  <xs:element name="dva" type="dva"/>
+
+  <xs:element name="emailAddresses" type="emailAddresses"/>
+
+  <xs:element name="entry" type="stringMapEntry"/>
+
+  <xs:element name="externalsystem" type="externalsystem"/>
+
+  <xs:element name="gatewayAdministrator" type="gatewayAdministrator"/>
+
+  <xs:element name="gatewayAlias" type="gatewayAlias"/>
+
+  <xs:element name="globalSignature" type="globalSignature"/>
+
+  <xs:element name="group" type="group"/>
+
+  <xs:element name="groupMemberListUpdate" type="groupMemberListUpdate"/>
+
+  <xs:element name="gwpath" type="gwPath"/>
+
+  <xs:element name="gwtimestamp" type="gwTimeStamp"/>
+
+  <xs:element name="installToken" type="installToken"/>
+
+  <xs:element name="internetAgent" type="internetAgent"/>
+
+  <xs:element name="internetDomain" type="internetDomain"/>
+
+  <xs:element name="ldapServer" type="ldapServer"/>
+
+  <xs:element name="library" type="library"/>
+
+  <xs:element name="libraryAccessRights" type="libraryAccessRights"/>
+
+  <xs:element name="libraryAccessRightsListUpdate" type="libraryAccessRightsListUpdate"/>
+
+  <xs:element name="libraryArea" type="libraryArea"/>
+
+  <xs:element name="libraryAreaAccess" type="libraryAreaAccess"/>
+
+  <xs:element name="list" type="listResult"/>
+
+  <xs:element name="listUpdateResult" type="listUpdateResult"/>
+
+  <xs:element name="maintenanceOptions" type="maintenanceOptions"/>
+
+  <xs:element name="member" type="member"/>
+
+  <xs:element name="membership" type="membership"/>
+
+  <xs:element name="moveRequest" type="moveRequest"/>
+
+  <xs:element name="mta" type="mta"/>
+
+  <xs:element name="nickname" type="nickname"/>
+
+  <xs:element name="nodeConfig" type="nodeConfig"/>
+
+  <xs:element name="nodeConfigInstance" type="nodeConfigInstance"/>
+
+  <xs:element name="nodeDbInfo" type="nodeDbInfo"/>
+
+  <xs:element name="object" type="restGwObject"/>
+
+  <xs:element name="objectAttributes" type="objectAttributes"/>
+
+  <xs:element name="poa" type="poa"/>
+
+  <xs:element name="poinstall" type="poinstall"/>
+
+  <xs:element name="postOffice" type="postOffice"/>
+
+  <xs:element name="querySchema" type="restQuerySchema"/>
+
+  <xs:element name="renameRequest" type="renameRequest"/>
+
+  <xs:element name="resource" type="resource"/>
+
+  <xs:element name="restFile" type="restFile"/>
+
+  <xs:element name="restoreArea" type="restoreArea"/>
+
+  <xs:element name="restoreAreaMembership" type="restoreAreaMembership"/>
+
+  <xs:element name="resultInfo" type="listResultInfo"/>
+
+  <xs:element name="scheduledEvent" type="scheduledEvent"/>
+
+  <xs:element name="scheduledEventAction" type="scheduledEventAction"/>
+
+  <xs:element name="smtprelayexception" type="smtprelayexception"/>
+
+  <xs:element name="softwareArea" type="softwareArea"/>
+
+  <xs:element name="sslfiles" type="sslfiles"/>
+
+  <xs:element name="syncResult" type="syncResult"/>
+
+  <xs:element name="sysconfigure" type="sysconfigure"/>
+
+  <xs:element name="sysinstall" type="sysinstall"/>
+
+  <xs:element name="system" type="system"/>
+
+  <xs:element name="timezone" type="timezone"/>
+
+  <xs:element name="trustedapp" type="trustedapp"/>
+
+  <xs:element name="user" type="user"/>
+
+  <xs:element name="warnings" type="warnings"/>
+
+  <xs:complexType name="libraryArea">
+    <xs:complexContent>
+      <xs:extension base="restArea">
+        <xs:sequence>
+          <xs:element name="domainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="libraryName" type="xs:string" minOccurs="0"/>
+          <xs:element name="postOfficeName" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restArea" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0"/>
+          <xs:element name="linuxPath" type="xs:string" minOccurs="0"/>
+          <xs:element name="path" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restGwObject" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="propertiesProxy">
+        <xs:sequence>
+          <xs:element name="externalGuid" type="xs:string" minOccurs="0"/>
+          <xs:element name="guid" type="xs:string" minOccurs="0"/>
+          <xs:element name="id" type="xs:string" minOccurs="0"/>
+          <xs:element name="lastModifiedBy" type="xs:string" minOccurs="0"/>
+          <xs:element name="lastModifiedOp" type="adminOp" minOccurs="0"/>
+          <xs:element ref="ns1:links" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="name" type="xs:string" minOccurs="0"/>
+          <xs:element name="pendingOp" type="adminOp" minOccurs="0"/>
+          <xs:element name="timeCreated" type="xs:long" minOccurs="0"/>
+          <xs:element name="timeLastMod" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="url" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="propertiesProxy" abstract="true">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="atomLink">
+    <xs:sequence/>
+    <xs:attribute name="href" type="xs:string"/>
+    <xs:attribute name="title" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="domain">
+    <xs:complexContent>
+      <xs:extension base="restInternetAddressingProps">
+        <xs:sequence>
+          <xs:element name="alternateInternetAgentName" type="xs:string" minOccurs="0"/>
+          <xs:element name="connected" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="defaultInternetAgentName" type="restEffectiveString" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="directoryName" type="xs:string" minOccurs="0"/>
+          <xs:element name="directorySyncDomainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="domainRebuildCount" type="xs:int" minOccurs="0"/>
+          <xs:element name="domainType" type="domainType" minOccurs="0"/>
+          <xs:element name="domainVersion" type="xs:int" minOccurs="0"/>
+          <xs:element name="enableICalBrowse" type="restEffectiveBoolean" minOccurs="0"/>
+          <xs:element name="externalSync" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="fileId" type="xs:string" minOccurs="0"/>
+          <xs:element name="hideUserComments" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="language" type="xs:string" minOccurs="0"/>
+          <xs:element name="languageId" type="xs:int" minOccurs="0"/>
+          <xs:element name="linkedDomainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="lockoutOldAdmin" type="restEffectiveBoolean" minOccurs="0"/>
+          <xs:element name="minimumAdminReleaseDate" type="restEffectiveLong" minOccurs="0"/>
+          <xs:element name="minimumAdminVersion" type="restEffectiveString" minOccurs="0"/>
+          <xs:element ref="mta" minOccurs="0"/>
+          <xs:element name="path" type="xs:string" minOccurs="0"/>
+          <xs:element name="remoteCreation" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="timezone" type="xs:string" minOccurs="0"/>
+          <xs:element name="timezoneId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restInternetAddressingProps" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="allowedAddressFormats" type="restEffectiveAddressFormats" minOccurs="0"/>
+          <xs:element name="internetDomainName" type="restEffectiveInternetDomainName" minOccurs="0"/>
+          <xs:element name="preferredAddressFormat" type="restEffectivePreferredAddressFormat" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restEffectiveString">
+    <xs:complexContent>
+      <xs:extension base="restEffectiveValue">
+        <xs:sequence>
+          <xs:element name="inheritedValue" type="xs:string" minOccurs="0"/>
+          <xs:element name="value" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restEffectiveValue" abstract="true">
+    <xs:sequence>
+      <xs:element name="inherited" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="inheritedFrom" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="restEffectiveBoolean">
+    <xs:complexContent>
+      <xs:extension base="restEffectiveValue">
+        <xs:sequence>
+          <xs:element name="inheritedValue" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="value" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restEffectiveLong">
+    <xs:complexContent>
+      <xs:extension base="restEffectiveValue">
+        <xs:sequence>
+          <xs:element name="inheritedValue" type="xs:long" minOccurs="0"/>
+          <xs:element name="value" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="mta">
+    <xs:complexContent>
+      <xs:extension base="restAgent">
+        <xs:sequence>
+          <xs:element name="attachRetry" type="xs:int" minOccurs="0"/>
+          <xs:element name="coexistenceSyncInterval" type="xs:int" minOccurs="0"/>
+          <xs:element name="coexistenceSyncStartOffset" type="xs:int" minOccurs="0"/>
+          <xs:element name="collectDeliveryStatusReports" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="collectOtherStatusReports" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="correlateDeliveryStatusReports" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="defaultRoutingDomain" type="xs:string" minOccurs="0"/>
+          <xs:element name="enableSsl" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="exchangeCoexistenceProfiles" type="exchangeCoexistenceProfile" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="externalSync" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="logMaxAge" type="xs:long" minOccurs="0"/>
+          <xs:element name="logMaxSize" type="xs:long" minOccurs="0"/>
+          <xs:element name="messageLogFilePath" type="xs:string" minOccurs="0"/>
+          <xs:element name="messageLogging" type="messageLogging" minOccurs="0"/>
+          <xs:element name="mtaRouteDelivery" type="xs:int" minOccurs="0"/>
+          <xs:element name="mtaSendDirect" type="xs:int" minOccurs="0"/>
+          <xs:element name="reportsCleanupDays" type="xs:int" minOccurs="0"/>
+          <xs:element name="scanCycle" type="xs:int" minOccurs="0"/>
+          <xs:element name="scanHigh" type="xs:int" minOccurs="0"/>
+          <xs:element name="serverFlags" type="xs:int" minOccurs="0"/>
+          <xs:element name="syncLdapServerName" type="xs:string" minOccurs="0"/>
+          <xs:element name="trackAdminMessages" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="use2ndHighScanner" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="use2ndMailScanner" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restAgent" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="adminPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="agentType" type="agentType" minOccurs="0"/>
+          <xs:element name="autoDBRecovery" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="bindExclusive" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="domainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="hasHttpPassword" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="hasSslKeyPassword" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="httpPassword" type="xs:string" minOccurs="0"/>
+          <xs:element name="httpPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="httpUser" type="xs:string" minOccurs="0"/>
+          <xs:element name="httpUsesSsl" type="sslStatus" minOccurs="0"/>
+          <xs:element name="ipAddress" type="xs:string" minOccurs="0"/>
+          <xs:element name="legacyDn" type="xs:string" minOccurs="0"/>
+          <xs:element name="logFilePath" type="xs:string" minOccurs="0"/>
+          <xs:element name="logLevel" type="logLevel" minOccurs="0"/>
+          <xs:element name="mtpPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="mtpUsesSsl" type="sslStatus" minOccurs="0"/>
+          <xs:element name="platform" type="platform" minOccurs="0"/>
+          <xs:element name="snmpCommunityGetString" type="xs:string" minOccurs="0"/>
+          <xs:element name="sslCertificateFile" type="xs:string" minOccurs="0"/>
+          <xs:element name="sslKeyFile" type="xs:string" minOccurs="0"/>
+          <xs:element name="sslKeyPassword" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="exchangeCoexistenceProfile">
+    <xs:sequence>
+      <xs:element name="activeDirectoryDisplayNameFormat" type="activeDirectoryDisplayNameFormat" minOccurs="0"/>
+      <xs:element name="activeDirectoryGroupWiseBaseContext" type="xs:string" minOccurs="0"/>
+      <xs:element name="activeDirectoryLdapAddress" type="xs:string" minOccurs="0"/>
+      <xs:element name="activeDirectoryLdapPassword" type="xs:string" minOccurs="0"/>
+      <xs:element name="activeDirectoryLdapPort" type="xs:long" minOccurs="0"/>
+      <xs:element name="activeDirectoryLdapSslKeyFile" type="xs:string" minOccurs="0"/>
+      <xs:element name="activeDirectoryLdapUseSsl" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="activeDirectoryLdapUser" type="xs:string" minOccurs="0"/>
+      <xs:element name="defaultInternetAgentDomain" type="xs:string" minOccurs="0"/>
+      <xs:element name="defaultInternetAgentName" type="xs:string" minOccurs="0"/>
+      <xs:element name="exchangeClientAccessUrl" type="xs:string" minOccurs="0"/>
+      <xs:element name="exchangeContexts" type="exchangeContext" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="exchangeGalDn" type="xs:string" minOccurs="0"/>
+      <xs:element name="groupWiseExternalDomainName" type="xs:string" minOccurs="0"/>
+      <xs:element name="profileEnabled" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="profileName" type="xs:string" minOccurs="0"/>
+      <xs:element name="syncExchangeGroup" type="xs:string" minOccurs="0"/>
+      <xs:element name="syncExchangeMailContacts" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="syncGroupWiseExternalObjects" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="syncGroupWiseGroup" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="exchangeContext" final="extension restriction">
+    <xs:sequence>
+      <xs:element name="activeDirectoryExchangeBaseContext" type="xs:string" minOccurs="0"/>
+      <xs:element name="groupWiseExternalPostOffice" type="xs:string" minOccurs="0"/>
+      <xs:element name="syncSubContexts" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="restEffectiveAddressFormats">
+    <xs:complexContent>
+      <xs:extension base="restEffectiveValue">
+        <xs:sequence>
+          <xs:element name="inheritedValue" type="addressFormats" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="value" type="addressFormats" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restEffectiveInternetDomainName">
+    <xs:complexContent>
+      <xs:extension base="restEffectiveString">
+        <xs:sequence>
+          <xs:element name="exclusive" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restEffectivePreferredAddressFormat">
+    <xs:complexContent>
+      <xs:extension base="restEffectiveValue">
+        <xs:sequence>
+          <xs:element name="inheritedValue" type="preferredAddressFormat" minOccurs="0"/>
+          <xs:element name="value" type="preferredAddressFormat" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="dva">
+    <xs:complexContent>
+      <xs:extension base="restService">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restService" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="ipAddress" type="xs:string" minOccurs="0"/>
+          <xs:element name="ipPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="sslEnabled" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="nickname">
+    <xs:complexContent>
+      <xs:extension base="restAddressable">
+        <xs:sequence>
+          <xs:element name="expirationDate" type="xs:long" minOccurs="0"/>
+          <xs:element name="externalSyncOverride" type="externalSync" minOccurs="0"/>
+          <xs:element name="givenName" type="xs:string" minOccurs="0"/>
+          <xs:element name="realMemberType" type="memberType" minOccurs="0"/>
+          <xs:element name="surname" type="xs:string" minOccurs="0"/>
+          <xs:element name="userDomainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="userName" type="xs:string" minOccurs="0"/>
+          <xs:element name="userPostOfficeName" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restAddressable" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="restInternetAddressingProps">
+        <xs:sequence>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="directoryId" type="xs:string" minOccurs="0"/>
+          <xs:element name="domainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="emailAddresses" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="forceInactive" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="forceInactiveTime" type="xs:long" minOccurs="0"/>
+          <xs:element name="ldapDn" type="xs:string" minOccurs="0"/>
+          <xs:element name="ldapId" type="xs:string" minOccurs="0"/>
+          <xs:element name="legacyDn" type="xs:string" minOccurs="0"/>
+          <xs:element name="moveStatus" type="restMoveUserStatus" minOccurs="0"/>
+          <xs:element name="postOfficeName" type="xs:string" minOccurs="0"/>
+          <xs:element name="preferredEmailId" type="xs:string" minOccurs="0"/>
+          <xs:element name="visibility" type="visibility" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restMoveUserStatus">
+    <xs:complexContent>
+      <xs:extension base="propertiesProxy">
+        <xs:sequence>
+          <xs:element name="action" type="moveUserAction" minOccurs="0"/>
+          <xs:element name="attempt" type="xs:int" minOccurs="0"/>
+          <xs:element name="beginTime" type="xs:long" minOccurs="0"/>
+          <xs:element name="count" type="xs:int" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="domainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="endTime" type="xs:long" minOccurs="0"/>
+          <xs:element name="errno" type="xs:int" minOccurs="0"/>
+          <xs:element name="grandTotal" type="xs:int" minOccurs="0"/>
+          <xs:element name="lastAction" type="moveUserAction" minOccurs="0"/>
+          <xs:element name="originalDomainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="originalFileId" type="xs:string" minOccurs="0"/>
+          <xs:element name="originalGuid" type="xs:string" minOccurs="0"/>
+          <xs:element name="originalName" type="xs:string" minOccurs="0"/>
+          <xs:element name="originalPostOfficeName" type="xs:string" minOccurs="0"/>
+          <xs:element name="postOfficeName" type="xs:string" minOccurs="0"/>
+          <xs:element name="subTotal" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="system">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="allowExternalBusySearch" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="allowExternalStatusTracking" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="allowSendDirect" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="allowedAddressFormats" type="addressFormats" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="archiveServiceApp" type="xs:string" minOccurs="0"/>
+          <xs:element name="autoCreateNickname" type="autoCreateNickname" minOccurs="0"/>
+          <xs:element name="autoSetUserRights" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="defaultGlobalSignatureName" type="xs:string" minOccurs="0"/>
+          <xs:element name="defaultInternetAgentName" type="xs:string" minOccurs="0"/>
+          <xs:element name="defaultNewUserPassword" type="xs:string" minOccurs="0"/>
+          <xs:element name="defaultRoutingDomain" type="xs:string" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="emailPublish" type="emailPublish" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="emailPublishFormats" type="emailPublishFormats" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="enableICalBrowse" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="exclusiveInternetDomain" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="firstInitialLastNameMatch" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="forceMessages" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="internetAgentForOutboundMsgs" type="xs:string" minOccurs="0"/>
+          <xs:element name="internetDomainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="legacyDn" type="xs:string" minOccurs="0"/>
+          <xs:element name="lockoutOldAdmin" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="minimumAdminReleaseDate" type="xs:long" minOccurs="0"/>
+          <xs:element name="minimumAdminVersion" type="xs:string" minOccurs="0"/>
+          <xs:element name="monitorUrl" type="xs:string" minOccurs="0"/>
+          <xs:element name="nicknameExpireDays" type="xs:int" minOccurs="0"/>
+          <xs:element name="preferredAddressFormat" type="preferredAddressFormat" minOccurs="0"/>
+          <xs:element name="restrictOpsToPrimaryDom" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="showDirXMLWarnings" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="systemAdminName" type="xs:string" minOccurs="0"/>
+          <xs:element name="systemType" type="systemType" minOccurs="0"/>
+          <xs:element name="useFullDN" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="syncResult">
+    <xs:sequence>
+      <xs:element name="action" type="syncAction" minOccurs="0"/>
+      <xs:element name="attributes" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="error" type="xs:int" minOccurs="0"/>
+      <xs:element name="ldapDn" type="xs:string" minOccurs="0"/>
+      <xs:element name="ldapId" type="xs:string" minOccurs="0"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+      <xs:element name="objectId" type="xs:string" minOccurs="0"/>
+      <xs:element name="objectType" type="domainObjectType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sysconfigure">
+    <xs:complexContent>
+      <xs:extension base="restInstallOptions">
+        <xs:sequence>
+          <xs:element name="databases" type="dbinfo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restInstallOptions">
+    <xs:sequence>
+      <xs:element name="adminName" type="xs:string" minOccurs="0"/>
+      <xs:element name="adminPassword" type="xs:string" minOccurs="0"/>
+      <xs:element name="createServices" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="remoteAdminHost" type="xs:string" minOccurs="0"/>
+      <xs:element name="remoteAdminPort" type="xs:int" minOccurs="0"/>
+      <xs:element name="startServices" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="synchronous" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dbinfo">
+    <xs:sequence>
+      <xs:element name="adminPort" type="xs:int" minOccurs="0"/>
+      <xs:element name="appName" type="xs:string" minOccurs="0"/>
+      <xs:element name="bindExclusive" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="domainName" type="xs:string" minOccurs="0"/>
+      <xs:element name="domainType" type="domainType" minOccurs="0"/>
+      <xs:element name="hasCertificate" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="ipAddress" type="xs:string" minOccurs="0"/>
+      <xs:element name="path" type="xs:string" minOccurs="0"/>
+      <xs:element name="postOfficeName" type="xs:string" minOccurs="0"/>
+      <xs:element name="systemGuid" type="xs:string" minOccurs="0"/>
+      <xs:element name="systemName" type="xs:string" minOccurs="0"/>
+      <xs:element name="version" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addressBookField">
+    <xs:sequence>
+      <xs:element name="name" type="field" minOccurs="0"/>
+      <xs:element name="id" type="xs:int" minOccurs="0"/>
+      <xs:element name="label" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="classOfService">
+    <xs:complexContent>
+      <xs:extension base="propertiesProxy">
+        <xs:sequence>
+          <xs:element name="imapAccess" type="gwiaClassofServiceImapAccess" minOccurs="0"/>
+          <xs:element name="name" type="xs:string" minOccurs="0"/>
+          <xs:element name="popAccess" type="gwiaClassofServicePopAccess" minOccurs="0"/>
+          <xs:element name="popConvertToMime" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="popDaysPrior" type="xs:long" minOccurs="0"/>
+          <xs:element name="popDeleteAfterDownload" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="popHighPerformanceFileSizeCalculation" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="popMaxDownloadMessages" type="xs:long" minOccurs="0"/>
+          <xs:element name="popPurgeAfterDownload" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="smtpIncomingAccess" type="gwiaClassofServiceSmtpAccess" minOccurs="0"/>
+          <xs:element name="smtpIncomingAllowExceptions" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="smtpIncomingBlockMessageSize" type="xs:long" minOccurs="0"/>
+          <xs:element name="smtpIncomingBlockMessageSizeEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="smtpIncomingPreventExceptions" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="smtpOutgoingAccess" type="gwiaClassofServiceSmtpAccess" minOccurs="0"/>
+          <xs:element name="smtpOutgoingAllowExceptions" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="smtpOutgoingBlockMessageSize" type="xs:long" minOccurs="0"/>
+          <xs:element name="smtpOutgoingBlockMessageSizeEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="smtpOutgoingPreventExceptions" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="smtpOutgoingRuleGeneratedForwardsAllowExceptions" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="smtpOutgoingRuleGeneratedForwardsEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="smtpOutgoingRuleGeneratedForwardsPreventExceptions" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="smtpOutgoingRuleGeneratedRepliesAllowExceptions" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="smtpOutgoingRuleGeneratedRepliesEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="smtpOutgoingRuleGeneratedRepliesPreventExceptions" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="smtprelayexception">
+    <xs:sequence>
+      <xs:element name="fromUrl" type="xs:string" minOccurs="0"/>
+      <xs:element name="toUrl" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="poa">
+    <xs:complexContent>
+      <xs:extension base="restAgent">
+        <xs:sequence>
+          <xs:element name="adminAgentFlag" type="xs:int" minOccurs="0"/>
+          <xs:element name="administrationTaskProcessingDisabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="appConnections" type="xs:long" minOccurs="0"/>
+          <xs:element name="cacheEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="calendarPublishingEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="calendarPublishingPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="calendarPublishingThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="clientServerEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="clientServerExtUsesSsl" type="sslStatus" minOccurs="0"/>
+          <xs:element name="clientServerThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="clientServerUsesSsl" type="sslStatus" minOccurs="0"/>
+          <xs:element name="cpuUtilization" type="xs:long" minOccurs="0"/>
+          <xs:element name="delayTime" type="xs:long" minOccurs="0"/>
+          <xs:element name="diskCheckDelay" type="xs:int" minOccurs="0"/>
+          <xs:element name="diskCheckInterval" type="xs:int" minOccurs="0"/>
+          <xs:element name="dvaName1" type="xs:string" minOccurs="0"/>
+          <xs:element name="dvaName2" type="xs:string" minOccurs="0"/>
+          <xs:element name="dvaName3" type="xs:string" minOccurs="0"/>
+          <xs:element name="enableSsl" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="externalClientServerPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="externalIpAddress" type="xs:string" minOccurs="0"/>
+          <xs:element name="externalSync" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="generateRemoteAddressBook" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="generateRemoteAddressBookOffset" type="xs:int" minOccurs="0"/>
+          <xs:element name="imapEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="imapPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="imapReadLimit" type="xs:long" minOccurs="0"/>
+          <xs:element name="imapReadNew" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="imapSslPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="imapThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="imapUsesSsl" type="sslStatus" minOccurs="0"/>
+          <xs:element name="internalClientServerPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="logMaxAge" type="xs:long" minOccurs="0"/>
+          <xs:element name="logMaxSize" type="xs:long" minOccurs="0"/>
+          <xs:element name="maintenanceHandlerThreads" type="xs:int" minOccurs="0"/>
+          <xs:element name="messageFileProcessing" type="messageFileProcessing" minOccurs="0"/>
+          <xs:element name="messageHandlerThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="performUserUpkeep" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="physicalConnections" type="xs:long" minOccurs="0"/>
+          <xs:element name="postOfficeName" type="xs:string" minOccurs="0"/>
+          <xs:element name="primeMoveThreadUsage" type="xs:long" minOccurs="0"/>
+          <xs:element name="quickFinderEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="quickFinderIndexBaseMinute" type="xs:int" minOccurs="0"/>
+          <xs:element name="quickFinderIntervalMinute" type="xs:int" minOccurs="0"/>
+          <xs:element name="quickFinderQuarantineFiles" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="snmpEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="soapEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="soapExternalPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="soapPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="soapThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="soapUsesSsl" type="sslStatus" minOccurs="0"/>
+          <xs:element name="userUpkeepOffset" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="renameRequest">
+    <xs:sequence>
+      <xs:element name="createNickname" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="newObjectId" type="xs:string" minOccurs="0"/>
+      <xs:element name="objectId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="globalSignature">
+    <xs:sequence>
+      <xs:element name="html" type="xs:string" minOccurs="0"/>
+      <xs:element name="images" type="image" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="text" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="url" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="image">
+    <xs:sequence>
+      <xs:element name="data" type="xs:base64Binary" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="emailAddresses">
+    <xs:sequence>
+      <xs:element name="preferred" type="xs:string" minOccurs="0"/>
+      <xs:element name="allowed" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="nickname" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="alias" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clientOptions">
+    <xs:complexContent>
+      <xs:extension base="propertiesProxy">
+        <xs:sequence>
+          <xs:element name="alarmDefaultTime" type="clientOptionTimeWrapper" minOccurs="0"/>
+          <xs:element name="alarmWhenAccepted" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="appointmentAcceptedNotification" type="returnNotificationWrapper" minOccurs="0"/>
+          <xs:element name="appointmentCleanupAction" type="appointmentCleanupWrapper" minOccurs="0"/>
+          <xs:element name="appointmentCleanupDays" type="longWrapper" minOccurs="0"/>
+          <xs:element name="appointmentDefaultLength" type="clientOptionTimeWrapper" minOccurs="0"/>
+          <xs:element name="appointmentDeletedNotification" type="returnNotificationWrapper" minOccurs="0"/>
+          <xs:element name="appointmentDisplayMode" type="appointmentDisplayModeWrapper" minOccurs="0"/>
+          <xs:element name="appointmentIncludeSelf" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="appointmentOpenedNotification" type="returnNotificationWrapper" minOccurs="0"/>
+          <xs:element name="appointmentTrackingAction" type="trackingInformationWrapper" minOccurs="0"/>
+          <xs:element name="archiveLocationLinux" type="stringWrapper" minOccurs="0"/>
+          <xs:element name="archiveLocationUnc" type="stringWrapper" minOccurs="0"/>
+          <xs:element name="autoDeleteSentMail" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="autoUpdateAlwaysPrompt" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="autoUpdateEnabled" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="autoUpdateForce" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="autoUpdateGraceLogins" type="longWrapper" minOccurs="0"/>
+          <xs:element name="autoUpdateUrl" type="stringWrapper" minOccurs="0"/>
+          <xs:element name="boxSizeLimit" type="longWrapper" minOccurs="0"/>
+          <xs:element name="boxSizeNotify" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="boxSizeWarningThreshold" type="longWrapper" minOccurs="0"/>
+          <xs:element name="boxThresholdNotify" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="busySearchAppointmentLength" type="clientOptionTimeWrapper" minOccurs="0"/>
+          <xs:element name="busySearchDays" type="enumSetDaysOfWeekWrapper" minOccurs="0"/>
+          <xs:element name="busySearchFromTime" type="clientOptionTimeWrapper" minOccurs="0"/>
+          <xs:element name="busySearchRange" type="longWrapper" minOccurs="0"/>
+          <xs:element name="busySearchToTime" type="clientOptionTimeWrapper" minOccurs="0"/>
+          <xs:element name="cachingGraceDays" type="longWrapper" minOccurs="0"/>
+          <xs:element name="cachingMode" type="cachingModeWrapper" minOccurs="0"/>
+          <xs:element name="calendarEndTime" type="clientOptionTimeWrapper" minOccurs="0"/>
+          <xs:element name="calendarFirstOfWeek" type="daysOfWeekWrapper" minOccurs="0"/>
+          <xs:element name="calendarHighlightDays" type="enumSetDaysOfWeekWrapper" minOccurs="0"/>
+          <xs:element name="calendarShowWeekNumber" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="calendarStartTime" type="clientOptionTimeWrapper" minOccurs="0"/>
+          <xs:element name="calendarWorkdays" type="enumSetDaysOfWeekWrapper" minOccurs="0"/>
+          <xs:element name="certificateDownloadUrl" type="stringWrapper" minOccurs="0"/>
+          <xs:element name="checkSpelling" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="checkSpellingAsYouType" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="classification" type="classificationWrapper" minOccurs="0"/>
+          <xs:element name="clientLicense" type="clientLicenseWrapper" minOccurs="0"/>
+          <xs:element name="collaborationSingleSignon" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="colorScheme" type="colorSchemeWrapper" minOccurs="0"/>
+          <xs:element name="composeViews" type="enumSetViewWrapper" minOccurs="0"/>
+          <xs:element name="concealSubject" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="convertAttachments" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="createTrackingItem" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="customViewsLocationUnc" type="stringWrapper" minOccurs="0"/>
+          <xs:element name="defaultComposeView" type="viewWrapper" minOccurs="0"/>
+          <xs:element name="defaultLibrary" type="stringWrapper" minOccurs="0"/>
+          <xs:element name="defaultReadView" type="viewWrapper" minOccurs="0"/>
+          <xs:element name="delayDelivery" type="longWrapper" minOccurs="0"/>
+          <xs:element name="disableHTMLView" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="displayFolderList" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="displayMainMenu" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="displayMainToolBar" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="displayNavBar" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="displayQuickViewer" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="doNotPurgeBeforeBackup" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="edirectoryAuthentication" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="encryptForRecipients" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="encryptionAlgorithm" type="encryptionAlgorithmWrapper" minOccurs="0"/>
+          <xs:element name="encryptionKeySize" type="encryptionKeySizeWrapper" minOccurs="0"/>
+          <xs:element name="folderListViewType" type="enumSetFolderListViewTypeWrapper" minOccurs="0"/>
+          <xs:element name="forceCacheCleanup" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="frequentContacts" type="enumSetFrequentContactsWrapper" minOccurs="0"/>
+          <xs:element name="globalSignatureApplication" type="signatureApplicationWrapper" minOccurs="0"/>
+          <xs:element name="globalSignatureList" type="stringArrayWrapper" minOccurs="0"/>
+          <xs:element name="globalSignatureName" type="stringWrapper" minOccurs="0"/>
+          <xs:element name="HTMLReplyFormat" type="htmlReplyFormatWrapper" minOccurs="0"/>
+          <xs:element name="HTMLReplyFormatIncludeAddress" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="HTMLReplyFormatIncludeDate" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="HTMLReplyFormatIncludeHeaders" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="HTMLReplyFormatIncludeID" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="HTMLReplyFormatIncludeName" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="HTMLReplyFormatIncludeSeparator" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="HTMLReplyFormatTypePosition" type="typePositionWrapper" minOccurs="0"/>
+          <xs:element name="handleJunkMail" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="internetMailTracking" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="junkMailCleanupAction" type="trashCleanupWrapper" minOccurs="0"/>
+          <xs:element name="junkMailCleanupDays" type="longWrapper" minOccurs="0"/>
+          <xs:element name="limitsApplyToCache" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="mailCleanupAction" type="mailCleanupWrapper" minOccurs="0"/>
+          <xs:element name="mailCleanupDays" type="longWrapper" minOccurs="0"/>
+          <xs:element name="mailDeletedNotification" type="returnNotificationWrapper" minOccurs="0"/>
+          <xs:element name="mailOpenedNotification" type="returnNotificationWrapper" minOccurs="0"/>
+          <xs:element name="mailTrackingAction" type="trackingInformationWrapper" minOccurs="0"/>
+          <xs:element name="maxMessageSize" type="longWrapper" minOccurs="0"/>
+          <xs:element name="messageRetention" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="mimeEncoding" type="mimeEncodingWrapper" minOccurs="0"/>
+          <xs:element name="moveToPublishedCalendar" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="noteAcceptedNotification" type="returnNotificationWrapper" minOccurs="0"/>
+          <xs:element name="noteDeletedNotification" type="returnNotificationWrapper" minOccurs="0"/>
+          <xs:element name="noteOpenedNotification" type="returnNotificationWrapper" minOccurs="0"/>
+          <xs:element name="noteTrackingAction" type="trackingInformationWrapper" minOccurs="0"/>
+          <xs:element name="notifyPollInterval" type="clientOptionMinuteTimeWrapper" minOccurs="0"/>
+          <xs:element name="openNewView" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="performMaintenancePurges" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="personalAddressBookUserDefinedFields" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="plainTextReplyFormat" type="plainTextReplyFormatWrapper" minOccurs="0"/>
+          <xs:element name="plainTextReplyFormatIncludeAddress" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="plainTextReplyFormatIncludeDate" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="plainTextReplyFormatIncludeID" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="plainTextReplyFormatIncludeName" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="plainTextReplyFormatIncludeSeparator" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="plainTextReplyFormatSeparatorChar" type="stringWrapper" minOccurs="0"/>
+          <xs:element name="plainTextReplyFormatTypePosition" type="typePositionWrapper" minOccurs="0"/>
+          <xs:element name="promptBeforePurge" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="publishCalendar" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="publishFreeBusySearch" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="publishingHost" type="stringWrapper" minOccurs="0"/>
+          <xs:element name="quickViewerPosition" type="quickViewerPositionWrapper" minOccurs="0"/>
+          <xs:element name="readNext" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="readViews" type="enumSetViewWrapper" minOccurs="0"/>
+          <xs:element name="refreshInterval" type="clientOptionMinuteTimeWrapper" minOccurs="0"/>
+          <xs:element name="remoteMode" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="requirePassword" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="ruleReplyAll" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="ruleReplyLoop" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="sendExpireDays" type="longWrapper" minOccurs="0"/>
+          <xs:element name="sendIllegalExtensions" type="stringWrapper" minOccurs="0"/>
+          <xs:element name="sendNotify" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="sendPriority" type="sendPriorityWrapper" minOccurs="0"/>
+          <xs:element name="sendRecipientLimit" type="longWrapper" minOccurs="0"/>
+          <xs:element name="sendReplyRequested" type="longWrapper" minOccurs="0"/>
+          <xs:element name="sharedAddressBook" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="sharedFolder" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="showMessengerPresence" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="signDigitally" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="singleSignon" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="subscribeCalendar" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="taskAcceptedNotification" type="returnNotificationWrapper" minOccurs="0"/>
+          <xs:element name="taskCompletedNotification" type="returnNotificationWrapper" minOccurs="0"/>
+          <xs:element name="taskDeletedNotification" type="returnNotificationWrapper" minOccurs="0"/>
+          <xs:element name="taskOpenedNotification" type="returnNotificationWrapper" minOccurs="0"/>
+          <xs:element name="taskTrackingAction" type="trackingInformationWrapper" minOccurs="0"/>
+          <xs:element name="trashCleanupAction" type="trashCleanupWrapper" minOccurs="0"/>
+          <xs:element name="trashCleanupDays" type="longWrapper" minOccurs="0"/>
+          <xs:element name="treatImapLikeGW" type="enumSetTreatImapLikeGWWrapper" minOccurs="0"/>
+          <xs:element name="tutorialUrl" type="stringWrapper" minOccurs="0"/>
+          <xs:element name="useBlockMailList" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="useColorSchemes" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="useJunkMailList" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="useNntpAccounts" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="usePersonalAddressBook" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="usePersonalAddressBookForCalendar" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="usePopImapAccounts" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="useSmime" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="userLimits" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="userPassword" type="stringWrapper" minOccurs="0"/>
+          <xs:element name="vibeEnabled" type="booleanWrapper" minOccurs="0"/>
+          <xs:element name="vibeUrl" type="stringWrapper" minOccurs="0"/>
+          <xs:element name="wildcardAddressing" type="wildcardRestrictionWrapper" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="clientOptionTimeWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="clientOptionTime" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="clientOptionWrapper" abstract="true">
+    <xs:sequence>
+      <xs:element name="lock" type="clientOptionLock" minOccurs="0"/>
+      <xs:element name="restore" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clientOptionTime" final="extension restriction">
+    <xs:sequence>
+      <xs:element name="hours" type="xs:int"/>
+      <xs:element name="minutes" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clientOptionLock">
+    <xs:sequence>
+      <xs:element name="itemLocked" type="xs:boolean"/>
+      <xs:element name="lockAttempt" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="lockAvailable" type="xs:boolean"/>
+      <xs:element name="lockLevel" type="accessLevel" minOccurs="0"/>
+      <xs:element name="lockRights" type="accessLevel" minOccurs="0"/>
+      <xs:element name="modifiable" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="booleanWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="returnNotificationWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="returnNotification" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="appointmentCleanupWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="appointmentCleanup" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="longWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="xs:long" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="appointmentDisplayModeWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="appointmentDisplayMode" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="trackingInformationWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="trackingInformation" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="stringWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="enumSetDaysOfWeekWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="daysOfWeek" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="cachingModeWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="cachingMode" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="daysOfWeekWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="daysOfWeek" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="classificationWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="classification" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="clientLicenseWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="clientLicense" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="colorSchemeWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="colorScheme" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="enumSetViewWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="view" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="viewWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="view" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="encryptionAlgorithmWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="encryptionAlgorithm" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="encryptionKeySizeWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="encryptionKeySize" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="enumSetFolderListViewTypeWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="folderListViewType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="enumSetFrequentContactsWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="frequentContacts" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="signatureApplicationWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="signatureApplication" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="stringArrayWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="htmlReplyFormatWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="htmlReplyFormat" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="typePositionWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="typePosition" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="trashCleanupWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="trashCleanup" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="mailCleanupWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="mailCleanup" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="mimeEncodingWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="mimeEncoding" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="clientOptionMinuteTimeWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="clientOptionMinuteTime" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="clientOptionMinuteTime" final="extension restriction">
+    <xs:sequence>
+      <xs:element name="minutes" type="xs:int"/>
+      <xs:element name="seconds" type="xs:int"/>
+      <xs:element name="timeInSeconds" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="plainTextReplyFormatWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="plainTextReplyFormat" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="quickViewerPositionWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="quickViewerPosition" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="sendPriorityWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="sendPriority" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="enumSetTreatImapLikeGWWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="treatImapLikeGW" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="wildcardRestrictionWrapper">
+    <xs:complexContent>
+      <xs:extension base="clientOptionWrapper">
+        <xs:sequence>
+          <xs:element name="value" type="wildcardRestriction" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="gatewayAdministrator">
+    <xs:complexContent>
+      <xs:extension base="restObjectReference">
+        <xs:sequence>
+          <xs:element name="adminType" type="adminType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restObjectReference">
+    <xs:sequence>
+      <xs:element name="domainName" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="pendingOp" type="adminOp" minOccurs="0"/>
+      <xs:element name="postOfficeName" type="xs:string" minOccurs="0"/>
+      <xs:element name="timeLastMod" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="library">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="displayName" type="xs:string" minOccurs="0"/>
+          <xs:element name="domainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="maxArchiveSize" type="xs:int" minOccurs="0"/>
+          <xs:element name="postOfficeName" type="xs:string" minOccurs="0"/>
+          <xs:element name="publicRights" type="accessRight" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="startVersionNumber" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="directoryLink">
+    <xs:sequence>
+      <xs:element name="directoryId" type="xs:string" minOccurs="0"/>
+      <xs:element name="ldapDn" type="xs:string" minOccurs="0"/>
+      <xs:element name="ldapId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="objectAttributes">
+    <xs:sequence>
+      <xs:element name="attr" type="restAttribute" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="restAttribute">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="id" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="softwareArea">
+    <xs:complexContent>
+      <xs:extension base="restArea">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="poinstall">
+    <xs:complexContent>
+      <xs:extension base="restInstallOptions">
+        <xs:sequence>
+          <xs:element name="po" type="postOffice" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="postOffice">
+    <xs:complexContent>
+      <xs:extension base="restInternetAddressingProps">
+        <xs:sequence>
+          <xs:element name="accessMode" type="accessMode" minOccurs="0"/>
+          <xs:element name="archiveServiceTrustedAppName" type="xs:string" minOccurs="0"/>
+          <xs:element name="clientLastUpdateTime" type="xs:long" minOccurs="0"/>
+          <xs:element name="clientLockout" type="clientLockout" minOccurs="0"/>
+          <xs:element name="clientLockoutDate" type="xs:long" minOccurs="0"/>
+          <xs:element name="clientLockoutVersion" type="xs:string" minOccurs="0"/>
+          <xs:element name="clientUpdateBumpNumber" type="xs:int" minOccurs="0"/>
+          <xs:element name="deliveryMode" type="deliveryMode" minOccurs="0"/>
+          <xs:element name="deltaRecordsMaxAge" type="xs:int" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="disableDeltaRecords" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="disableLdapPasswordChange" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="disableLiveMove" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="disableLogins" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="domainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="enableICalBrowse" type="restEffectiveBoolean" minOccurs="0"/>
+          <xs:element name="externalRecord" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="externalSync" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="fileId" type="xs:string" minOccurs="0"/>
+          <xs:element name="intruderDetection" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="intruderLockoutAttempts" type="xs:int" minOccurs="0"/>
+          <xs:element name="intruderLockoutAttemptsInterval" type="xs:int" minOccurs="0"/>
+          <xs:element name="intruderLockoutResetInterval" type="xs:int" minOccurs="0"/>
+          <xs:element name="language" type="xs:string" minOccurs="0"/>
+          <xs:element name="languageId" type="xs:int" minOccurs="0"/>
+          <xs:element name="ldapInactiveConnectionTimeout" type="xs:int" minOccurs="0"/>
+          <xs:element name="ldapPassword" type="xs:string" minOccurs="0"/>
+          <xs:element name="ldapPoolServerResetTimeout" type="xs:int" minOccurs="0"/>
+          <xs:element name="ldapQuarantineThreshold" type="xs:int" minOccurs="0"/>
+          <xs:element name="ldapUser" type="xs:string" minOccurs="0"/>
+          <xs:element name="linkAddress" type="xs:string" minOccurs="0"/>
+          <xs:element name="linkAddressType" type="linkAddressType" minOccurs="0"/>
+          <xs:element name="mtpAppName" type="xs:string" minOccurs="0"/>
+          <xs:element name="mtpMaxSendSize" type="xs:int" minOccurs="0"/>
+          <xs:element name="path" type="xs:string" minOccurs="0"/>
+          <xs:element ref="poa" minOccurs="0"/>
+          <xs:element name="postOfficeVersion" type="xs:int" minOccurs="0"/>
+          <xs:element name="remoteCreation" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="remotePassword" type="xs:string" minOccurs="0"/>
+          <xs:element name="remoteUser" type="xs:string" minOccurs="0"/>
+          <xs:element name="restoreAreaName" type="xs:string" minOccurs="0"/>
+          <xs:element name="securitySettings" type="securitySettings" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="softwareAreaGuid" type="xs:string" minOccurs="0"/>
+          <xs:element name="timezone" type="xs:string" minOccurs="0"/>
+          <xs:element name="timezoneId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="sysinstall">
+    <xs:complexContent>
+      <xs:extension base="restInstallOptions">
+        <xs:sequence>
+          <xs:element ref="domain" minOccurs="0"/>
+          <xs:element name="gwia" type="internetAgent" minOccurs="0"/>
+          <xs:element name="postoffice" type="postOffice" minOccurs="0"/>
+          <xs:element ref="system" minOccurs="0"/>
+          <xs:element name="users" type="user" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="internetAgent">
+    <xs:complexContent>
+      <xs:extension base="restGateway">
+        <xs:sequence>
+          <xs:element name="accountingEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="addressFormat" type="gwiaAddressFormat" minOccurs="0"/>
+          <xs:element name="badMessageHandling" type="gwiaBadMessageHandling" minOccurs="0"/>
+          <xs:element name="cap" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="conversionDirectory" type="xs:string" minOccurs="0"/>
+          <xs:element name="convert" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="convertStatusToMessage" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="correlationAge" type="xs:long" minOccurs="0"/>
+          <xs:element name="correlationEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="defaultSignatureOverride" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="delayedMessageNotification" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="deliveryStatusNotification" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="dia" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="dialPassword" type="xs:string" minOccurs="0"/>
+          <xs:element name="dialUser" type="xs:string" minOccurs="0"/>
+          <xs:element name="directorySynchronization" type="gatewayDirectorySync" minOccurs="0"/>
+          <xs:element name="disableImip" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="disableQuotedPrintableText" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="displayLastFirst" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="dontReplaceUnderscore" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="dsnHoldAge" type="xs:long" minOccurs="0"/>
+          <xs:element name="etrnHost" type="xs:string" minOccurs="0"/>
+          <xs:element name="etrnQueue" type="xs:string" minOccurs="0"/>
+          <xs:element name="expandDistributionLists" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="externalSync" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="failedRecoveryWait" type="xs:long" minOccurs="0"/>
+          <xs:element name="flatForward" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="force7BitOut" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="foreignId" type="xs:string" minOccurs="0"/>
+          <xs:element name="gatewayAliasType" type="xs:string" minOccurs="0"/>
+          <xs:element name="gatewaySignatureName" type="xs:string" minOccurs="0"/>
+          <xs:element name="hostName" type="xs:string" minOccurs="0"/>
+          <xs:element name="idleSleepDuration" type="xs:long" minOccurs="0"/>
+          <xs:element name="imap4Service" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="imapPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="imapReadLimit" type="xs:long" minOccurs="0"/>
+          <xs:element name="imapReadNew" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="imapSslPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="imapSslThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="imapThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="imapUsesSsl" type="sslStatus" minOccurs="0"/>
+          <xs:element name="inboundConversionThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="keepSendGroups" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="killThreads" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ldapContext" type="xs:string" minOccurs="0"/>
+          <xs:element name="ldapPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="ldapPublicAccessAllow" type="gwiaLdapPublicAccess" minOccurs="0"/>
+          <xs:element name="ldapPublicEmailVisibility" type="gwiaLdapPublicVisibility" minOccurs="0"/>
+          <xs:element name="ldapPublicGivenNameVisibility" type="gwiaLdapPublicVisibility" minOccurs="0"/>
+          <xs:element name="ldapPublicLastNameVisibility" type="gwiaLdapPublicVisibility" minOccurs="0"/>
+          <xs:element name="ldapPublicPhoneVisibility" type="gwiaLdapPublicVisibility" minOccurs="0"/>
+          <xs:element name="ldapPublicSearchIdleTimeout" type="xs:long" minOccurs="0"/>
+          <xs:element name="ldapPublicSearchMaxSeconds" type="xs:long" minOccurs="0"/>
+          <xs:element name="ldapPublicSearchReturnCount" type="xs:long" minOccurs="0"/>
+          <xs:element name="ldapRefUrl" type="xs:string" minOccurs="0"/>
+          <xs:element name="ldapService" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ldapSslPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="ldapThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="ldapUsesSsl" type="sslStatus" minOccurs="0"/>
+          <xs:element name="lineWrapLength" type="xs:long" minOccurs="0"/>
+          <xs:element name="logFilePath" type="xs:string" minOccurs="0"/>
+          <xs:element name="logMaxAge" type="xs:long" minOccurs="0"/>
+          <xs:element name="logMaxDiskSpace" type="xs:long" minOccurs="0"/>
+          <xs:element name="mailbombProtection" type="xs:long" minOccurs="0"/>
+          <xs:element name="mailbombTime" type="xs:long" minOccurs="0"/>
+          <xs:element name="messageDeferInterval" type="xs:string" minOccurs="0"/>
+          <xs:element name="messageDeferMaxHours" type="xs:long" minOccurs="0"/>
+          <xs:element name="mimeReplyDomain" type="xs:string" minOccurs="0"/>
+          <xs:element name="minimumRunTime" type="xs:long" minOccurs="0"/>
+          <xs:element name="networkReattachCommand" type="xs:string" minOccurs="0"/>
+          <xs:element name="noImapVersion" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="noMapPriority" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="noPopVersion" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="noSmtpVersion" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="notFamiliar" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="outboundConversionThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="outboundMessageEncoding" type="gwiaOutboundMessageEncoding" minOccurs="0"/>
+          <xs:element name="outboundRelayHost" type="xs:string" minOccurs="0"/>
+          <xs:element name="outboundStatusLevel" type="gatewayOutboundStatusLevel" minOccurs="0"/>
+          <xs:element name="pop3Service" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="popIntruderDetect" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="popPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="popSslPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="popSslThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="popThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="popUsesSsl" type="sslStatus" minOccurs="0"/>
+          <xs:element name="ptrRecordHandling" type="gwiaPtrRecordHandling" minOccurs="0"/>
+          <xs:element name="qualifierPositioning" type="gwiaQualifierPositioning" minOccurs="0"/>
+          <xs:element name="realMailFrom" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="realtimeBlacklist" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="recoveryEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="relayAddSignature" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="relayHost" type="xs:string" minOccurs="0"/>
+          <xs:element name="retryCount" type="xs:long" minOccurs="0"/>
+          <xs:element name="retryInterval" type="xs:long" minOccurs="0"/>
+          <xs:element name="rfc822ReplyDomain" type="xs:string" minOccurs="0"/>
+          <xs:element name="sendPollCycle" type="xs:long" minOccurs="0"/>
+          <xs:element name="sendReceiveCycleTime" type="xs:long" minOccurs="0"/>
+          <xs:element name="smtpHomeDirectory" type="xs:string" minOccurs="0"/>
+          <xs:element name="smtpMessageRelayAllow" type="gwiaSmtpMessageRelay" minOccurs="0"/>
+          <xs:element name="smtpMessageRelayBlockMessageSize" type="xs:long" minOccurs="0"/>
+          <xs:element name="smtpMessageRelayBlockMessageSizeEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="smtpPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="smtpQueuesDirectory" type="xs:string" minOccurs="0"/>
+          <xs:element name="smtpReceiveThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="smtpSendThreads" type="xs:long" minOccurs="0"/>
+          <xs:element name="smtpService" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="smtpUsesSsl" type="sslStatus" minOccurs="0"/>
+          <xs:element name="snapShotInterval" type="xs:long" minOccurs="0"/>
+          <xs:element name="timeoutCommands" type="xs:long" minOccurs="0"/>
+          <xs:element name="timeoutConnectionEstablish" type="xs:long" minOccurs="0"/>
+          <xs:element name="timeoutConnectionTerminate" type="xs:long" minOccurs="0"/>
+          <xs:element name="timeoutData" type="xs:long" minOccurs="0"/>
+          <xs:element name="timeoutGreeting" type="xs:long" minOccurs="0"/>
+          <xs:element name="timeoutTcpRead" type="xs:long" minOccurs="0"/>
+          <xs:element name="undeliverableForwardHost" type="xs:string" minOccurs="0"/>
+          <xs:element name="undeliverableMessageReturnAmount" type="xs:long" minOccurs="0"/>
+          <xs:element name="useDialup" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="uuencodeAttachments" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="version" type="xs:long" minOccurs="0"/>
+          <xs:element name="xspam" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="xspamFields" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restGateway" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="bindExclusive" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="domainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="fileId" type="xs:string" minOccurs="0"/>
+          <xs:element name="gatewaySubDirectory" type="xs:string" minOccurs="0"/>
+          <xs:element name="gatewayType" type="gatewayType" minOccurs="0"/>
+          <xs:element name="gatewayVersion" type="xs:int" minOccurs="0"/>
+          <xs:element name="hasHttpPassword" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="hasSslKeyPassword" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="httpPassword" type="xs:string" minOccurs="0"/>
+          <xs:element name="httpPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="httpUser" type="xs:string" minOccurs="0"/>
+          <xs:element name="httpUsesSsl" type="sslStatus" minOccurs="0"/>
+          <xs:element name="ipAddress" type="xs:string" minOccurs="0"/>
+          <xs:element name="language" type="xs:string" minOccurs="0"/>
+          <xs:element name="languageId" type="xs:int" minOccurs="0"/>
+          <xs:element name="logLevel" type="logLevel" minOccurs="0"/>
+          <xs:element name="mtpPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="mtpUsesSsl" type="sslStatus" minOccurs="0"/>
+          <xs:element name="path" type="xs:string" minOccurs="0"/>
+          <xs:element name="platform" type="platform" minOccurs="0"/>
+          <xs:element name="snmpCommunityGetString" type="xs:string" minOccurs="0"/>
+          <xs:element name="sslCertificateFile" type="xs:string" minOccurs="0"/>
+          <xs:element name="sslKeyFile" type="xs:string" minOccurs="0"/>
+          <xs:element name="sslKeyPassword" type="xs:string" minOccurs="0"/>
+          <xs:element name="timezone" type="xs:string" minOccurs="0"/>
+          <xs:element name="timezoneId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="user">
+    <xs:complexContent>
+      <xs:extension base="restDeliverable">
+        <xs:sequence>
+          <xs:element name="accountId" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined1" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined10" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined11" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined12" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined13" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined14" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined15" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined16" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined17" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined18" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined19" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined2" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined20" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined3" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined4" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined5" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined6" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined7" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined8" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined9" type="xs:string" minOccurs="0"/>
+          <xs:element name="city" type="xs:string" minOccurs="0"/>
+          <xs:element name="company" type="xs:string" minOccurs="0"/>
+          <xs:element name="department" type="xs:string" minOccurs="0"/>
+          <xs:element name="externalEntity" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="externalRecord" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="externalSync" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="externalSyncOverride" type="externalSync" minOccurs="0"/>
+          <xs:element name="faxNumber" type="xs:string" minOccurs="0"/>
+          <xs:element name="gatewayAccess" type="xs:string" minOccurs="0"/>
+          <xs:element name="givenName" type="xs:string" minOccurs="0"/>
+          <xs:element name="homePhoneNumber" type="xs:string" minOccurs="0"/>
+          <xs:element name="internetFreeBusyUrl" type="xs:string" minOccurs="0"/>
+          <xs:element name="lastClientLoginTime" type="xs:long" minOccurs="0"/>
+          <xs:element name="lastClientType" type="clientType" minOccurs="0"/>
+          <xs:element name="ldapAuthentication" type="xs:string" minOccurs="0"/>
+          <xs:element name="ldapAuthenticationDirectory" type="xs:string" minOccurs="0"/>
+          <xs:element name="location" type="xs:string" minOccurs="0"/>
+          <xs:element name="mailboxLicenseType" type="mailboxLicenseType" minOccurs="0"/>
+          <xs:element name="mailboxSizeMb" type="xs:long" minOccurs="0"/>
+          <xs:element name="middleInitial" type="xs:string" minOccurs="0"/>
+          <xs:element name="mobilePhoneNumber" type="xs:string" minOccurs="0"/>
+          <xs:element name="networkId" type="xs:string" minOccurs="0"/>
+          <xs:element name="otherPhoneNumber" type="xs:string" minOccurs="0"/>
+          <xs:element name="pagerNumber" type="xs:string" minOccurs="0"/>
+          <xs:element name="postOfficeBox" type="xs:string" minOccurs="0"/>
+          <xs:element name="postalZipCode" type="xs:string" minOccurs="0"/>
+          <xs:element name="prefix" type="xs:string" minOccurs="0"/>
+          <xs:element name="stateProvince" type="xs:string" minOccurs="0"/>
+          <xs:element name="streetAddress" type="xs:string" minOccurs="0"/>
+          <xs:element name="suffix" type="xs:string" minOccurs="0"/>
+          <xs:element name="surname" type="xs:string" minOccurs="0"/>
+          <xs:element name="telephoneNumber" type="xs:string" minOccurs="0"/>
+          <xs:element name="title" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restDeliverable" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="restAddressable">
+        <xs:sequence>
+          <xs:element name="enableICalBrowse" type="restEffectiveBoolean" minOccurs="0"/>
+          <xs:element name="expirationDate" type="xs:long" minOccurs="0"/>
+          <xs:element name="fileId" type="xs:string" minOccurs="0"/>
+          <xs:element name="loginDisabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="password" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="checkOptions">
+    <xs:complexContent>
+      <xs:extension base="propertiesProxy">
+        <xs:sequence>
+          <xs:element name="action" type="menuAction" minOccurs="0"/>
+          <xs:element name="analyzeOptions" type="restAnalyzeOptions" minOccurs="0"/>
+          <xs:element name="auditOptions" type="restAuditReportOptions" minOccurs="0"/>
+          <xs:element name="distribute" type="distributeFlag" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="dmsContentsOptions" type="restDmsContentsOptions" minOccurs="0"/>
+          <xs:element name="dmsLogCleanupOptions" type="restDmsLogCleanupOptions" minOccurs="0"/>
+          <xs:element name="exclude" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="expireOptions" type="restExpireOptions" minOccurs="0"/>
+          <xs:element name="files" type="fileFlag" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="logFilePath" type="xs:string" minOccurs="0"/>
+          <xs:element name="message" type="xs:string" minOccurs="0"/>
+          <xs:element name="minAgeDays" type="xs:int" minOccurs="0"/>
+          <xs:element name="resetPassword" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="sendToCc" type="xs:string" minOccurs="0"/>
+          <xs:element name="statsOptions" type="restStatsOptions" minOccurs="0"/>
+          <xs:element name="supportOptions" type="xs:string" minOccurs="0"/>
+          <xs:element name="targets" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="verbose" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restAnalyzeOptions">
+    <xs:complexContent>
+      <xs:extension base="propertiesProxy">
+        <xs:sequence>
+          <xs:element name="checkAttachments" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="checkIndex" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="fixProblems" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="statistics" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="updateTotals" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="verify" type="verifyFlag" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restAuditReportOptions">
+    <xs:complexContent>
+      <xs:extension base="propertiesProxy">
+        <xs:sequence>
+          <xs:element name="reportDays" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restDmsContentsOptions">
+    <xs:complexContent>
+      <xs:extension base="propertiesProxy">
+        <xs:sequence>
+          <xs:element name="authorForOrphanedDocuments" type="xs:string" minOccurs="0"/>
+          <xs:element name="contentsCheckFlags" type="dmsContentsCheckFlag" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="resetWordLists" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restDmsLogCleanupOptions">
+    <xs:complexContent>
+      <xs:extension base="propertiesProxy">
+        <xs:sequence>
+          <xs:element name="maxDays" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restExpireOptions">
+    <xs:complexContent>
+      <xs:extension base="restExpireOptionsBase">
+        <xs:sequence>
+          <xs:element name="expireActive" type="xs:int" minOccurs="0"/>
+          <xs:element name="expireTrashDays" type="xs:int" minOccurs="0"/>
+          <xs:element name="expireType" type="expireType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restExpireOptionsBase" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="propertiesProxy">
+        <xs:sequence>
+          <xs:element name="expireDays" type="xs:int" minOccurs="0"/>
+          <xs:element name="expireDownloadedDays" type="xs:int" minOccurs="0"/>
+          <xs:element name="expireFlags" type="expireFlag" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="expireSize" type="xs:int" minOccurs="0"/>
+          <xs:element name="expireUntil" type="xs:int" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restStatsOptions">
+    <xs:complexContent>
+      <xs:extension base="restExpireOptionsBase">
+        <xs:sequence>
+          <xs:element name="boxLimit" type="xs:int" minOccurs="0"/>
+          <xs:element name="statsType" type="statsType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="warnings">
+    <xs:sequence>
+      <xs:element name="warning" type="apiStatus" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="apiStatus">
+    <xs:sequence>
+      <xs:element name="error" type="xs:boolean"/>
+      <xs:element name="httpStatus" type="status" minOccurs="0"/>
+      <xs:element name="httpStatusCode" type="xs:int" minOccurs="0"/>
+      <xs:element name="params" type="stringMapEntry" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="statusCode" type="xs:int" minOccurs="0"/>
+      <xs:element name="statusMsg" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="stringMapEntry">
+    <xs:sequence>
+      <xs:element name="key" type="xs:string" minOccurs="0"/>
+      <xs:element name="value" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="customAddress">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="enabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="priority" type="xs:long" minOccurs="0"/>
+          <xs:element name="replaceString" type="xs:string" minOccurs="0"/>
+          <xs:element name="searchString" type="xs:string" minOccurs="0"/>
+          <xs:element name="unlisted" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="libraryAccessRights">
+    <xs:complexContent>
+      <xs:extension base="restObjectReference">
+        <xs:sequence>
+          <xs:element name="accessRights" type="accessRight" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="fixSerializationBug" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restFile">
+    <xs:sequence>
+      <xs:element name="fileDate" type="xs:long" minOccurs="0"/>
+      <xs:element name="fileHidden" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="fileName" type="xs:string" minOccurs="0"/>
+      <xs:element name="fileSize" type="xs:long" minOccurs="0"/>
+      <xs:element name="files" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="folders" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="path" type="xs:string" minOccurs="0"/>
+      <xs:element name="roots" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="url" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="customPreference">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="adminName" type="xs:string" minOccurs="0"/>
+          <xs:element name="domainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="group" type="xs:string" minOccurs="0"/>
+          <xs:element name="postOfficeName" type="xs:string" minOccurs="0"/>
+          <xs:element name="value" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="dominstall">
+    <xs:complexContent>
+      <xs:extension base="restInstallOptions">
+        <xs:sequence>
+          <xs:element ref="domain" minOccurs="0"/>
+          <xs:element name="gwia" type="internetAgent" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="addressBookView">
+    <xs:sequence>
+      <xs:element name="fields" type="addressBookField" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="sort" type="sort"/>
+  </xs:complexType>
+
+  <xs:complexType name="restoreArea">
+    <xs:complexContent>
+      <xs:extension base="restArea">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="gatewayAlias">
+    <xs:complexContent>
+      <xs:extension base="restObjectReference">
+        <xs:sequence>
+          <xs:element name="alias" type="xs:string" minOccurs="0"/>
+          <xs:element name="aliasType" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Notification">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="notificationId" type="xs:long" minOccurs="0"/>
+          <xs:element name="notificationMessage" type="xs:string" minOccurs="0"/>
+          <xs:element name="notificationOwner" type="xs:string" minOccurs="0"/>
+          <xs:element name="notificationType" type="xs:string" minOccurs="0"/>
+          <xs:element name="value" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ldapServer">
+    <xs:complexContent>
+      <xs:extension base="restAbstractLdapServer">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restAbstractLdapServer" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="address" type="xs:string" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="directoryId" type="xs:string" minOccurs="0"/>
+          <xs:element name="hasSslCertificateBin" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ldapPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="sslCertificateBin" type="xs:base64Binary" minOccurs="0"/>
+          <xs:element name="sslCertificateFile" type="xs:string" minOccurs="0"/>
+          <xs:element name="sslEnabled" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="libraryAreaAccess">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="restQuerySchema">
+    <xs:sequence>
+      <xs:element name="attr" type="queryAttribute" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="queryAttribute">
+    <xs:sequence>
+      <xs:element name="values" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="alias" type="xs:boolean"/>
+    <xs:attribute name="id" type="xs:int" use="required"/>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="type" type="attributeType"/>
+  </xs:complexType>
+
+  <xs:complexType name="domainLink">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="domainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="gatewayAccessString" type="xs:string" minOccurs="0"/>
+          <xs:element name="gatewayName" type="xs:string" minOccurs="0"/>
+          <xs:element name="ipAddress" type="xs:string" minOccurs="0"/>
+          <xs:element name="linkAddress" type="xs:string" minOccurs="0"/>
+          <xs:element name="linkAddressType" type="linkAddressType" minOccurs="0"/>
+          <xs:element name="linkAri" type="xs:string" minOccurs="0"/>
+          <xs:element name="linkDestDomainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="linkHopDomainName" type="xs:string" minOccurs="0"/>
+          <xs:element name="linkOverride" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="linkReturnDomain" type="xs:string" minOccurs="0"/>
+          <xs:element name="linkType" type="linkType" minOccurs="0"/>
+          <xs:element name="msgDelayLimit" type="xs:long" minOccurs="0"/>
+          <xs:element name="msgSendLimit" type="xs:long" minOccurs="0"/>
+          <xs:element name="mtpPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="networkReattachString" type="xs:string" minOccurs="0"/>
+          <xs:element name="path" type="xs:string" minOccurs="0"/>
+          <xs:element name="transferPullCycle" type="xs:int" minOccurs="0"/>
+          <xs:element name="transferPullDirectory" type="xs:string" minOccurs="0"/>
+          <xs:element name="uncOverride" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="uncPullDir" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="libraryAccessRightsListUpdate">
+    <xs:sequence>
+      <xs:element name="add" type="libraryAccessRights" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="update" type="libraryAccessRights" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="remove" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="simpleAssociationListUpdate">
+    <xs:sequence>
+      <xs:element name="add" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="remove" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="timezone">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="abbreviation" type="xs:string" minOccurs="0"/>
+          <xs:element name="daylightSavingsDayOccurrence" type="gwTimezoneDayOccurrence" minOccurs="0"/>
+          <xs:element name="daylightSavingsDayOfWeek" type="gwTimezoneDayOfWeek" minOccurs="0"/>
+          <xs:element name="daylightSavingsHour" type="xs:int" minOccurs="0"/>
+          <xs:element name="daylightSavingsMinute" type="xs:int" minOccurs="0"/>
+          <xs:element name="daylightSavingsMonth" type="gwTimezoneMonth" minOccurs="0"/>
+          <xs:element name="daylightSavingsOffset" type="gwTimezoneOffset" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="gmtOffset" type="gwTimezoneOffset" minOccurs="0"/>
+          <xs:element name="standardDayOccurrence" type="gwTimezoneDayOccurrence" minOccurs="0"/>
+          <xs:element name="standardDayOfWeek" type="gwTimezoneDayOfWeek" minOccurs="0"/>
+          <xs:element name="standardHour" type="xs:int" minOccurs="0"/>
+          <xs:element name="standardMinute" type="xs:int" minOccurs="0"/>
+          <xs:element name="standardMonth" type="gwTimezoneMonth" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="gwTimezoneOffset" final="extension restriction">
+    <xs:sequence>
+      <xs:element name="hours" type="xs:long" minOccurs="0"/>
+      <xs:element name="minutes" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sslfiles">
+    <xs:sequence>
+      <xs:element name="sslCertificateFile" type="xs:string" minOccurs="0"/>
+      <xs:element name="sslKeyFile" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="moveRequest">
+    <xs:sequence>
+      <xs:element name="postOfficeId" type="xs:string" minOccurs="0"/>
+      <xs:element name="sources" type="moveSource" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="moveSource">
+    <xs:sequence>
+      <xs:element name="createNickname" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="resourceOwnerId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="resource">
+    <xs:complexContent>
+      <xs:extension base="restDeliverable">
+        <xs:sequence>
+          <xs:element name="externalRecord" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="externalSync" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="internetFreeBusyUrl" type="xs:string" minOccurs="0"/>
+          <xs:element name="owner" type="xs:string" minOccurs="0"/>
+          <xs:element name="resourceType" type="resourceType" minOccurs="0"/>
+          <xs:element name="telephoneNumber" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="calPubHost">
+    <xs:complexContent>
+      <xs:extension base="restService">
+        <xs:sequence>
+          <xs:element name="serviceUrl" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="scheduledEventAction">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="action" type="menuAction" minOccurs="0"/>
+          <xs:element name="analyzeOptions" type="restAnalyzeOptions" minOccurs="0"/>
+          <xs:element name="auditOptions" type="restAuditReportOptions" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="distribute" type="distributeFlag" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="dmsContentsOptions" type="restDmsContentsOptions" minOccurs="0"/>
+          <xs:element name="dmsLogCleanupOptions" type="restDmsLogCleanupOptions" minOccurs="0"/>
+          <xs:element name="eventType" type="eventType" minOccurs="0"/>
+          <xs:element name="exclude" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="expireOptions" type="restExpireOptions" minOccurs="0"/>
+          <xs:element name="files" type="fileFlag" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="isDefault" type="xs:boolean"/>
+          <xs:element name="logFilePath" type="xs:string" minOccurs="0"/>
+          <xs:element name="message" type="xs:string" minOccurs="0"/>
+          <xs:element name="minAgeDays" type="xs:int" minOccurs="0"/>
+          <xs:element name="notifyOnBegin" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="notifyOnComplete" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="notifyOnFail" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="resetPassword" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="sendToCc" type="xs:string" minOccurs="0"/>
+          <xs:element name="statsOptions" type="restStatsOptions" minOccurs="0"/>
+          <xs:element name="supportOptions" type="xs:string" minOccurs="0"/>
+          <xs:element name="verbose" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="group">
+    <xs:complexContent>
+      <xs:extension base="restAddressable">
+        <xs:sequence>
+          <xs:element name="externalRecord" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="externalSync" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="groupType" type="groupType" minOccurs="0"/>
+          <xs:element name="replicationOverride" type="distributionListReplication" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="cosmembership">
+    <xs:complexContent>
+      <xs:extension base="restObjectReference">
+        <xs:sequence>
+          <xs:element name="memberType" type="gwiaClassofServiceMemberType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="asyncStatus">
+    <xs:sequence>
+      <xs:element name="detail" type="xs:anyType" minOccurs="0"/>
+      <xs:element name="done" type="xs:boolean"/>
+      <xs:element name="error" type="apiStatus" minOccurs="0"/>
+      <xs:element name="jobId" type="xs:string" minOccurs="0"/>
+      <xs:element name="result" type="xs:anyType" minOccurs="0"/>
+      <xs:element name="startTime" type="xs:long" minOccurs="0"/>
+      <xs:element name="state" type="asyncState" minOccurs="0"/>
+      <xs:element name="stopTime" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="url" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="restoreAreaMembership">
+    <xs:complexContent>
+      <xs:extension base="restObjectReference">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="dirImport">
+    <xs:complexContent>
+      <xs:extension base="restDirectorySearchOptions">
+        <xs:sequence>
+          <xs:element name="postOfficeId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restDirectorySearchOptions">
+    <xs:complexContent>
+      <xs:extension base="restDirectoryJobOptions">
+        <xs:sequence>
+          <xs:element name="context" type="xs:string" minOccurs="0"/>
+          <xs:element name="exclude" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="filter" type="xs:string" minOccurs="0"/>
+          <xs:element name="objectTypes" type="memberType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="searchSubtree" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restDirectoryJobOptions">
+    <xs:sequence>
+      <xs:element name="commit" type="xs:boolean"/>
+      <xs:element name="showFailed" type="xs:boolean"/>
+      <xs:element name="showSkipped" type="xs:boolean"/>
+      <xs:element name="showSucceeded" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="member">
+    <xs:complexContent>
+      <xs:extension base="membership">
+        <xs:sequence>
+          <xs:element name="diagnosticId" type="xs:string" minOccurs="0"/>
+          <xs:element name="givenName" type="xs:string" minOccurs="0"/>
+          <xs:element name="lastModifiedOp" type="adminOp" minOccurs="0"/>
+          <xs:element name="surname" type="xs:string" minOccurs="0"/>
+          <xs:element name="type" type="memberType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="membership">
+    <xs:complexContent>
+      <xs:extension base="restObjectReference">
+        <xs:sequence>
+          <xs:element name="participation" type="participation" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="scheduledEvent">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="dayOfWeek" type="syncDayOfWeek" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="diskCheckLimit" type="xs:int" minOccurs="0"/>
+          <xs:element name="diskCheckThresholdHighMb" type="xs:int" minOccurs="0"/>
+          <xs:element name="diskCheckThresholdHighPercent" type="xs:int" minOccurs="0"/>
+          <xs:element name="diskCheckThresholdLowMb" type="xs:int" minOccurs="0"/>
+          <xs:element name="diskCheckThresholdLowPercent" type="xs:int" minOccurs="0"/>
+          <xs:element name="diskCheckThresholdType" type="diskCheckThresholdType" minOccurs="0"/>
+          <xs:element name="eventType" type="eventType" minOccurs="0"/>
+          <xs:element name="interval" type="xs:int" minOccurs="0"/>
+          <xs:element name="intervalUnit" type="intervalUnit" minOccurs="0"/>
+          <xs:element name="isDefault" type="xs:boolean"/>
+          <xs:element name="life" type="eventLife" minOccurs="0"/>
+          <xs:element name="recurs" type="eventRecurs" minOccurs="0"/>
+          <xs:element name="timeOfDay" type="restTimeOfDay" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restTimeOfDay">
+    <xs:sequence>
+      <xs:element name="hour" type="xs:int" minOccurs="0"/>
+      <xs:element name="minute" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="listUpdateResult">
+    <xs:sequence>
+      <xs:element name="created" type="apiStatus" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="updated" type="apiStatus" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="deleted" type="apiStatus" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="attributeMap">
+    <xs:sequence>
+      <xs:element name="attr" type="restAttribute" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="batchResult">
+    <xs:sequence>
+      <xs:element name="failed" type="error" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="succeeded" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="error">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="status" type="apiStatus" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="directory">
+    <xs:complexContent>
+      <xs:extension base="restAbstractLdapServer">
+        <xs:sequence>
+          <xs:element name="adminDefined1" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined10" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined11" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined12" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined13" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined14" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined15" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined16" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined17" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined18" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined19" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined2" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined20" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined3" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined4" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined5" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined6" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined7" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined8" type="xs:string" minOccurs="0"/>
+          <xs:element name="adminDefined9" type="xs:string" minOccurs="0"/>
+          <xs:element name="authDisablePasswordChange" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="authPassword" type="xs:string" minOccurs="0"/>
+          <xs:element name="authUser" type="xs:string" minOccurs="0"/>
+          <xs:element name="baseDn" type="xs:string" minOccurs="0"/>
+          <xs:element name="directoryType" type="directoryType" minOccurs="0"/>
+          <xs:element name="emailPublish" type="restEffectiveEmailPublish" minOccurs="0"/>
+          <xs:element name="emailPublishEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="emailPublishFormats" type="restEffectiveEmailPublishFormats" minOccurs="0"/>
+          <xs:element name="hasAuthPassword" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="hasSyncPassword" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="syncDomain" type="xs:string" minOccurs="0"/>
+          <xs:element name="syncEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="syncPassword" type="xs:string" minOccurs="0"/>
+          <xs:element name="syncUser" type="xs:string" minOccurs="0"/>
+          <xs:element name="treeName" type="xs:string" minOccurs="0"/>
+          <xs:element name="userAuthenticationMethod" type="ldapAuthMethod" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restEffectiveEmailPublish">
+    <xs:complexContent>
+      <xs:extension base="restEffectiveValue">
+        <xs:sequence>
+          <xs:element name="inheritedValue" type="emailPublish" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="value" type="emailPublish" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restEffectiveEmailPublishFormats">
+    <xs:complexContent>
+      <xs:extension base="restEffectiveValue">
+        <xs:sequence>
+          <xs:element name="inheritedValue" type="emailPublishFormats" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="value" type="emailPublishFormats" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="nodeDbInfo">
+    <xs:sequence>
+      <xs:element name="agentId" type="xs:string" minOccurs="0"/>
+      <xs:element name="canLock" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="path" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="administrator">
+    <xs:complexContent>
+      <xs:extension base="restObjectReference">
+        <xs:sequence>
+          <xs:element name="adminType" type="adminType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="dirLink">
+    <xs:complexContent>
+      <xs:extension base="restDirectorySearchOptions">
+        <xs:sequence>
+          <xs:element name="containerId" type="xs:string" minOccurs="0"/>
+          <xs:element name="directoryId" type="xs:string" minOccurs="0"/>
+          <xs:element name="overwrite" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="accessControlListUpdate">
+    <xs:sequence>
+      <xs:element name="add" type="accessControl" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="update" type="accessControl" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="remove" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="accessControl">
+    <xs:complexContent>
+      <xs:extension base="restObjectReference">
+        <xs:sequence>
+          <xs:element name="rights" type="accessRights" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="nodeConfig">
+    <xs:sequence>
+      <xs:element name="configInstance" type="nodeConfigInstance" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="osType" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="currentDir" type="xs:string"/>
+    <xs:attribute name="hostname" type="xs:string"/>
+    <xs:attribute name="mode" type="nodeConfigMode"/>
+    <xs:attribute name="serverPort" type="xs:long"/>
+    <xs:attribute name="url" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="nodeConfigInstance">
+    <xs:sequence>
+      <xs:element name="clustered" type="xs:boolean"/>
+      <xs:element name="ipAddress" type="xs:string" minOccurs="0"/>
+      <xs:element name="mta" type="nodeConfigInstanceAgent" minOccurs="0"/>
+      <xs:element name="poas" type="nodeConfigInstanceAgent" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="port" type="xs:int"/>
+      <xs:element name="systemGuid" type="xs:string" minOccurs="0"/>
+      <xs:element name="systemName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="nodeConfigInstanceAgent">
+    <xs:sequence>
+      <xs:element name="agentType" type="agentType" minOccurs="0"/>
+      <xs:element name="appName" type="xs:string" minOccurs="0"/>
+      <xs:element name="domainName" type="xs:string" minOccurs="0"/>
+      <xs:element name="path" type="xs:string" minOccurs="0"/>
+      <xs:element name="postOfficeName" type="xs:string" minOccurs="0"/>
+      <xs:element name="version" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="gwTimeStamp">
+    <xs:sequence>
+      <xs:element name="clear" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="objName" type="xs:string" minOccurs="0"/>
+      <xs:element name="timeInSeconds" type="xs:int" minOccurs="0"/>
+      <xs:element name="type" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="externalsystem">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="externalDomain" type="xs:string" minOccurs="0"/>
+          <xs:element name="receiveExternalDomains" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="receiveExternalGroups" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="receiveExternalPostOffices" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="receiveExternalResources" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="receiveExternalUsers" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="sendExternalDomains" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="sendExternalGroups" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="sendExternalPostOffices" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="sendExternalResources" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="sendExternalUsers" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="listResult">
+    <xs:sequence>
+      <xs:element name="ids" type="xs:string" minOccurs="0"/>
+      <xs:element name="object" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="resultInfo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="listResultInfo">
+    <xs:sequence>
+      <xs:element name="nextId" type="xs:int" minOccurs="0"/>
+      <xs:element name="outOf" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="groupMemberListUpdate">
+    <xs:sequence>
+      <xs:element name="add" type="member" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="update" type="member" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="remove" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="maintenanceOptions">
+    <xs:sequence>
+      <xs:element name="action" type="maintenanceAction" minOccurs="0"/>
+      <xs:element name="agentTask" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="createIfMissing" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="download" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="targetId" type="xs:string" minOccurs="0"/>
+      <xs:element name="targetPath" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="internetDomain">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="externalSync" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="csrParams">
+    <xs:sequence>
+      <xs:element name="adminName" type="xs:string" minOccurs="0"/>
+      <xs:element name="adminPassword" type="xs:string" minOccurs="0"/>
+      <xs:element name="altDnsNames" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="altIpAddresses" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="caAdminPort" type="xs:int" minOccurs="0"/>
+      <xs:element name="caIpAddress" type="xs:string" minOccurs="0"/>
+      <xs:element name="cn" type="xs:string" minOccurs="0"/>
+      <xs:element name="country" type="xs:string" minOccurs="0"/>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="keySize" type="xs:int"/>
+      <xs:element name="locality" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="stateOrProvince" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="gwPath">
+    <xs:sequence>
+      <xs:element name="path" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dirPublish">
+    <xs:complexContent>
+      <xs:extension base="restDirectoryJobOptions">
+        <xs:sequence>
+          <xs:element name="password" type="xs:string" minOccurs="0"/>
+          <xs:element name="username" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="trustedapp">
+    <xs:complexContent>
+      <xs:extension base="restGwObject">
+        <xs:sequence>
+          <xs:element name="allowArchiveService" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="archiveServiceAddress" type="xs:string" minOccurs="0"/>
+          <xs:element name="archiveServicePort" type="xs:long" minOccurs="0"/>
+          <xs:element name="archiveServiceRequiresSsl" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="archiveServiceTrustedApplicationID" type="xs:string" minOccurs="0"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="enabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ipAddress" type="xs:string" minOccurs="0"/>
+          <xs:element name="ipPort" type="xs:long" minOccurs="0"/>
+          <xs:element name="NMAPEnabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="providesRetentionService" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="queuingDisabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="requiresSsl" type="xs:boolean" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="installToken">
+    <xs:sequence>
+      <xs:element name="authorized" type="xs:long" minOccurs="0"/>
+      <xs:element name="claimed" type="xs:long" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="issued" type="xs:long" minOccurs="0"/>
+      <xs:element name="secret" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="adminOp">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SAFE"/>
+      <xs:enumeration value="ADD"/>
+      <xs:enumeration value="DELETE"/>
+      <xs:enumeration value="MODIFY"/>
+      <xs:enumeration value="MOVE"/>
+      <xs:enumeration value="UPDATE"/>
+      <xs:enumeration value="PO_REMOTE_REQ"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="domainType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNDEFINED"/>
+      <xs:enumeration value="SECONDARY"/>
+      <xs:enumeration value="PRIMARY"/>
+      <xs:enumeration value="EXTERNAL_GROUPWISE"/>
+      <xs:enumeration value="EXTERNAL_NON_GROUPWISE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="activeDirectoryDisplayNameFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FIRST_LAST"/>
+      <xs:enumeration value="LAST_FIRST"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="messageLogging">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OFF"/>
+      <xs:enumeration value="BRIEF"/>
+      <xs:enumeration value="FULL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="agentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="POA"/>
+      <xs:enumeration value="MTA"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sslStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DISABLED"/>
+      <xs:enumeration value="ENABLED"/>
+      <xs:enumeration value="REQUIRED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="logLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OFF"/>
+      <xs:enumeration value="NORMAL"/>
+      <xs:enumeration value="VERBOSE"/>
+      <xs:enumeration value="DIAGNOSTIC"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="platform">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNSUPPORTED"/>
+      <xs:enumeration value="NETWARE"/>
+      <xs:enumeration value="LINUX"/>
+      <xs:enumeration value="WINDOWS"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="addressFormats">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FULL"/>
+      <xs:enumeration value="HOST"/>
+      <xs:enumeration value="USER"/>
+      <xs:enumeration value="LAST_FIRST"/>
+      <xs:enumeration value="FIRST_LAST"/>
+      <xs:enumeration value="FLAST"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="preferredAddressFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FULL"/>
+      <xs:enumeration value="HOST"/>
+      <xs:enumeration value="USER"/>
+      <xs:enumeration value="LAST_FIRST"/>
+      <xs:enumeration value="FIRST_LAST"/>
+      <xs:enumeration value="FLAST"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="externalSync">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IF_VISIBILITY_SYSTEM"/>
+      <xs:enumeration value="ALWAYS"/>
+      <xs:enumeration value="NEVER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="memberType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BAD"/>
+      <xs:enumeration value="GROUP"/>
+      <xs:enumeration value="NICKNAME"/>
+      <xs:enumeration value="RESOURCE"/>
+      <xs:enumeration value="USER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="moveUserAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="ADM_ERROR"/>
+      <xs:enumeration value="ADM_REMOTE_REQ_SENT"/>
+      <xs:enumeration value="ADM_DESTINATION_DOM_UPDATED"/>
+      <xs:enumeration value="ADM_DESTINATION_PO_UPDATED"/>
+      <xs:enumeration value="ADM_PRIMARY_DOM_UPDATED"/>
+      <xs:enumeration value="ADM_SOURCE_DOM_UPDATED"/>
+      <xs:enumeration value="ADM_SOURCE_PO_UPDATED"/>
+      <xs:enumeration value="ADM_STATUS_UNAVAILABLE"/>
+      <xs:enumeration value="ADM_SEND_MOVE_USER_RESTART"/>
+      <xs:enumeration value="ADM_RECV_MOVE_USER_RESTART"/>
+      <xs:enumeration value="ADM_EXEC_MOVE_USER_RESTART"/>
+      <xs:enumeration value="ADM_SEND_RETRIEVE_ITEMS_RESTART"/>
+      <xs:enumeration value="ADM_RECV_RETRIEVE_ITEMS_RESTART"/>
+      <xs:enumeration value="ADM_EXEC_RETRIEVE_ITEMS_RESTART"/>
+      <xs:enumeration value="ADM_SEND_FORCE_COMPLETION"/>
+      <xs:enumeration value="ADM_RECV_FORCE_COMPLETION"/>
+      <xs:enumeration value="ADM_EXEC_FORCE_COMPLETION"/>
+      <xs:enumeration value="UDB_MOVE_USER"/>
+      <xs:enumeration value="UDB_MOVE_USER_RESTART"/>
+      <xs:enumeration value="UDB_MOVE_USER_RETRY"/>
+      <xs:enumeration value="UDB_FIXUP_PROXY_LISTS_ETC"/>
+      <xs:enumeration value="UDB_BUILD_INVENTORY_LIST_LIVE"/>
+      <xs:enumeration value="UDB_BUILD_INVENTORY_LIST_BATCH"/>
+      <xs:enumeration value="UDB_SEND_INVENTORY_LIST_LIVE"/>
+      <xs:enumeration value="UDB_SEND_INVENTORY_LIST_BATCH"/>
+      <xs:enumeration value="UDB_RECV_INVENTORY_LIST_LIVE"/>
+      <xs:enumeration value="UDB_RECV_INVENTORY_LIST_BATCH"/>
+      <xs:enumeration value="UDB_STORE_INVENTORY_LIST_LIVE"/>
+      <xs:enumeration value="UDB_STORE_INVENTORY_LIST_BATCH"/>
+      <xs:enumeration value="UDB_COMPLETE_INVENTORY_LIST_TRANSFER"/>
+      <xs:enumeration value="UDB_MOVE_USER_CLEAR_AND_STOP"/>
+      <xs:enumeration value="UDB_MOVE_USER_OVERRIDE_AND_FINISH"/>
+      <xs:enumeration value="UDB_RETRIEVE_ITEMS_STATUS_UPDATE"/>
+      <xs:enumeration value="UDB_RETRIEVE_ITEMS_PENDING"/>
+      <xs:enumeration value="UDB_RETRIEVE_ITEMS"/>
+      <xs:enumeration value="UDB_RETRIEVE_ITEMS_RESTART"/>
+      <xs:enumeration value="UDB_RETRIEVE_ITEMS_RETRY"/>
+      <xs:enumeration value="UDB_RETRIEVE_ITEMS_UPDATE_INVENTORY_RETRY"/>
+      <xs:enumeration value="UDB_BUILD_ITEMS_REQUEST_LIVE"/>
+      <xs:enumeration value="UDB_BUILD_ITEMS_REQUEST_BATCH"/>
+      <xs:enumeration value="UDB_SEND_ITEMS_REQUEST_LIVE"/>
+      <xs:enumeration value="UDB_SEND_ITEMS_REQUEST_BATCH"/>
+      <xs:enumeration value="UDB_RECV_ITEMS_REQUEST_LIVE"/>
+      <xs:enumeration value="UDB_RECV_ITEMS_REQUEST_BATCH"/>
+      <xs:enumeration value="UDB_STORE_ITEMS_REQUEST_LIVE"/>
+      <xs:enumeration value="UDB_STORE_ITEMS_REQUEST_BATCH"/>
+      <xs:enumeration value="UDB_BUILD_ITEMS_RESPONSE"/>
+      <xs:enumeration value="UDB_SEND_ITEMS_RESPONSE"/>
+      <xs:enumeration value="UDB_RECEIVE_ITEMS_RESPONSE"/>
+      <xs:enumeration value="UDB_RECEIVE_ITEMS_RESPONSE_FINAL"/>
+      <xs:enumeration value="UDB_STORE_ITEMS_RESPONSE"/>
+      <xs:enumeration value="UDB_STORE_ITEMS_RESPONSE_FINAL"/>
+      <xs:enumeration value="UDB_COMPLETE_ITEMS_TRANSFER"/>
+      <xs:enumeration value="UDB_RETRIEVE_ITEMS_CLEAR_AND_STOP"/>
+      <xs:enumeration value="UDB_RETRIEVE_ITEMS_OVERRIDE_AND_FINISH"/>
+      <xs:enumeration value="UDB_SEND_PURGE_USER"/>
+      <xs:enumeration value="UDB_RECV_PURGE_USER"/>
+      <xs:enumeration value="UDB_EXEC_PURGE_USER"/>
+      <xs:enumeration value="UDB_RETRIEVE_ITEMS_FINISHED"/>
+      <xs:enumeration value="UDB_MOVE_USER_FINISHED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="visibility">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="POST_OFFICE"/>
+      <xs:enumeration value="DOMAIN"/>
+      <xs:enumeration value="SYSTEM"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="autoCreateNickname">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NEVER"/>
+      <xs:enumeration value="ALWAYS"/>
+      <xs:enumeration value="PROMPT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="emailPublish">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PREFERRED_ADDRESS"/>
+      <xs:enumeration value="ALL_AVAILABLE_ADDRESSES"/>
+      <xs:enumeration value="CUSTOM_ADDRESSES"/>
+      <xs:enumeration value="NICKNAME_ADDRESSES"/>
+      <xs:enumeration value="GATEWAY_ALIAS_ADDRESSES"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="emailPublishFormats">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PREFERRED"/>
+      <xs:enumeration value="USER_ID"/>
+      <xs:enumeration value="USER_ID_PO"/>
+      <xs:enumeration value="FIRST_LAST"/>
+      <xs:enumeration value="LAST_FIRST"/>
+      <xs:enumeration value="FLAST"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="systemType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EXTERNAL"/>
+      <xs:enumeration value="LOCAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="syncAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="IGNORE"/>
+      <xs:enumeration value="ERROR"/>
+      <xs:enumeration value="WARNING"/>
+      <xs:enumeration value="ADD"/>
+      <xs:enumeration value="LINK"/>
+      <xs:enumeration value="SYNC"/>
+      <xs:enumeration value="PUBLISH"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="domainObjectType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNMAPPED"/>
+      <xs:enumeration value="BASE_GATEWAY"/>
+      <xs:enumeration value="BASE_LDAP_SERVER"/>
+      <xs:enumeration value="BASE_OBJECT"/>
+      <xs:enumeration value="ACCESS_CONTROL"/>
+      <xs:enumeration value="ACTION"/>
+      <xs:enumeration value="ADMINISTRATOR"/>
+      <xs:enumeration value="ADMIN_NOTIFICATION"/>
+      <xs:enumeration value="ADMIN_PREFERENCE"/>
+      <xs:enumeration value="APP_EVENT_ASSOCIATION"/>
+      <xs:enumeration value="AREA_ACCESS"/>
+      <xs:enumeration value="CUSTOM_ADDRESS"/>
+      <xs:enumeration value="CUSTOM_ADDRESS_ASSOCIATION"/>
+      <xs:enumeration value="CUSTOM_PREFERENCE"/>
+      <xs:enumeration value="CUSTOM_RECORD"/>
+      <xs:enumeration value="DIRECTORY"/>
+      <xs:enumeration value="DOMAIN"/>
+      <xs:enumeration value="DOMAIN_LINK"/>
+      <xs:enumeration value="EVENT_ACTION_ASSOCIATION"/>
+      <xs:enumeration value="EXTERNAL_ENTITY"/>
+      <xs:enumeration value="EXTERNAL_SYSTEM"/>
+      <xs:enumeration value="GATEWAY_ALIAS"/>
+      <xs:enumeration value="GATEWAY_HOST_ALIAS"/>
+      <xs:enumeration value="GATEWAY"/>
+      <xs:enumeration value="GROUP"/>
+      <xs:enumeration value="GROUP_MEMBER"/>
+      <xs:enumeration value="CAL_PUB_HOST"/>
+      <xs:enumeration value="DVA"/>
+      <xs:enumeration value="GWIA"/>
+      <xs:enumeration value="INTERNET_DOMAIN"/>
+      <xs:enumeration value="LDAP_SERVER"/>
+      <xs:enumeration value="LDAP_SERVER_ASSC"/>
+      <xs:enumeration value="LIBRARY"/>
+      <xs:enumeration value="LIBRARY_ACCESS_RIGHTS"/>
+      <xs:enumeration value="LIBRARY_AREA"/>
+      <xs:enumeration value="MTA"/>
+      <xs:enumeration value="MTA_PROFILE"/>
+      <xs:enumeration value="MUST_MESSAGE"/>
+      <xs:enumeration value="NDS_DS_FIELD_MAP"/>
+      <xs:enumeration value="NICKNAME"/>
+      <xs:enumeration value="POA"/>
+      <xs:enumeration value="POST_OFFICE"/>
+      <xs:enumeration value="RESOURCE"/>
+      <xs:enumeration value="RESTORE_AREA"/>
+      <xs:enumeration value="SCHEDULED_EVENT"/>
+      <xs:enumeration value="SOFTWARE_AREA"/>
+      <xs:enumeration value="SYSTEM_RECORD"/>
+      <xs:enumeration value="TIMEZONE"/>
+      <xs:enumeration value="TRUSTED_APP"/>
+      <xs:enumeration value="USER"/>
+      <xs:enumeration value="WEB_ACCESS_AGENT"/>
+      <xs:enumeration value="X400_RECORD"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="field">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DOMAIN"/>
+      <xs:enumeration value="POST_OFFICE"/>
+      <xs:enumeration value="USER_ID"/>
+      <xs:enumeration value="FILE_ID"/>
+      <xs:enumeration value="ACCOUNT_ID"/>
+      <xs:enumeration value="DN"/>
+      <xs:enumeration value="NETWORK_ID"/>
+      <xs:enumeration value="PERSONAL_TITLE"/>
+      <xs:enumeration value="GIVEN_NAME"/>
+      <xs:enumeration value="MIDDLE_NAME"/>
+      <xs:enumeration value="LAST_NAME"/>
+      <xs:enumeration value="GENERATION"/>
+      <xs:enumeration value="COMPANY"/>
+      <xs:enumeration value="DEPARTMENT"/>
+      <xs:enumeration value="TITLE"/>
+      <xs:enumeration value="STREET_ADDRESS"/>
+      <xs:enumeration value="PO_BOX"/>
+      <xs:enumeration value="CITY"/>
+      <xs:enumeration value="STATE_OR_PROVINCE"/>
+      <xs:enumeration value="POSTAL_CODE"/>
+      <xs:enumeration value="LOCATION"/>
+      <xs:enumeration value="PHONE"/>
+      <xs:enumeration value="MOBILE"/>
+      <xs:enumeration value="HOME_PHONE"/>
+      <xs:enumeration value="OTHER_PHONE"/>
+      <xs:enumeration value="FAX"/>
+      <xs:enumeration value="PAGER"/>
+      <xs:enumeration value="INTERNET_FREE_BUSY_URL"/>
+      <xs:enumeration value="DESCRIPTION"/>
+      <xs:enumeration value="ADMIN_DEFINED_1"/>
+      <xs:enumeration value="ADMIN_DEFINED_2"/>
+      <xs:enumeration value="ADMIN_DEFINED_3"/>
+      <xs:enumeration value="ADMIN_DEFINED_4"/>
+      <xs:enumeration value="ADMIN_DEFINED_5"/>
+      <xs:enumeration value="ADMIN_DEFINED_6"/>
+      <xs:enumeration value="ADMIN_DEFINED_7"/>
+      <xs:enumeration value="ADMIN_DEFINED_8"/>
+      <xs:enumeration value="ADMIN_DEFINED_9"/>
+      <xs:enumeration value="ADMIN_DEFINED_10"/>
+      <xs:enumeration value="ADMIN_DEFINED_11"/>
+      <xs:enumeration value="ADMIN_DEFINED_12"/>
+      <xs:enumeration value="ADMIN_DEFINED_13"/>
+      <xs:enumeration value="ADMIN_DEFINED_14"/>
+      <xs:enumeration value="ADMIN_DEFINED_15"/>
+      <xs:enumeration value="ADMIN_DEFINED_16"/>
+      <xs:enumeration value="ADMIN_DEFINED_17"/>
+      <xs:enumeration value="ADMIN_DEFINED_18"/>
+      <xs:enumeration value="ADMIN_DEFINED_19"/>
+      <xs:enumeration value="ADMIN_DEFINED_20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwiaClassofServiceImapAccess">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALLOW"/>
+      <xs:enumeration value="PREVENT"/>
+      <xs:enumeration value="INHERIT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwiaClassofServicePopAccess">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALLOW"/>
+      <xs:enumeration value="PREVENT"/>
+      <xs:enumeration value="INHERIT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwiaClassofServiceSmtpAccess">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALLOW"/>
+      <xs:enumeration value="PREVENT"/>
+      <xs:enumeration value="INHERIT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="messageFileProcessing">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALL_MESSAGES"/>
+      <xs:enumeration value="LOW_PRIORITY_MESSAGES"/>
+      <xs:enumeration value="HIGH_PRIORITY_MESSAGES"/>
+      <xs:enumeration value="OFF"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="accessLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="SET_USER"/>
+      <xs:enumeration value="SET_POSTOFFICE"/>
+      <xs:enumeration value="SET_DOMAIN"/>
+      <xs:enumeration value="LOCK_USER"/>
+      <xs:enumeration value="LOCK_POSTOFFICE"/>
+      <xs:enumeration value="LOCK_DOMAIN"/>
+      <xs:enumeration value="UNKNOWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="returnNotification">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="MAIL_RECEIPT"/>
+      <xs:enumeration value="NOTIFY"/>
+      <xs:enumeration value="NOTIFY_MAIL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="appointmentCleanup">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MANUAL_DELETE_ARCHIVE"/>
+      <xs:enumeration value="AUTO_DELETE"/>
+      <xs:enumeration value="AUTO_ARCHIVE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="appointmentDisplayMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DURATION"/>
+      <xs:enumeration value="END_DATE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="trackingInformation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DELIVERED"/>
+      <xs:enumeration value="DELIVERED_OPENED"/>
+      <xs:enumeration value="ALL_INFORMATION"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="daysOfWeek">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUNDAY"/>
+      <xs:enumeration value="MONDAY"/>
+      <xs:enumeration value="TUESDAY"/>
+      <xs:enumeration value="WEDNESDAY"/>
+      <xs:enumeration value="THURSDAY"/>
+      <xs:enumeration value="FRIDAY"/>
+      <xs:enumeration value="SATURDAY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="cachingMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALLOW"/>
+      <xs:enumeration value="FORCE"/>
+      <xs:enumeration value="DISALLOW"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="classification">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NORMAL"/>
+      <xs:enumeration value="PROPRIETARY"/>
+      <xs:enumeration value="CONFIDENTIAL"/>
+      <xs:enumeration value="SECRET"/>
+      <xs:enumeration value="TOP_SECRET"/>
+      <xs:enumeration value="FOR_YOUR_EYES_ONLY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="clientLicense">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FULL"/>
+      <xs:enumeration value="LIMITED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="colorScheme">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BLUE"/>
+      <xs:enumeration value="OLIVE_GREEN"/>
+      <xs:enumeration value="SILVER"/>
+      <xs:enumeration value="SKY_BLUE"/>
+      <xs:enumeration value="SPRING_GREEN"/>
+      <xs:enumeration value="STERLING_SILVER"/>
+      <xs:enumeration value="GRAY"/>
+      <xs:enumeration value="LIGHT_GRAY"/>
+      <xs:enumeration value="ROSE"/>
+      <xs:enumeration value="LILAC"/>
+      <xs:enumeration value="EARTH"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="view">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TEXT"/>
+      <xs:enumeration value="HTML"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="encryptionAlgorithm">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="RC2"/>
+      <xs:enumeration value="RC4"/>
+      <xs:enumeration value="DES"/>
+      <xs:enumeration value="DES3"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="encryptionKeySize">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="KEY_40"/>
+      <xs:enumeration value="KEY_56"/>
+      <xs:enumeration value="KEY_64"/>
+      <xs:enumeration value="KEY_128"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="folderListViewType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FULL"/>
+      <xs:enumeration value="SIMPLE"/>
+      <xs:enumeration value="FAVORITES"/>
+      <xs:enumeration value="LONG"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="frequentContacts">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AUTO_SAVE"/>
+      <xs:enumeration value="RECV_SAVE_EXT"/>
+      <xs:enumeration value="RECV_SAVE_INT"/>
+      <xs:enumeration value="RECV_SAVE_TO_ME"/>
+      <xs:enumeration value="SEND_SAVE_EXT"/>
+      <xs:enumeration value="SEND_SAVE_INT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="signatureApplication">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALL"/>
+      <xs:enumeration value="EXTERNAL_MESSAGES"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="htmlReplyFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GROUPWISE_CLASSIC"/>
+      <xs:enumeration value="HTML_ENHANCED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typePosition">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TOP"/>
+      <xs:enumeration value="BOTTOM"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="trashCleanup">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MANUAL_PURGE"/>
+      <xs:enumeration value="AUTO_PURGE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mailCleanup">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MANUAL_DELETE_ARCHIVE"/>
+      <xs:enumeration value="AUTO_DELETE"/>
+      <xs:enumeration value="AUTO_ARCHIVE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mimeEncoding">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WINDOWS_DEFAULT"/>
+      <xs:enumeration value="ISO_DEFAULT"/>
+      <xs:enumeration value="UTF8"/>
+      <xs:enumeration value="ARABIC_ASMO_708"/>
+      <xs:enumeration value="ARABIC_DOS"/>
+      <xs:enumeration value="ARABIC_ISO"/>
+      <xs:enumeration value="ARABIC_WINDOWS_1256"/>
+      <xs:enumeration value="BALTIC_ISO"/>
+      <xs:enumeration value="BALTIC_WINDOWS_1257"/>
+      <xs:enumeration value="CENTRAL_EURO_DOS"/>
+      <xs:enumeration value="CENTRAL_EURO_ISO"/>
+      <xs:enumeration value="CENTRAL_EURO_WINDOWS_1250"/>
+      <xs:enumeration value="CHINESE_SIMP_GB2312"/>
+      <xs:enumeration value="CHINESE_SIMP_HZ"/>
+      <xs:enumeration value="CHINESE_TRAD_BIG5"/>
+      <xs:enumeration value="CYRLLIC_DOS"/>
+      <xs:enumeration value="CYRLLIC_ISO"/>
+      <xs:enumeration value="CYRLLIC_KOI8_R"/>
+      <xs:enumeration value="CYRLLIC_KOI8_U"/>
+      <xs:enumeration value="CYRLLIC_WINDOWS"/>
+      <xs:enumeration value="GREEK_ISO"/>
+      <xs:enumeration value="GREEK_WINDOWS"/>
+      <xs:enumeration value="HEBREW_DOS"/>
+      <xs:enumeration value="HEBREW_ISO"/>
+      <xs:enumeration value="HEBREW_ISO_LOGICAL"/>
+      <xs:enumeration value="HEBREW_ISO_VISUAL"/>
+      <xs:enumeration value="HEBREW_WINDOWS_1255"/>
+      <xs:enumeration value="JAPANESE_EUC"/>
+      <xs:enumeration value="JAPANESE_ISO2022_JP"/>
+      <xs:enumeration value="JAPANESE_SHIFT_JIS"/>
+      <xs:enumeration value="KOREAN_ISO"/>
+      <xs:enumeration value="KOREAN_EUC_KR"/>
+      <xs:enumeration value="THAI_WINDOWS_874"/>
+      <xs:enumeration value="TURKISH_ISO"/>
+      <xs:enumeration value="TURKISH_WINDOWS_1254"/>
+      <xs:enumeration value="USER_DEFINED"/>
+      <xs:enumeration value="UTF7"/>
+      <xs:enumeration value="VIETNAMESE_WINDOWS"/>
+      <xs:enumeration value="WESTERN_EURO_ISO_8859_1"/>
+      <xs:enumeration value="WESTERN_EURO_ISO_8859_15"/>
+      <xs:enumeration value="WESTERN_EURO_WINDOWS_1252"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="plainTextReplyFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GROUPWISE_CLASSIC"/>
+      <xs:enumeration value="INCLUDE_HEADERS"/>
+      <xs:enumeration value="INTERNET_STANDARD"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="quickViewerPosition">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RIGHT"/>
+      <xs:enumeration value="BOTTOM"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sendPriority">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LOW"/>
+      <xs:enumeration value="STANDARD"/>
+      <xs:enumeration value="HIGH"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="treatImapLikeGW">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IMAPCOPY_IS_MOVE"/>
+      <xs:enumeration value="IMAPMARKDEL_IS_DELETE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="wildcardRestriction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LIMITED_TO_SYSTEM"/>
+      <xs:enumeration value="LIMITED_TO_POST_OFFICE"/>
+      <xs:enumeration value="LIMITED_TO_DOMAIN"/>
+      <xs:enumeration value="UNLIMITED"/>
+      <xs:enumeration value="NOT_ALLOWED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="adminType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNDEFINED"/>
+      <xs:enumeration value="OPERATOR"/>
+      <xs:enumeration value="ACCOUNTING"/>
+      <xs:enumeration value="POST_MASTER"/>
+      <xs:enumeration value="FOREIGN_OPERATOR"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="accessRight">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ADD"/>
+      <xs:enumeration value="MODIFY"/>
+      <xs:enumeration value="VIEW"/>
+      <xs:enumeration value="DELETE"/>
+      <xs:enumeration value="RESET_IN_USE"/>
+      <xs:enumeration value="SET_OFFICIAL_VER"/>
+      <xs:enumeration value="MANAGE"/>
+      <xs:enumeration value="DISK_USAGE_LIMIT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="accessMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CLIENT_SERVER"/>
+      <xs:enumeration value="CLIENT_SERVER_DIRECT"/>
+      <xs:enumeration value="DIRECT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="clientLockout">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="VERSION"/>
+      <xs:enumeration value="DATE"/>
+      <xs:enumeration value="BOTH"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="deliveryMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="APP_THRESHOLD"/>
+      <xs:enumeration value="CLIENT_DELIVERS_LOCALLY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="linkAddressType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNKNOWN"/>
+      <xs:enumeration value="MAPPED"/>
+      <xs:enumeration value="TCP_IP"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="securitySettings">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LOW"/>
+      <xs:enumeration value="HIGH"/>
+      <xs:enumeration value="EDIRECTORY"/>
+      <xs:enumeration value="LDAP"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwiaAddressFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AUTO"/>
+      <xs:enumeration value="USER"/>
+      <xs:enumeration value="PO"/>
+      <xs:enumeration value="DOMAIN"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwiaBadMessageHandling">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MOVE"/>
+      <xs:enumeration value="SEND"/>
+      <xs:enumeration value="BOTH"/>
+      <xs:enumeration value="NEITHER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gatewayDirectorySync">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="SYNCHRONIZATION"/>
+      <xs:enumeration value="EXCHANGE"/>
+      <xs:enumeration value="BOTH"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwiaLdapPublicAccess">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALLOW"/>
+      <xs:enumeration value="PREVENT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwiaLdapPublicVisibility">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NOT_VISIBLE"/>
+      <xs:enumeration value="VISIBLE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwiaOutboundMessageEncoding">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RFC822"/>
+      <xs:enumeration value="MIME"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gatewayOutboundStatusLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="UNDELIVERED"/>
+      <xs:enumeration value="DELIVERED"/>
+      <xs:enumeration value="OPEN"/>
+      <xs:enumeration value="FULL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwiaPtrRecordHandling">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNDEFINED"/>
+      <xs:enumeration value="REJECT_IF_PTR_MISSING"/>
+      <xs:enumeration value="REJECT_IF_PTR_DOES_NOT_MATCH_SENDER_GREETING"/>
+      <xs:enumeration value="FLAG_INVALID_PTR_AS_JUNK_MAIL"/>
+      <xs:enumeration value="ALL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwiaQualifierPositioning">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LEFT"/>
+      <xs:enumeration value="RIGHT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwiaSmtpMessageRelay">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALLOW"/>
+      <xs:enumeration value="PREVENT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gatewayType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNSUPPORTED"/>
+      <xs:enumeration value="API"/>
+      <xs:enumeration value="ASYNC"/>
+      <xs:enumeration value="EXCHANGE"/>
+      <xs:enumeration value="INTERNET"/>
+      <xs:enumeration value="NOTES"/>
+      <xs:enumeration value="WEB_ACCESS"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="clientType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LINUX_65X"/>
+      <xs:enumeration value="LINUX_70X"/>
+      <xs:enumeration value="LINUX_80X"/>
+      <xs:enumeration value="MAC_5X"/>
+      <xs:enumeration value="MAC_6X"/>
+      <xs:enumeration value="MAC_70X"/>
+      <xs:enumeration value="MAC_80X"/>
+      <xs:enumeration value="OUTLOOK_65X"/>
+      <xs:enumeration value="OUTLOOK_70X"/>
+      <xs:enumeration value="OUTLOOK_80X"/>
+      <xs:enumeration value="WIN32_65X"/>
+      <xs:enumeration value="WIN32_70X"/>
+      <xs:enumeration value="WIN32_80X"/>
+      <xs:enumeration value="WIN32_2012X"/>
+      <xs:enumeration value="WIN32_2014X"/>
+      <xs:enumeration value="WINX_65X"/>
+      <xs:enumeration value="WINX_70X"/>
+      <xs:enumeration value="WINX_80X"/>
+      <xs:enumeration value="OTHER"/>
+      <xs:enumeration value="UNKNOWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mailboxLicenseType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNKNOWN"/>
+      <xs:enumeration value="FULL"/>
+      <xs:enumeration value="LIMITED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="menuAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ANALYZE"/>
+      <xs:enumeration value="EXPIRE"/>
+      <xs:enumeration value="STATS"/>
+      <xs:enumeration value="REBUILD"/>
+      <xs:enumeration value="PREFS"/>
+      <xs:enumeration value="RECREATE"/>
+      <xs:enumeration value="MERGE"/>
+      <xs:enumeration value="DMS_AGE"/>
+      <xs:enumeration value="DMS_LOG_CLEANUP"/>
+      <xs:enumeration value="DMS_CONTENTS"/>
+      <xs:enumeration value="RESET_PW"/>
+      <xs:enumeration value="SET_PW"/>
+      <xs:enumeration value="SET_PW_BIT"/>
+      <xs:enumeration value="DISK_SPACE_USAGE"/>
+      <xs:enumeration value="AUDIT_REPORT"/>
+      <xs:enumeration value="UNKNOWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="verifyFlag">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="STRUCTURE"/>
+      <xs:enumeration value="CONTENTS"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="distributeFlag">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ADMIN"/>
+      <xs:enumeration value="USERS"/>
+      <xs:enumeration value="USERLOG_ON"/>
+      <xs:enumeration value="USERLOG_MSG"/>
+      <xs:enumeration value="OTHERS"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dmsContentsCheckFlag">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LIBRARY_RECORD"/>
+      <xs:enumeration value="DOC_VER_ELEM"/>
+      <xs:enumeration value="DOC_FILE"/>
+      <xs:enumeration value="ORPHANED_DOCS"/>
+      <xs:enumeration value="SECURITY"/>
+      <xs:enumeration value="CACHED_NAME"/>
+      <xs:enumeration value="LIB_SPACE_USAGE"/>
+      <xs:enumeration value="MOVE_BLOBS"/>
+      <xs:enumeration value="REMOVE_BLOB_AREAS"/>
+      <xs:enumeration value="RESYNC_SECURITY"/>
+      <xs:enumeration value="VERIFY_LIB_SPACE_USAGE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="expireType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EXPIRE"/>
+      <xs:enumeration value="REDUCE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="expireFlag">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CALENDAR"/>
+      <xs:enumeration value="INBOX"/>
+      <xs:enumeration value="OUTBOX"/>
+      <xs:enumeration value="DOCUMENTS"/>
+      <xs:enumeration value="ONLY_BACKED_UP"/>
+      <xs:enumeration value="LIMITED_SIZE"/>
+      <xs:enumeration value="ONLY_RETAINED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="fileFlag">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="USER"/>
+      <xs:enumeration value="MSG"/>
+      <xs:enumeration value="WPROF"/>
+      <xs:enumeration value="DOC"/>
+      <xs:enumeration value="GUARD"/>
+      <xs:enumeration value="DEFER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="statsType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MAILBOX"/>
+      <xs:enumeration value="EXPIRE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK"/>
+      <xs:enumeration value="CREATED"/>
+      <xs:enumeration value="ACCEPTED"/>
+      <xs:enumeration value="NO_CONTENT"/>
+      <xs:enumeration value="MOVED_PERMANENTLY"/>
+      <xs:enumeration value="SEE_OTHER"/>
+      <xs:enumeration value="NOT_MODIFIED"/>
+      <xs:enumeration value="TEMPORARY_REDIRECT"/>
+      <xs:enumeration value="BAD_REQUEST"/>
+      <xs:enumeration value="UNAUTHORIZED"/>
+      <xs:enumeration value="FORBIDDEN"/>
+      <xs:enumeration value="NOT_FOUND"/>
+      <xs:enumeration value="NOT_ACCEPTABLE"/>
+      <xs:enumeration value="CONFLICT"/>
+      <xs:enumeration value="GONE"/>
+      <xs:enumeration value="PRECONDITION_FAILED"/>
+      <xs:enumeration value="UNSUPPORTED_MEDIA_TYPE"/>
+      <xs:enumeration value="INTERNAL_SERVER_ERROR"/>
+      <xs:enumeration value="SERVICE_UNAVAILABLE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FIRST_LAST"/>
+      <xs:enumeration value="LAST_FIRST"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="attributeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="string"/>
+      <xs:enumeration value="number"/>
+      <xs:enumeration value="bool"/>
+      <xs:enumeration value="enumeration"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="linkType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNDEFINED"/>
+      <xs:enumeration value="DIRECT"/>
+      <xs:enumeration value="INDIRECT"/>
+      <xs:enumeration value="GATEWAY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwTimezoneDayOccurrence">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNDEFINED"/>
+      <xs:enumeration value="FIRST"/>
+      <xs:enumeration value="SECOND"/>
+      <xs:enumeration value="THIRD"/>
+      <xs:enumeration value="FOURTH"/>
+      <xs:enumeration value="LAST"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwTimezoneDayOfWeek">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUNDAY"/>
+      <xs:enumeration value="MONDAY"/>
+      <xs:enumeration value="TUESDAY"/>
+      <xs:enumeration value="WEDNESDAY"/>
+      <xs:enumeration value="THURSDAY"/>
+      <xs:enumeration value="FRIDAY"/>
+      <xs:enumeration value="SATURDAY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwTimezoneMonth">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNDEFINED"/>
+      <xs:enumeration value="JANUARY"/>
+      <xs:enumeration value="FEBRUARY"/>
+      <xs:enumeration value="MARCH"/>
+      <xs:enumeration value="APRIL"/>
+      <xs:enumeration value="MAY"/>
+      <xs:enumeration value="JUNE"/>
+      <xs:enumeration value="JULY"/>
+      <xs:enumeration value="AUGUST"/>
+      <xs:enumeration value="SEPTEMBER"/>
+      <xs:enumeration value="OCTOBER"/>
+      <xs:enumeration value="NOVEMBER"/>
+      <xs:enumeration value="DECEMBER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="resourceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNSUPPORTED"/>
+      <xs:enumeration value="RESOURCE"/>
+      <xs:enumeration value="PLACE"/>
+      <xs:enumeration value="ROLE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="eventType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MAINTENANCE"/>
+      <xs:enumeration value="DISK_CHECK"/>
+      <xs:enumeration value="USER_SYNC"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="groupType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DISTRIBUTION_LIST"/>
+      <xs:enumeration value="DIRECTORY_GROUP"/>
+      <xs:enumeration value="ORGANIZATIONAL_ROLE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="distributionListReplication">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACCORDING_TO_VISIBILITY"/>
+      <xs:enumeration value="EVERYWHERE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gwiaClassofServiceMemberType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DOMAIN"/>
+      <xs:enumeration value="POST_OFFICE"/>
+      <xs:enumeration value="GROUP"/>
+      <xs:enumeration value="USER"/>
+      <xs:enumeration value="RESOURCE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="asyncState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="QUEUED"/>
+      <xs:enumeration value="RUNNING"/>
+      <xs:enumeration value="FAILED"/>
+      <xs:enumeration value="CANCELING"/>
+      <xs:enumeration value="CANCELED"/>
+      <xs:enumeration value="COMPLETE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="participation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PRIMARY"/>
+      <xs:enumeration value="CARBON_COPY"/>
+      <xs:enumeration value="BLIND_COPY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="syncDayOfWeek">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUNDAY"/>
+      <xs:enumeration value="MONDAY"/>
+      <xs:enumeration value="TUESDAY"/>
+      <xs:enumeration value="WEDNESDAY"/>
+      <xs:enumeration value="THURSDAY"/>
+      <xs:enumeration value="FRIDAY"/>
+      <xs:enumeration value="SATURDAY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="diskCheckThresholdType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MB"/>
+      <xs:enumeration value="PERCENT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="intervalUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HOURLY"/>
+      <xs:enumeration value="DAILY"/>
+      <xs:enumeration value="WEEKLY"/>
+      <xs:enumeration value="MONTHLY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="eventLife">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="REPEAT"/>
+      <xs:enumeration value="DISKLIMIT"/>
+      <xs:enumeration value="ONCE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="eventRecurs">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DAILY"/>
+      <xs:enumeration value="WEEKDAY"/>
+      <xs:enumeration value="MONTHDAY"/>
+      <xs:enumeration value="HOURLY"/>
+      <xs:enumeration value="INTERVAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="directoryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EDIRECTORY"/>
+      <xs:enumeration value="ACTIVE_DIRECTORY"/>
+      <xs:enumeration value="UNKNOWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ldapAuthMethod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BIND"/>
+      <xs:enumeration value="COMPARE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="accessRights">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNDEFINED"/>
+      <xs:enumeration value="WRITE"/>
+      <xs:enumeration value="READ"/>
+      <xs:enumeration value="READWRITE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="nodeConfigMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NOT_CONFIGURED"/>
+      <xs:enumeration value="SIMPLE_NODE"/>
+      <xs:enumeration value="DOMAIN_NODE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="maintenanceAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VALIDATE"/>
+      <xs:enumeration value="RECOVER"/>
+      <xs:enumeration value="REBUILD"/>
+      <xs:enumeration value="RECLAIM_SPACE"/>
+      <xs:enumeration value="REBUILD_INDEXES"/>
+      <xs:enumeration value="UPGRADE_VERSION"/>
+      <xs:enumeration value="CLEANUP_UNMAPPED_ADMIN_DEF_FIELDS"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
