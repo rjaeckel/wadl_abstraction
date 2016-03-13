@@ -13,39 +13,12 @@ define('export_namespaces',[
 */
 namespace wadl;
 use XMLReader;
-
+use callByRegex;
 error_reporting(E_ALL|E_STRICT);
 
-trait callByRegex {
-	/**
-	 * @var callable[]
-	 */
-	private static $handlers =[];
+require_once 'includes/callByRegex.php';
 
-	/**
-	 * @param string   $regex
-	 * @param callable $call
-	 */
-	protected function addHandler (string $regex,callable $call) {
-		static::$handlers[ $regex ] =$call;
-	}
-
-	/**
-	 * @param string $name
-	 * @param array  $args
-	 */
-	protected function handleRegex(string $name,array $args) {
-		foreach(static::$handlers as $regEx=>$cb) {
-			if(
-				preg_match($regEx,$name,$matches)&&
-				$name==array_shift($matches)&&
-				($res=$cb(...$matches,...$args))
-			) return $res;
-		}
-	}
-}
-
-Class XMLNode {
+Class xxxXMLNode {
 	function __construct (\XMLReader $xml) {
 		$this->xml=$xml;
 	}
@@ -53,7 +26,7 @@ Class XMLNode {
 		return json_encode($this);
 	}
 	function __debugInfo () {
-		$res=(array)$this;unset($res[@xml]);
+		$res=(array)$this;unset($res['xml']);
 		return $res;
 	}
 
@@ -259,24 +232,17 @@ function __main() {
 
 	//ini_set(assert.exception,true)
 	//assert_options(ASSERT_QUIET_EVAL, 1);
-	$wadl_file = 'test.wadl';
+	$wadl_file = 'wadl_schemata/test.wadl';
 	$reader    = new \XMLReader();
 	$reader->open ( $wadl_file );
 
 	//$test = new Reader( $reader ,true );
-	$test = new XMLNode($reader);
+	$test = new xxxXMLNode($reader);
 	$test2=$test->read(true);
 	assert($test==$test2,"retrun equals object called");
 	fwrite(STDERR,print_r($test,true));
-	//echo json_encode($test->debug(5,['nameNS','depth','Child','text','Attrs']),JSON_PRETTY_PRINT);
-	/*print_r($test->eachChild($f=function(Reader $child,$idx,string $parent)use(&$f){
-		return "$parent.$idx # $child->nameNS [\n".implode($child->eachChild($f,"$parent.$idx."))." ],\n";
-	},"## ")->debug(4,['nameNS','Child']));*/
-	#print_r ( $test->debug ( 2 ) );
 
-	}
-
-
+}
 if(__FILE__===realpath($argv[0]))__main(...$argv);
 
 
