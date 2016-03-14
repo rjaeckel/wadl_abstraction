@@ -1,0 +1,6 @@
+[submodule "3rdparty/ipcsystems.wadl-stylesheet"]
+	path = 3rdparty/ipcsystems.wadl-stylesheet
+	url = git@github.com:ipcsystems/wadl-stylesheet.git
+[submodule "3rdparty/mnot.wadl_stylesheets"]
+	path = 3rdparty/mnot.wadl_stylesheets
+	url = git@github.com:mnot/wadl_stylesheets.git
