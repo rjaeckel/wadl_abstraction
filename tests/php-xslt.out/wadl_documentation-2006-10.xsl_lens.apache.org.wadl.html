@@ -1,0 +1,2553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+  
+  
+    
+  
+  
+    
+      
+        
+          API to know if metastore service is up and running
+        
+        
+          
+            Simple text saying it up
+          
+          
+        
+      
+    
+    
+      
+        
+          API to know if Query service is up and running
+        
+        
+          
+            Simple text saying it up
+          
+          
+        
+      
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          API to know if session service is up and running
+        
+        
+          
+            Simple text saying it up
+          
+          
+        
+      
+      
+        
+          Create a new session with Lens server.
+        
+        
+        
+          
+            A Session handle unique to this session
+          
+          
+          
+          
+        
+      
+      
+        
+          Close a Lens server session.
+        
+        
+          
+            
+              Session handle object of the session to be closed
+            
+          
+        
+        
+          
+            APIResult object indicating if the operation was successful (check result.getStatus())
+          
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Get all cubes in the metastores, of the specified type
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              The type of cubes. Accepted values are 'all' or 'base' or 'derived' or 'queryable'
+            
+          
+        
+        
+          
+            StringList consisting of all cubes names
+          
+          
+          
+        
+      
+      
+        
+          Delete all cubes
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED in case of successful delete. APIResult with state  in case of delete failure. APIResult with state Status#PARTIAL in case of partial delete.
+          
+          
+          
+        
+      
+      
+        
+          Create a new cube
+        
+        
+          
+            The XCube representation of the cube definition
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if create was successful. APIResult with
+state Status#FAILED, if create has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Get all databases in the metastore
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            StringList consisting of all database names.
+          
+          
+          
+        
+      
+      
+        
+          Create a new database
+        
+        
+          
+            The db name
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              If true, create will be ignored if db already exists, otherwise it fails.
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if create was successful. APIResult with
+state Status#FAILED, if create has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Get all dimensions in the metastore
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            StringList consisting of all the dimension names
+          
+          
+          
+        
+      
+      
+        
+          Create new dimension
+        
+        
+          
+            The XDimension representation of dimension
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if create was successful. APIResult with
+state Status#FAILED, if create has failed
+          
+          
+          
+        
+      
+      
+        
+          Delete all dimensions in metastore
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED in case of successful delete. APIResult with state  in case of delete failure. APIResult with state Status#PARTIAL in case of partial delete.
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Get all dimension tables in the metastore
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            StringList consisting of all dimension table names
+          
+          
+          
+        
+      
+      
+        
+          Create a new dimension table
+        
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if create was successful. APIResult with
+state Status#FAILED, if create has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Get all fact tables in the metastore in the current database
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            StringList consisting of all fact table names
+          
+          
+          
+        
+      
+      
+        
+          Delete all fact tables
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              if set to true, all the underlying tables will be dropped, if set to false, only the fact table
+will be dropped
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED in case of successful delete. APIResult with state  in case of delete failure. APIResult with state Status#PARTIAL in case of partial delete.
+          
+          
+          
+        
+      
+      
+        
+          Create a new fact tabble
+        
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if create was successful. APIResult with
+state Status#FAILED, if create has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Get all native tables.
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              The options available are 'current' and 'all'. If option is current, gives all tables from current
+db. If option is all, gives all tables from all databases. If dbname is passed, dbOption is
+ignored. If no dbOption or dbname are passed, then default is to get tables from current db.
+            
+          
+          
+            
+              The db name. If not empty, the tables in the db will be returned
+            
+          
+        
+        
+          
+            StringList consisting of all table names.
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Get all storages in the metastore
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            StringList consisting of all the storage names
+          
+          
+          
+        
+      
+      
+        
+          Create new storage
+        
+        
+          
+            The XStorage representation of storage
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if create was successful. APIResult with
+state Status#FAILED, if create has failed
+          
+          
+          
+        
+      
+      
+        
+          Delete all storages in metastore
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED in case of successful delete. APIResult with state  in case of delete failure. APIResult with state Status#PARTIAL in case of partial delete.
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Get all prepared queries in the query server; can be filtered with user.
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              returns queries of the user. If set to "all", returns queries of all users. By default returns the
+queries of the current user.
+            
+          
+          
+            
+              returns queries matching the query name
+            
+          
+          
+            
+              start time for filtering prepared queries by preparation time
+            
+          
+          
+            
+              end time for filtering prepared queries by preparation time
+            
+          
+        
+        
+          
+            List of QueryPrepareHandle objects
+          
+          
+          
+          
+        
+      
+      
+        
+          Prepare a query or 'explain and prepare' the query.
+        
+        
+        
+          
+            QueryPrepareHandle incase of {link org.apache.lens.api.query.SubmitOp#PREPARE} operation.
+QueryPlan incase of org.apache.lens.api.query.SubmitOp#EXPLAIN_AND_PREPARE
+and the query plan will contain the prepare handle as well.
+          
+          
+          
+          
+        
+      
+      
+        
+          Destroy all the prepared queries; Can be filtered with user.
+        
+        
+          
+            
+              The session in which cancel is issued
+            
+          
+          
+            
+              destroys queries of the user. If set to "all", destroys queries of all users. By default destroys
+the queries of the current user.
+            
+          
+          
+            
+              destroys queries matching the query name
+            
+          
+          
+            
+              the from date
+            
+          
+          
+            
+              the to date
+            
+          
+        
+        
+          
+            APIResult with state org.apache.lens.api.APIResult.Status#SUCCEEDED in case of successful
+destroy. APIResult with state org.apache.lens.api.APIResult.Status#FAILED in case of destroy
+failure. APIResult with state org.apache.lens.api.APIResult.Status#PARTIAL in case of
+partial destroy.
+          
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Get all the queries in the query server; can be filtered with state and queryName. This will by default only return
+queries submitted by the user that has started the session. To get queries of all users, set the searchAllUsers
+parameter to false.
+        
+        
+          
+            
+              The sessionid in which queryName is working
+            
+          
+          
+            
+              If any state is passed, all the queries in that state will be returned, otherwise all queries will
+be returned. Possible states are {link QueryStatus.Status#values()}
+            
+          
+          
+            
+              If any queryName is passed, all the queries containing the queryName will be returned, otherwise
+all the queries will be returned
+            
+          
+          
+            
+              Returns queries submitted by this user. If set to "all", returns queries of all users. By default,
+returns queries of the current user.
+            
+          
+          
+            
+              from date to search queries in a time range, the range is inclusive(submitTime &amp;gt;= fromDate)
+            
+          
+          
+            
+              to date to search queries in a time range, the range is inclusive(toDate &amp;gt;= submitTime)
+            
+          
+        
+        
+          
+            List of QueryHandle objects
+          
+          
+          
+          
+        
+      
+      
+        
+          Submit the query for explain or execute or execute with a timeout.
+        
+        
+        
+          
+            LensAPIResult with DATA as QueryHandle in case of
+org.apache.lens.api.query.SubmitOp#EXECUTE operation.
+QueryPlan in case of org.apache.lens.api.query.SubmitOp#EXPLAIN operation.
+QueryHandleWithResultSet in case org.apache.lens.api.query.SubmitOp#EXECUTE_WITH_TIMEOUT
+operation. QueryCostTO in case of org.apache.lens.api.query.SubmitOp#ESTIMATE operation.
+          
+          
+          
+          
+        
+      
+      
+        
+          Cancel all the queries in query server; can be filtered with state and user.
+        
+        
+          
+            
+              The session in which cancel is issued
+            
+          
+          
+            
+              If any state is passed, all the queries in that state will be cancelled, otherwise all queries
+will be cancelled. Possible states are
+org.apache.lens.api.query.QueryStatus.Status#values()
+The queries in org.apache.lens.api.query.QueryStatus.Status#FAILED,
+org.apache.lens.api.query.QueryStatus.Status#CLOSED,
+org.apache.lens.api.query.QueryStatus.Status#SUCCESSFUL cannot be cancelled
+            
+          
+          
+            
+              If any user is passed, all the queries submitted by the user will be cancelled, otherwise all the
+queries will be cancelled
+            
+          
+          
+            
+              Cancel queries matching the query name
+            
+          
+          
+            
+              the from date, inclusive(submitTime&amp;gt;=fromDate)
+            
+          
+          
+            
+              the to date, inclusive(toDate&amp;gt;=submitTime)
+            
+          
+        
+        
+          
+            APIResult with state org.apache.lens.api.APIResult.Status#SUCCEEDED in case of successful
+cancellation. APIResult with state org.apache.lens.api.APIResult.Status#FAILED
+in case of cancellation failure. APIResult with state
+org.apache.lens.api.APIResult.Status#PARTIAL in case of partial cancellation.
+          
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Gets a list of saved queries matching the criteria (url parameters)
+windowed by count and start.
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              Offset to start from the search result
+            
+          
+          
+            
+              Number of records to fetch from start
+            
+          
+        
+        
+          
+            org.apache.lens.api.query.save.ListResponse ListResponse object
+          
+          
+          
+        
+      
+      
+        
+          Creates a new saved query.
+        
+        
+          
+            Saved query object
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            org.apache.lens.api.query.save.ResourceModifiedResponse ResourceModifiedResponse object
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Get a list of key=value parameters set for this session.
+        
+        
+          
+            
+              session handle object
+            
+          
+          
+            
+              If true, all the parameters will be returned. If false, configuration parameters will be returned
+            
+          
+          
+            
+              if this is empty, output will contain all parameters and their values,
+if it is non empty parameters will be filtered by key
+            
+          
+        
+        
+          
+            List of Strings, one entry per key-value pair
+          
+          
+          
+          
+        
+      
+      
+        
+          Set value for a parameter specified by key
+&lt;p&gt;&lt;/p&gt;
+The parameters can be a hive variable or a configuration. To set key as a hive variable, the key should be prefixed
+with 'hivevar:'. To set key as configuration parameter, the key should be prefixed with 'hiveconf:' If no prefix is
+attached, the parameter is set as configuration.
+        
+        
+        
+          
+            APIResult object indicating if set operation was successful
+          
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          name of the table. can be either cube or dimension
+        
+      
+      
+        
+          Get all chains that belong to a table(cube or dimension) in the metastore
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            XJoinChains object
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The cube name
+        
+      
+      
+        
+          Update cube definition
+        
+        
+          
+            The XCube representation of the updated cube definition
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if update was successful. APIResult with
+state Status#FAILED, if update has failed
+          
+          
+          
+        
+      
+      
+        
+          Get the cube specified by name
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            JAXB representation of XCube
+          
+          
+          
+        
+      
+      
+        
+          Drop the cube, specified by name
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if drop was successful. APIResult with state
+Status#FAILED, if drop has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Get the current database
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            The current db name
+          
+          
+          
+        
+      
+      
+        
+          Set the current db
+        
+        
+          
+            The db name
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if set was successful. APIResult with state
+Status#FAILED, if set has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The db name
+        
+      
+      
+        
+          Delete the db specified by name. Deleting underlying tables is optional. If db does not exist, delete is ignored.
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              if true, all the tables inside the db will also be dropped.
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if delete was successful. APIResult with
+state Status#FAILED, if delete has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The dimension name
+        
+      
+      
+        
+          Update dimension definition
+        
+        
+          
+            The XDimension representation of the updated dimension definition
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if update was successful. APIResult with
+state Status#FAILED, if update has failed
+          
+          
+          
+        
+      
+      
+        
+          Get the dimension specified by name
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            JAXB representation of XDimension
+          
+          
+          
+        
+      
+      
+        
+          Drop the dimension, specified by name
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if drop was successful. APIResult with state
+Status#FAILED, if drop has failed
+          
+          
+          
+        
+      
+    
+    
+      
+      
+        
+          Update dimension table definition
+        
+        
+          
+            The XDimensionTable representation of the updated dim table definition
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if update was successful. APIResult with
+state Status#FAILED, if update has failed
+          
+          
+          
+        
+      
+      
+        
+          Drop the dimension table, specified by name
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              if true, all the storage tables of dimension table will also be dropped
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if drop was successful. APIResult with state
+Status#FAILED, if drop has failed
+          
+          
+          
+        
+      
+      
+        
+          Get the dimension table specified by name
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            JAXB representation of XDimensionTable
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The fact table name
+        
+      
+      
+        
+          Get the fact table specified by name
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            JAXB representation of XFactTable
+          
+          
+          
+        
+      
+      
+        
+          Update fact table definition
+        
+        
+          
+            The XFactTable representation of the updated fact table definition
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if update was successful. APIResult with
+state Status#FAILED, if update has failed
+          
+          
+          
+        
+      
+      
+        
+          Drop the fact table, specified by name
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              If true, all the storage tables of the fact will also be dropped
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if drop was successful. APIResult with state
+Status#FAILED, if drop has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          name of the table
+        
+      
+      
+        
+          Get flattened list of columns reachable from a cube or a dimension
+        
+        
+          
+            
+              session id
+            
+          
+          
+            
+              whether columns accessed via chains should also be returned
+            
+          
+        
+        
+          
+            list of measures, expressions or dimension attributes
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The native table name
+        
+      
+      
+        
+          Get the native table passed in name
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            JAXB representation of XNativeTable
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The storage name
+        
+      
+      
+        
+          Update storage definition
+        
+        
+          
+            The XStorage representation of the updated storage definition
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if update was successful. APIResult with
+state Status#FAILED, if update has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The storage name
+        
+      
+      
+        
+          Get the storage specified by name
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            JAXB representation of XStorage
+          
+          
+          
+        
+      
+      
+        
+          Drop the storage, specified by name
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if drop was successful. APIResult with state
+Status#FAILED, if drop has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The prepare handle
+        
+      
+      
+        
+          Get a prepared query specified by handle.
+        
+        
+          
+            
+              The user session handle
+            
+          
+        
+        
+          
+            LensPreparedQuery
+          
+          
+          
+          
+        
+      
+      
+        
+          Destroy the prepared query specified by handle.
+        
+        
+          
+            
+              The user session handle
+            
+          
+        
+        
+          
+            APIResult with state org.apache.lens.api.APIResult.Status#SUCCEEDED in case of successful
+destroy. APIResult with state org.apache.lens.api.APIResult.Status#FAILED in case of
+destroy failure.
+          
+          
+          
+          
+        
+      
+      
+        
+          Modify prepared query's configuration. This would be picked up for subsequent runs of the prepared queries. The
+query wont be re-prepared with new configuration.
+        
+        
+        
+          
+            APIResult with state org.apache.lens.api.APIResult.Status#SUCCEEDED in case of successful
+update. APIResult with state org.apache.lens.api.APIResult.Status#FAILED in case of udpate failure.
+          
+          
+          
+          
+        
+      
+      
+        
+          Submit prepared query for execution.
+        
+        
+        
+          
+            QueryHandle in case of {link org.apache.lens.api.query.SubmitOp#EXECUTE} operation.
+QueryHandleWithResultSet in case {@link org.apache.lens.api.query.SubmitOp#EXECUTE_WITH_TIMEOUT
+} operation.
+          
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The query handle
+        
+      
+      
+        
+          Get lens query and its current status.
+        
+        
+          
+            
+              The user session handle
+            
+          
+        
+        
+          
+            LensQuery
+          
+          
+          
+          
+        
+      
+      
+        
+          Cancel the query specified by the handle.
+        
+        
+          
+            
+              The user session handle
+            
+          
+        
+        
+          
+            APIResult with state org.apache.lens.api.APIResult.Status#SUCCEEDED in case of successful
+cancellation. APIResult with state org.apache.lens.api.APIResult.Status#FAILED in case of
+cancellation failure.
+          
+          
+          
+          
+        
+      
+      
+        
+          Modify query configuration if it is not running yet.
+        
+        
+        
+          
+            APIResult with state org.apache.lens.api.APIResult.Status#SUCCEEDED in case of successful
+update. APIResult with state org.apache.lens.api.APIResult.Status#FAILED in case of udpate failure.
+          
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          Parses the query and returns parameters that are found in the query.
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              The HQL query
+            
+          
+        
+        
+          
+            org.apache.lens.api.query.save.ParameterParserResponse ParameterParserResponse object
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          id of the saved query
+        
+      
+      
+        
+          Gets the saved query with the given id.
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            org.apache.lens.api.query.save.SavedQuery SavedQuery object
+          
+          
+          
+        
+      
+      
+        
+          Deletes the saved query with the given id.
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            org.apache.lens.api.query.save.ResourceModifiedResponse ResourceModifiedResponse object
+          
+          
+          
+        
+      
+      
+        
+          Updates the saved query {id} with the new payload.
+        
+        
+          
+            Saved query object
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            org.apache.lens.api.query.save.ResourceModifiedResponse ResourceModifiedResponse object
+          
+          
+          
+        
+      
+      
+        
+          Runs the saved query with the given id and returns a query handle.
+        
+        
+        
+          
+            LensAPIResult containing the query handle
+          
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Add a resource to the session to all LensServices running in this Lens server
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;
+The returned @{link APIResult} will have status SUCCEEDED &lt;em&gt;only if&lt;/em&gt; the add operation was successful for all
+services running in this Lens server.
+&lt;/p&gt;
+        
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if add was successful. APIResult with state
+Status#PARTIAL, if add succeeded only for some services. APIResult with state
+Status#FAILED, if add has failed
+          
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Delete a resource from sesssion from all the @{link LensService}s running in this Lens server
+&lt;p&gt;
+Similar to addResource, this call is successful only if resource was deleted from all services.
+&lt;/p&gt;
+        
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if delete was successful. APIResult with
+state Status#PARTIAL, if delete succeeded only for some services. APIResult with state
+Status#FAILED, if delete has failed
+          
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          Lists resources from the session for a given resource type.
+        
+        
+          
+            
+              session handle object
+            
+          
+          
+            
+              resource type. It can be jar, file or null
+            
+          
+        
+        
+          
+            Lists all resources for a given resource type
+Lists all resources if the resource type is not specified
+          
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          name of the base cube or derived cube
+        
+      
+      
+        
+          Get all facts that belong to a cube in the metastore
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            List of XFactTable objects
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          name of the base cube
+        
+      
+      
+        
+          Get the latest available date upto which data is available for the base cubes, for the time dimension.
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              time dimension name
+            
+          
+        
+        
+          
+            DateTime object which has Date in it.
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          name of the dimension
+        
+      
+      
+        
+          Get all dimtables that belong to a dimension in the metastore
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            List of XDimensionTable objects
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The dimension table name
+        
+      
+      
+        
+          Get all storages of the dimension table in the metastore
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            StringList consisting of all the storage names
+          
+          
+          
+        
+      
+      
+        
+          Add storage to dimension table
+        
+        
+          
+            The Storage table description
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if add was successful. APIResult with state
+Status#FAILED, if add has failed
+          
+          
+          
+        
+      
+      
+        
+          Drop all the storage tables of a dimension table
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if drop was successful. APIResult with state
+Status#FAILED, if drop has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The fact table name
+        
+      
+      
+        
+          Get all storages of the fact table in the metastore
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            StringList consisting of all the storage names
+          
+          
+          
+        
+      
+      
+        
+          Drop all the storage tables of a fact table
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if drop was successful. APIResult with state
+Status#FAILED, if drop has failed
+          
+          
+          
+        
+      
+      
+        
+          Add storage to fact table
+        
+        
+          
+            The storage table description
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if add was successful. APIResult with state
+Status#FAILED, if add has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          name of the fact
+        
+      
+      
+        
+          Get the partition timelines.
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              storage Name
+            
+          
+          
+            
+              update period
+            
+          
+          
+            
+              time dimension name
+            
+          
+        
+        
+          
+            List os partition timelines.
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The query handle
+        
+      
+      
+        
+          Get the http endpoint for result set.
+        
+        
+          
+            
+              The user session handle
+            
+          
+        
+        
+          
+            Response with result as octet stream
+          
+          
+        
+      
+    
+    
+      
+        
+          The query handle
+        
+      
+      
+        
+          Fetch the result set.
+        
+        
+          
+            
+              The user session handle
+            
+          
+          
+            
+              start index of the result
+            
+          
+          
+            
+              fetch size
+            
+          
+        
+        
+          
+            QueryResult
+          
+          
+          
+          
+        
+      
+      
+        
+          Close the result set once fetching is done.
+        
+        
+          
+            
+              The user session handle
+            
+          
+        
+        
+          
+            APIResult with state org.apache.lens.api.APIResult.Status#SUCCEEDED in case of successful
+close. APIResult with state org.apache.lens.api.APIResult.Status#FAILED in case of close failure.
+          
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The query handle
+        
+      
+      
+        
+          Get resultset metadata of the query.
+        
+        
+          
+            
+              The user session handle
+            
+          
+        
+        
+          
+            QueryResultSetMetadata
+          
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The fact table name
+        
+      
+      
+        
+          The storage name
+        
+      
+      
+        
+          Get the dim storage table
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            JAXB representation of XStorageTableElement
+          
+          
+          
+        
+      
+      
+        
+          Drop the storage of a dimension table, specified by name
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if drop was successful. APIResult with state
+Status#FAILED, if drop has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The fact table name
+        
+      
+      
+        
+          The storage name
+        
+      
+      
+        
+          Drop the storage of a fact, specified by name
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if drop was successful. APIResult with state
+Status#FAILED, if drop has failed
+          
+          
+          
+        
+      
+      
+        
+          Get the fact storage table
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            JAXB representation of XStorageTableElement
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The dimension table name
+        
+      
+      
+        
+          The storage name
+        
+      
+      
+        
+          Drop the partitions in the storage of a dimension table, specified by exact values
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              Comma separated values
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if drop was successful. APIResult with state
+Status#FAILED, if drop has failed
+          
+          
+          
+        
+      
+      
+        
+          Add a new partition for a storage of dimension
+        
+        
+          
+            XPartition representation of partition
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if add was successful. APIResult with state
+Status#FAILED, if add has failed
+          
+          
+          
+        
+      
+      
+        
+          Updates an existing partition for a storage of dimension
+        
+        
+          
+            XPartition representation of partition
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if update was successful.
+APIResult with state
+Status#FAILED, if update has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The dimension table name
+        
+      
+      
+        
+          The storage name
+        
+      
+      
+        
+          Get all partition of the dimension table in the specified storage; can be filtered
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              The filter for partitions, string representation of the filter for ex: x &amp;lt; "xxx" and y &amp;gt;
+"yyy"
+            
+          
+        
+        
+          
+            JAXB representation of XPartitionList containing XPartition objects
+          
+          
+          
+        
+      
+      
+        
+          Drop the partitions in the storage of a dimension table; can specified filter as well
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              The filter for partitions, string representation of the filter for ex: x &amp;lt; 'xxx' and y &amp;gt;
+'yyy'
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if drop was successful. APIResult with state
+Status#FAILED, if drop has failed
+          
+          
+          
+        
+      
+      
+        
+          Add new partitions for a storage of dimension
+        
+        
+          
+            XPartitionList representation of list of partitions
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if add was successful. APIResult with state
+Status#FAILED, if add has failed
+          
+          
+          
+        
+      
+      
+        
+          Add new partitions for a storage of dimension
+        
+        
+          
+            XPartitionList representation of list of partitions
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if update was successful.
+APIResult with state
+Status#FAILED, if update has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          fact table name
+        
+      
+      
+        
+          storage name
+        
+      
+      
+        
+          Add a new partition for a storage of fact
+        
+        
+          
+            XPartition representation of partition
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if add was successful. APIResult with state
+Status#FAILED, if add has failed
+          
+          
+          
+        
+      
+      
+        
+          updates an existing partition for a storage of fact
+        
+        
+          
+            XPartition representation of partition.
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if update was successful.
+APIResult with state
+Status#FAILED, if update has failed
+          
+          
+          
+        
+      
+      
+        
+          Drop the partitions in the storage of a fact table, specified by exact values
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              Comma separated values
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if drop was successful. APIResult with state
+Status#FAILED, if drop has failed
+          
+          
+          
+        
+      
+    
+    
+      
+        
+          The fact table name
+        
+      
+      
+        
+          The storage name
+        
+      
+      
+        
+          Get all partitions of the fact table in the specified storage; can be filtered as well.
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              The filter for partitions, string representation of the filter for ex: x &amp;lt; "xxx" and y &amp;gt;
+"yyy"
+            
+          
+        
+        
+          
+            JAXB representation of XPartitionList containing XPartition objects
+          
+          
+          
+        
+      
+      
+        
+          Drop the partitions in the storage of a fact; can specified filter as well
+        
+        
+          
+            
+              The sessionid in which user is working
+            
+          
+          
+            
+              The filter for partitions, string representation of the filter for ex: x &amp;lt; "xxx" and y &amp;gt;
+"yyy"
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if drop was successful. APIResult with state
+Status#FAILED, if drop has failed
+          
+          
+          
+        
+      
+      
+        
+          Batch Add partitions for a storage of fact
+        
+        
+          
+            XPartitionList representation of partitions
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if add was successful. APIResult with state
+Status#FAILED, if add has failed
+          
+          
+          
+        
+      
+      
+        
+          Batch Update partitions for a storage of fact
+        
+        
+          
+            XPartitionList representation of partitions
+          
+          
+          
+          
+            
+              The sessionid in which user is working
+            
+          
+        
+        
+          
+            APIResult with state Status#SUCCEEDED, if update was successful.
+APIResult with state
+Status#FAILED, if update has failed
+          
+          
+          
+        
+      
+    
+  
+

@@ -1,0 +1,1807 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:html="http://www.w3.org/1999/xhtml"><head><meta charset="UTF-8"/><style type="text/css">
+        body {
+            font-family: sans-serif;
+            font-size: 0.85em;
+            margin: 2em 2em;
+        }
+        .methods {
+            margin-left: 2em; 
+            margin-bottom: 2em;
+        }
+        .method {
+            background-color: #eef;
+            border: 1px solid #DDDDE6;
+            padding: .5em;
+            margin-bottom: 1em;
+            width: 50em
+        }
+        .methodNameTable {
+            width: 100%;
+            border: 0px;
+            border-bottom: 2px solid white;
+            font-size: 1.4em;
+        }
+        .methodNameTd {
+            background-color: #eef;
+        }
+        h1 {
+            font-size: 2m;
+            margin-bottom: 0em;
+        }
+        h2 {
+            border-bottom: 1px solid black;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            font-size: 1.5em;
+           }
+        h3 {
+            color: #FF6633;
+            font-size: 1.35em;
+            margin-top: .5em;
+            margin-bottom: 0em;
+        }
+        h5 {
+            font-size: 1.2em;
+            color: #99a;
+            margin: 0.5em 0em 0.25em 0em;
+        }
+        h6 {
+            color: #700000;
+            font-size: 1em;
+            margin: 1em 0em 0em 0em;
+        }
+        .h7 {
+            margin-top: .75em;
+            font-size: 1em;
+            font-weight: bold;
+            font-style: italic;
+            color: blue;
+        }
+        .h8 {
+            margin-top: .75em;
+            font-size: 1em;
+            font-weight: bold;
+            font-style: italic;
+            color: black;
+        }
+        tt {
+            font-size: 1em;
+        }
+        table {
+            margin-bottom: 0.5em;
+            border: 1px solid #E0E0E0;
+        }
+        th {
+            text-align: left;
+            font-weight: normal;
+            font-size: 1em;
+            color: black;
+            background-color: #DDDDE6;
+            padding: 3px 6px;
+            border: 1px solid #B1B1B8;
+        }
+        td {
+            padding: 3px 6px;
+            vertical-align: top;
+            background-color: #F6F6FF;
+            font-size: 0.85em;
+        }
+        p {
+            margin-top: 0em;
+            margin-bottom: 0em;
+        }
+        td.summary {
+            background-color: white;
+        }
+        td.summarySeparator {
+            padding: 1px;
+        }
+    </style><title>
+            Web Application
+        </title></head><body><h1>
+            Web Application
+        </h1><h2>Summary</h2><table><tr><th>Resource</th><th>Method</th><th>Description</th></tr><tr><td class="summary"><a href="#idm45482348671216">http://localhost:8080/lens/metastore</a></td><td class="summary"><a href="#idm45482348177632">GET</a><br/><br/></td><td class="summary">
+          API to know if metastore service is up and running
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348231568">http://localhost:8080/lens/queryapi</a></td><td class="summary"><a href="#idm45482348224656">GET</a><br/><br/></td><td class="summary">
+          API to know if Query service is up and running
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348033600">http://localhost:8080/lens/queryscheduler</a></td><td class="summary"><a href="#idm45482348033216">GET</a><br/></td><td class="summary"><br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348031584">http://localhost:8080/lens/quota</a></td><td class="summary"><a href="#idm45482348031088">GET</a><br/></td><td class="summary"><br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348723408">http://localhost:8080/lens/session</a></td><td class="summary"><a href="#idm45482348722912">GET</a><br/><br/><a href="#idm45482348720080">POST</a><br/><br/><a href="#idm45482348620704">DELETE</a><br/><br/></td><td class="summary">
+          API to know if session service is up and running
+        <br/><br/>
+          Create a new session with Lens server.
+        <br/><br/>
+          Close a Lens server session.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348329696">http://localhost:8080/lens/metastore/cubes</a></td><td class="summary"><a href="#idm45482348329168">GET</a><br/><br/><a href="#idm45482348271952">DELETE</a><br/><br/><a href="#idm45482348265904">POST</a><br/><br/></td><td class="summary">
+          Get all cubes in the metastores, of the specified type
+        <br/><br/>
+          Delete all cubes
+        <br/><br/>
+          Create a new cube
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348257856">http://localhost:8080/lens/metastore/databases</a></td><td class="summary"><a href="#idm45482348257328">GET</a><br/><br/><a href="#idm45482348251568">POST</a><br/><br/></td><td class="summary">
+          Get all databases in the metastore
+        <br/><br/>
+          Create a new database
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348641296">http://localhost:8080/lens/metastore/dimensions</a></td><td class="summary"><a href="#idm45482348640768">GET</a><br/><br/><a href="#idm45482348635008">POST</a><br/><br/><a href="#idm45482348627312">DELETE</a><br/><br/></td><td class="summary">
+          Get all dimensions in the metastore
+        <br/><br/>
+          Create new dimension
+        <br/><br/>
+          Delete all dimensions in metastore
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348117152">http://localhost:8080/lens/metastore/dimtables</a></td><td class="summary"><a href="#idm45482348116624">GET</a><br/><br/><a href="#idm45482348110912">POST</a><br/><br/></td><td class="summary">
+          Get all dimension tables in the metastore
+        <br/><br/>
+          Create a new dimension table
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348106544">http://localhost:8080/lens/metastore/facts</a></td><td class="summary"><a href="#idm45482348106016">GET</a><br/><br/><a href="#idm45482348100304">DELETE</a><br/><br/><a href="#idm45482348374544">POST</a><br/><br/></td><td class="summary">
+          Get all fact tables in the metastore in the current database
+        <br/><br/>
+          Delete all fact tables
+        <br/><br/>
+          Create a new fact tabble
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348370176">http://localhost:8080/lens/metastore/nativetables</a></td><td class="summary"><a href="#idm45482348369648">GET</a><br/><br/></td><td class="summary">
+          Get all native tables.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348360272">http://localhost:8080/lens/metastore/storages</a></td><td class="summary"><a href="#idm45482348359744">GET</a><br/><br/><a href="#idm45482348353984">POST</a><br/><br/><a href="#idm45482348346240">DELETE</a><br/><br/></td><td class="summary">
+          Get all storages in the metastore
+        <br/><br/>
+          Create new storage
+        <br/><br/>
+          Delete all storages in metastore
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348340048">http://localhost:8080/lens/queryapi/preparedqueries</a></td><td class="summary"><a href="#idm45482348339504">GET</a><br/><br/><a href="#idm45482348318880">POST</a><br/><br/><a href="#idm45482348314144">DELETE</a><br/><br/></td><td class="summary">
+          Get all prepared queries in the query server; can be filtered with user.
+        <br/><br/>
+          Prepare a query or 'explain and prepare' the query.
+        <br/><br/>
+          Destroy all the prepared queries; Can be filtered with user.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348300688">http://localhost:8080/lens/queryapi/queries</a></td><td class="summary"><a href="#idm45482348300160">GET</a><br/><br/><a href="#idm45482348284944">POST</a><br/><br/><a href="#idm45482348484416">DELETE</a><br/><br/></td><td class="summary">
+          Get all the queries in the query server; can be filtered with state and queryName. This will by default only return
+queries submitted by the user that has started the session. To get queries of all users, set the searchAllUsers
+parameter to false.
+        <br/><br/>
+          Submit the query for explain or execute or execute with a timeout.
+        <br/><br/>
+          Cancel all the queries in query server; can be filtered with state and user.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348468896">http://localhost:8080/lens/queryapi/savedqueries</a></td><td class="summary"><a href="#idm45482348468368">GET</a><br/><br/><a href="#idm45482348459168">POST</a><br/><br/></td><td class="summary">
+          Gets a list of saved queries matching the criteria (url parameters)
+windowed by count and start.
+        <br/><br/>
+          Creates a new saved query.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348451104">http://localhost:8080/lens/session/params</a></td><td class="summary"><a href="#idm45482348450576">GET</a><br/><br/><a href="#idm45482348440704">PUT</a><br/><br/></td><td class="summary">
+          Get a list of key=value parameters set for this session.
+        <br/><br/>
+          Set value for a parameter specified by key
+<p></p>
+The parameters can be a hive variable or a configuration. To set key as a hive variable, the key should be prefixed
+with 'hivevar:'. To set key as configuration parameter, the key should be prefixed with 'hiveconf:' If no prefix is
+attached, the parameter is set as configuration.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348019952">http://localhost:8080/lens/metastore/chains/{tableName}</a></td><td class="summary"><a href="#idm45482348017632">GET</a><br/><br/></td><td class="summary">
+          Get all chains that belong to a table(cube or dimension) in the metastore
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482348012048">http://localhost:8080/lens/metastore/cubes/{cubeName}</a></td><td class="summary"><a href="#idm45482348009760">PUT</a><br/><br/><a href="#idm45482348002144">GET</a><br/><br/><a href="#idm45482347996608">DELETE</a><br/><br/></td><td class="summary">
+          Update cube definition
+        <br/><br/>
+          Get the cube specified by name
+        <br/><br/>
+          Drop the cube, specified by name
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347990480">http://localhost:8080/lens/metastore/databases/current</a></td><td class="summary"><a href="#idm45482347989936">GET</a><br/><br/><a href="#idm45482347984416">PUT</a><br/><br/></td><td class="summary">
+          Get the current database
+        <br/><br/>
+          Set the current db
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347976576">http://localhost:8080/lens/metastore/databases/{dbName}</a></td><td class="summary"><a href="#idm45482347974288">DELETE</a><br/><br/></td><td class="summary">
+          Delete the db specified by name. Deleting underlying tables is optional. If db does not exist, delete is ignored.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347966496">http://localhost:8080/lens/metastore/dimensions/{dimName}</a></td><td class="summary"><a href="#idm45482347964208">PUT</a><br/><br/><a href="#idm45482347956640">GET</a><br/><br/><a href="#idm45482347951104">DELETE</a><br/><br/></td><td class="summary">
+          Update dimension definition
+        <br/><br/>
+          Get the dimension specified by name
+        <br/><br/>
+          Drop the dimension, specified by name
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347944976">http://localhost:8080/lens/metastore/dimtables/{dimTableName}</a></td><td class="summary"><a href="#idm45482347943632">PUT</a><br/><br/><a href="#idm45482347935952">DELETE</a><br/><br/><a href="#idm45482347928336">GET</a><br/><br/></td><td class="summary">
+          Update dimension table definition
+        <br/><br/>
+          Drop the dimension table, specified by name
+        <br/><br/>
+          Get the dimension table specified by name
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347922656">http://localhost:8080/lens/metastore/facts/{factName}</a></td><td class="summary"><a href="#idm45482347920368">GET</a><br/><br/><a href="#idm45482347914944">PUT</a><br/><br/><a href="#idm45482347907264">DELETE</a><br/><br/></td><td class="summary">
+          Get the fact table specified by name
+        <br/><br/>
+          Update fact table definition
+        <br/><br/>
+          Drop the fact table, specified by name
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347899536">http://localhost:8080/lens/metastore/flattened/{tableName}</a></td><td class="summary"><a href="#idm45482347897248">GET</a><br/><br/></td><td class="summary">
+          Get flattened list of columns reachable from a cube or a dimension
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347890144">http://localhost:8080/lens/metastore/nativetables/{tableName}</a></td><td class="summary"><a href="#idm45482347887856">GET</a><br/><br/></td><td class="summary">
+          Get the native table passed in name
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347882304">http://localhost:8080/lens/metastore/storages/{storageName}</a></td><td class="summary"><a href="#idm45482347880016">PUT</a><br/><br/></td><td class="summary">
+          Update storage definition
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347872320">http://localhost:8080/lens/metastore/storages/{storage}</a></td><td class="summary"><a href="#idm45482347870032">GET</a><br/><br/><a href="#idm45482347864608">DELETE</a><br/><br/></td><td class="summary">
+          Get the storage specified by name
+        <br/><br/>
+          Drop the storage, specified by name
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347858480">http://localhost:8080/lens/queryapi/preparedqueries/{prepareHandle}</a></td><td class="summary"><a href="#idm45482347856176">GET</a><br/><br/><a href="#idm45482347849968">DELETE</a><br/><br/><a href="#idm45482347843360">PUT</a><br/><br/><a href="#idm45482347838352">POST</a><br/><br/></td><td class="summary">
+          Get a prepared query specified by handle.
+        <br/><br/>
+          Destroy the prepared query specified by handle.
+        <br/><br/>
+          Modify prepared query's configuration. This would be picked up for subsequent runs of the prepared queries. The
+query wont be re-prepared with new configuration.
+        <br/><br/>
+          Submit prepared query for execution.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347833392">http://localhost:8080/lens/queryapi/queries/{queryHandle}</a></td><td class="summary"><a href="#idm45482347831104">GET</a><br/><br/><a href="#idm45482347824912">DELETE</a><br/><br/><a href="#idm45482347818368">PUT</a><br/><br/></td><td class="summary">
+          Get lens query and its current status.
+        <br/><br/>
+          Cancel the query specified by the handle.
+        <br/><br/>
+          Modify query configuration if it is not running yet.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347813424">http://localhost:8080/lens/queryapi/savedqueries/health</a></td><td class="summary"><a href="#idm45482347812880">GET</a><br/></td><td class="summary"><br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347811216">http://localhost:8080/lens/queryapi/savedqueries/parameters</a></td><td class="summary"><a href="#idm45482347810400">GET</a><br/><br/></td><td class="summary">
+          Parses the query and returns parameters that are found in the query.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347802832">http://localhost:8080/lens/queryapi/savedqueries/{id}</a></td><td class="summary"><a href="#idm45482347800576">GET</a><br/><br/><a href="#idm45482347794928">DELETE</a><br/><br/><a href="#idm45482347789008">PUT</a><br/><br/><a href="#idm45482347781088">POST</a><br/><br/></td><td class="summary">
+          Gets the saved query with the given id.
+        <br/><br/>
+          Deletes the saved query with the given id.
+        <br/><br/>
+          Updates the saved query {id} with the new payload.
+        <br/><br/>
+          Runs the saved query with the given id and returns a query handle.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347776400">http://localhost:8080/lens/session/resources/add</a></td><td class="summary"><a href="#idm45482347775872">PUT</a><br/><br/></td><td class="summary">
+          Add a resource to the session to all LensServices running in this Lens server
+<p></p>
+<p>
+The returned @{link APIResult} will have status SUCCEEDED <em>only if</em> the add operation was successful for all
+services running in this Lens server.
+</p>
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347770720">http://localhost:8080/lens/session/resources/delete</a></td><td class="summary"><a href="#idm45482347770176">PUT</a><br/><br/></td><td class="summary">
+          Delete a resource from sesssion from all the @{link LensService}s running in this Lens server
+<p>
+Similar to addResource, this call is successful only if resource was deleted from all services.
+</p>
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347765152">http://localhost:8080/lens/session/resources/list</a></td><td class="summary"><a href="#idm45482347764624">GET</a><br/><br/></td><td class="summary">
+          Lists resources from the session for a given resource type.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347756416">http://localhost:8080/lens/metastore/cubes/{cubeName}/facts</a></td><td class="summary"><a href="#idm45482347754112">GET</a><br/><br/></td><td class="summary">
+          Get all facts that belong to a cube in the metastore
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347748272">http://localhost:8080/lens/metastore/cubes/{cubeName}/latestdate</a></td><td class="summary"><a href="#idm45482347745984">GET</a><br/><br/></td><td class="summary">
+          Get the latest available date upto which data is available for the base cubes, for the time dimension.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347738384">http://localhost:8080/lens/metastore/dimensions/{dimName}/dimtables</a></td><td class="summary"><a href="#idm45482347736080">GET</a><br/><br/></td><td class="summary">
+          Get all dimtables that belong to a dimension in the metastore
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347730304">http://localhost:8080/lens/metastore/dimtables/{dimTableName}/storages</a></td><td class="summary"><a href="#idm45482347727984">GET</a><br/><br/><a href="#idm45482347722320">POST</a><br/><br/><a href="#idm45482347714576">DELETE</a><br/><br/></td><td class="summary">
+          Get all storages of the dimension table in the metastore
+        <br/><br/>
+          Add storage to dimension table
+        <br/><br/>
+          Drop all the storage tables of a dimension table
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347708432">http://localhost:8080/lens/metastore/facts/{factName}/storages</a></td><td class="summary"><a href="#idm45482347706144">GET</a><br/><br/><a href="#idm45482347700416">DELETE</a><br/><br/><a href="#idm45482347694400">POST</a><br/><br/></td><td class="summary">
+          Get all storages of the fact table in the metastore
+        <br/><br/>
+          Drop all the storage tables of a fact table
+        <br/><br/>
+          Add storage to fact table
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347686528">http://localhost:8080/lens/metastore/facts/{factName}/timelines</a></td><td class="summary"><a href="#idm45482347684240">GET</a><br/><br/></td><td class="summary">
+          Get the partition timelines.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347673520">http://localhost:8080/lens/queryapi/queries/{queryHandle}/httpresultset</a></td><td class="summary"><a href="#idm45482347671216">GET</a><br/><br/></td><td class="summary">
+          Get the http endpoint for result set.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347666192">http://localhost:8080/lens/queryapi/queries/{queryHandle}/resultset</a></td><td class="summary"><a href="#idm45482347663888">GET</a><br/><br/><a href="#idm45482347654432">DELETE</a><br/><br/></td><td class="summary">
+          Fetch the result set.
+        <br/><br/>
+          Close the result set once fetching is done.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347647696">http://localhost:8080/lens/queryapi/queries/{queryHandle}/resultsetmetadata</a></td><td class="summary"><a href="#idm45482347645392">GET</a><br/><br/></td><td class="summary">
+          Get resultset metadata of the query.
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347639072">http://localhost:8080/lens/metastore/dimtables/{dimTableName}/storages/{storage}</a></td><td class="summary"><a href="#idm45482347635136">GET</a><br/><br/><a href="#idm45482347629696">DELETE</a><br/><br/></td><td class="summary">
+          Get the dim storage table
+        <br/><br/>
+          Drop the storage of a dimension table, specified by name
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347623616">http://localhost:8080/lens/metastore/facts/{factName}/storages/{storage}</a></td><td class="summary"><a href="#idm45482347619680">DELETE</a><br/><br/><a href="#idm45482347613776">GET</a><br/><br/></td><td class="summary">
+          Drop the storage of a fact, specified by name
+        <br/><br/>
+          Get the fact storage table
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347608096">http://localhost:8080/lens/metastore/dimtables/{dimTableName}/storages/{storage}/partition</a></td><td class="summary"><a href="#idm45482347604208">DELETE</a><br/><br/><a href="#idm45482347596640">POST</a><br/><br/><a href="#idm45482347588880">PUT</a><br/><br/></td><td class="summary">
+          Drop the partitions in the storage of a dimension table, specified by exact values
+        <br/><br/>
+          Add a new partition for a storage of dimension
+        <br/><br/>
+          Updates an existing partition for a storage of dimension
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347581072">http://localhost:8080/lens/metastore/dimtables/{dimTableName}/storages/{storage}/partitions</a></td><td class="summary"><a href="#idm45482347577184">GET</a><br/><br/><a href="#idm45482347569968">DELETE</a><br/><br/><a href="#idm45482347562128">POST</a><br/><br/><a href="#idm45482347554352">PUT</a><br/><br/></td><td class="summary">
+          Get all partition of the dimension table in the specified storage; can be filtered
+        <br/><br/>
+          Drop the partitions in the storage of a dimension table; can specified filter as well
+        <br/><br/>
+          Add new partitions for a storage of dimension
+        <br/><br/>
+          Add new partitions for a storage of dimension
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347546464">http://localhost:8080/lens/metastore/facts/{factName}/storages/{storage}/partition</a></td><td class="summary"><a href="#idm45482347542592">POST</a><br/><br/><a href="#idm45482347534944">PUT</a><br/><br/><a href="#idm45482347527200">DELETE</a><br/><br/></td><td class="summary">
+          Add a new partition for a storage of fact
+        <br/><br/>
+          updates an existing partition for a storage of fact
+        <br/><br/>
+          Drop the partitions in the storage of a fact table, specified by exact values
+        <br/></td></tr><tr><td class="summarySeparator"/><td class="summarySeparator"/><td class="summarySeparator"/></tr><tr><td class="summary"><a href="#idm45482347519392">http://localhost:8080/lens/metastore/facts/{factName}/storages/{storage}/partitions</a></td><td class="summary"><a href="#idm45482347515520">GET</a><br/><br/><a href="#idm45482347508304">DELETE</a><br/><br/><a href="#idm45482347500464">POST</a><br/><br/><a href="#idm45482347492688">PUT</a><br/><br/></td><td class="summary">
+          Get all partitions of the fact table in the specified storage; can be filtered as well.
+        <br/><br/>
+          Drop the partitions in the storage of a fact; can specified filter as well
+        <br/><br/>
+          Batch Add partitions for a storage of fact
+        <br/><br/>
+          Batch Update partitions for a storage of fact
+        <br/></td></tr></table><p/><h2>Grammars</h2><p><a href="ns0.xsd">ns0.xsd</a></p><h2>Resources</h2><br/><h3><a name="idm45482348671216">http://localhost:8080/lens/metastore</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348177632">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          API to know if metastore service is up and running
+        </p><h6>request</h6><div style="margin-left: 2em">
+                        unspecified
+                    </div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">text/plain</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348231568">http://localhost:8080/lens/queryapi</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348224656">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          API to know if Query service is up and running
+        </p><h6>request</h6><div style="margin-left: 2em">
+                        unspecified
+                    </div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">text/plain</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348033600">http://localhost:8080/lens/queryscheduler</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348033216">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p/><h6>request</h6><div style="margin-left: 2em">
+                        unspecified
+                    </div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">text/plain</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348031584">http://localhost:8080/lens/quota</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348031088">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p/><h6>request</h6><div style="margin-left: 2em">
+                        unspecified
+                    </div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">text/plain</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348723408">http://localhost:8080/lens/session</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348722912">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          API to know if session service is up and running
+        </p><h6>request</h6><div style="margin-left: 2em">
+                        unspecified
+                    </div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">text/plain</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348720080">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Create a new session with Lens server.
+        </p><h6>request</h6><div style="margin-left: 2em"/><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>lensSessionHandle</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348620704">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Close a Lens server session.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              Session handle object of the session to be closed
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348329696">http://localhost:8080/lens/metastore/cubes</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348329168">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all cubes in the metastores, of the specified type
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">type</td><td>
+                    unspecified type
+                </td><td>
+              The type of cubes. Accepted values are 'all' or 'base' or 'derived' or 'queryable'
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348271952">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Delete all cubes
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348265904">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Create a new cube
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348257856">http://localhost:8080/lens/metastore/databases</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348257328">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all databases in the metastore
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348251568">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Create a new database
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">ignoreIfExisting</td><td>
+                    unspecified type
+                </td><td>
+              If true, create will be ignored if db already exists, otherwise it fails.
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348641296">http://localhost:8080/lens/metastore/dimensions</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348640768">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all dimensions in the metastore
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348635008">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Create new dimension
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348627312">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Delete all dimensions in metastore
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348117152">http://localhost:8080/lens/metastore/dimtables</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348116624">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all dimension tables in the metastore
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348110912">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Create a new dimension table
+        </p><h6>request</h6><div style="margin-left: 2em"/><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348106544">http://localhost:8080/lens/metastore/facts</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348106016">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all fact tables in the metastore in the current database
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348100304">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Delete all fact tables
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">cascade</td><td>
+                    unspecified type
+                </td><td>
+              if set to true, all the underlying tables will be dropped, if set to false, only the fact table
+will be dropped
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348374544">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Create a new fact tabble
+        </p><h6>request</h6><div style="margin-left: 2em"/><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348370176">http://localhost:8080/lens/metastore/nativetables</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348369648">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all native tables.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">dbOption</td><td>
+                    unspecified type
+                </td><td>
+              The options available are 'current' and 'all'. If option is current, gives all tables from current
+db. If option is all, gives all tables from all databases. If dbname is passed, dbOption is
+ignored. If no dbOption or dbname are passed, then default is to get tables from current db.
+            </td></tr><tr><td style="font-weight: bold">dbName</td><td>
+                    unspecified type
+                </td><td>
+              The db name. If not empty, the tables in the db will be returned
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348360272">http://localhost:8080/lens/metastore/storages</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348359744">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all storages in the metastore
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348353984">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Create new storage
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348346240">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Delete all storages in metastore
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348340048">http://localhost:8080/lens/queryapi/preparedqueries</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348339504">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all prepared queries in the query server; can be filtered with user.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">user</td><td>
+                    unspecified type
+                </td><td>
+              returns queries of the user. If set to "all", returns queries of all users. By default returns the
+queries of the current user.
+            </td></tr><tr><td style="font-weight: bold">queryName</td><td>
+                    unspecified type
+                </td><td>
+              returns queries matching the query name
+            </td></tr><tr><td style="font-weight: bold">fromDate</td><td>
+                    unspecified type
+                </td><td>
+              start time for filtering prepared queries by preparation time
+            </td></tr><tr><td style="font-weight: bold">toDate</td><td>
+                    unspecified type
+                </td><td>
+              end time for filtering prepared queries by preparation time
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348318880">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Prepare a query or 'explain and prepare' the query.
+        </p><h6>request</h6><div style="margin-left: 2em"/><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>lensAPIResult</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348314144">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Destroy all the prepared queries; Can be filtered with user.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The session in which cancel is issued
+            </td></tr><tr><td style="font-weight: bold">user</td><td>
+                    unspecified type
+                </td><td>
+              destroys queries of the user. If set to "all", destroys queries of all users. By default destroys
+the queries of the current user.
+            </td></tr><tr><td style="font-weight: bold">queryName</td><td>
+                    unspecified type
+                </td><td>
+              destroys queries matching the query name
+            </td></tr><tr><td style="font-weight: bold">fromDate</td><td>
+                    unspecified type
+                </td><td>
+              the from date
+            </td></tr><tr><td style="font-weight: bold">toDate</td><td>
+                    unspecified type
+                </td><td>
+              the to date
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348300688">http://localhost:8080/lens/queryapi/queries</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348300160">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all the queries in the query server; can be filtered with state and queryName. This will by default only return
+queries submitted by the user that has started the session. To get queries of all users, set the searchAllUsers
+parameter to false.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which queryName is working
+            </td></tr><tr><td style="font-weight: bold">state</td><td>
+                    unspecified type
+                </td><td>
+              If any state is passed, all the queries in that state will be returned, otherwise all queries will
+be returned. Possible states are {link QueryStatus.Status#values()}
+            </td></tr><tr><td style="font-weight: bold">queryName</td><td>
+                    unspecified type
+                </td><td>
+              If any queryName is passed, all the queries containing the queryName will be returned, otherwise
+all the queries will be returned
+            </td></tr><tr><td style="font-weight: bold">user</td><td>
+                    unspecified type
+                </td><td>
+              Returns queries submitted by this user. If set to "all", returns queries of all users. By default,
+returns queries of the current user.
+            </td></tr><tr><td style="font-weight: bold">fromDate</td><td>
+                    unspecified type
+                </td><td>
+              from date to search queries in a time range, the range is inclusive(submitTime &amp;gt;= fromDate)
+            </td></tr><tr><td style="font-weight: bold">toDate</td><td>
+                    unspecified type
+                </td><td>
+              to date to search queries in a time range, the range is inclusive(toDate &amp;gt;= submitTime)
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348284944">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Submit the query for explain or execute or execute with a timeout.
+        </p><h6>request</h6><div style="margin-left: 2em"/><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>lensAPIResult</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348484416">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Cancel all the queries in query server; can be filtered with state and user.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The session in which cancel is issued
+            </td></tr><tr><td style="font-weight: bold">state</td><td>
+                    unspecified type
+                </td><td>
+              If any state is passed, all the queries in that state will be cancelled, otherwise all queries
+will be cancelled. Possible states are
+org.apache.lens.api.query.QueryStatus.Status#values()
+The queries in org.apache.lens.api.query.QueryStatus.Status#FAILED,
+org.apache.lens.api.query.QueryStatus.Status#CLOSED,
+org.apache.lens.api.query.QueryStatus.Status#SUCCESSFUL cannot be cancelled
+            </td></tr><tr><td style="font-weight: bold">user</td><td>
+                    unspecified type
+                </td><td>
+              If any user is passed, all the queries submitted by the user will be cancelled, otherwise all the
+queries will be cancelled
+            </td></tr><tr><td style="font-weight: bold">queryName</td><td>
+                    unspecified type
+                </td><td>
+              Cancel queries matching the query name
+            </td></tr><tr><td style="font-weight: bold">fromDate</td><td>
+                    unspecified type
+                </td><td>
+              the from date, inclusive(submitTime&amp;gt;=fromDate)
+            </td></tr><tr><td style="font-weight: bold">toDate</td><td>
+                    unspecified type
+                </td><td>
+              the to date, inclusive(toDate&amp;gt;=submitTime)
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348468896">http://localhost:8080/lens/queryapi/savedqueries</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348468368">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Gets a list of saved queries matching the criteria (url parameters)
+windowed by count and start.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">start</td><td>
+                    unspecified type
+                </td><td>
+              Offset to start from the search result
+            </td></tr><tr><td style="font-weight: bold">count</td><td>
+                    unspecified type
+                </td><td>
+              Number of records to fetch from start
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>listResponse</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348459168">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Creates a new saved query.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>savedQuery</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>resourceModifiedResponse</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348451104">http://localhost:8080/lens/session/params</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348450576">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get a list of key=value parameters set for this session.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              session handle object
+            </td></tr><tr><td style="font-weight: bold">verbose</td><td>
+                    unspecified type
+                </td><td>
+              If true, all the parameters will be returned. If false, configuration parameters will be returned
+            </td></tr><tr><td style="font-weight: bold">key</td><td>
+                    unspecified type
+                </td><td>
+              if this is empty, output will contain all parameters and their values,
+if it is non empty parameters will be filtered by key
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348440704">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Set value for a parameter specified by key
+<p></p>
+The parameters can be a hive variable or a configuration. To set key as a hive variable, the key should be prefixed
+with 'hivevar:'. To set key as configuration parameter, the key should be prefixed with 'hiveconf:' If no prefix is
+attached, the parameter is set as configuration.
+        </p><h6>request</h6><div style="margin-left: 2em"/><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348019952">http://localhost:8080/lens/metastore/chains/{tableName}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348017632">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all chains that belong to a table(cube or dimension) in the metastore
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">tableName</td><td>
+                    unspecified type
+                </td><td>
+          name of the table. can be either cube or dimension
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482348012048">http://localhost:8080/lens/metastore/cubes/{cubeName}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348009760">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Update cube definition
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">cubeName</td><td>
+                    unspecified type
+                </td><td>
+          The cube name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482348002144">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get the cube specified by name
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">cubeName</td><td>
+                    unspecified type
+                </td><td>
+          The cube name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347996608">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Drop the cube, specified by name
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">cubeName</td><td>
+                    unspecified type
+                </td><td>
+          The cube name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347990480">http://localhost:8080/lens/metastore/databases/current</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347989936">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get the current database
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347984416">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Set the current db
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347976576">http://localhost:8080/lens/metastore/databases/{dbName}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347974288">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Delete the db specified by name. Deleting underlying tables is optional. If db does not exist, delete is ignored.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dbName</td><td>
+                    unspecified type
+                </td><td>
+          The db name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">cascade</td><td>
+                    unspecified type
+                </td><td>
+              if true, all the tables inside the db will also be dropped.
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347966496">http://localhost:8080/lens/metastore/dimensions/{dimName}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347964208">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Update dimension definition
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimName</td><td>
+                    unspecified type
+                </td><td>
+          The dimension name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347956640">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get the dimension specified by name
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimName</td><td>
+                    unspecified type
+                </td><td>
+          The dimension name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347951104">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Drop the dimension, specified by name
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimName</td><td>
+                    unspecified type
+                </td><td>
+          The dimension name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347944976">http://localhost:8080/lens/metastore/dimtables/{dimTableName}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347943632">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Update dimension table definition
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347935952">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Drop the dimension table, specified by name
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">cascade</td><td>
+                    unspecified type
+                </td><td>
+              if true, all the storage tables of dimension table will also be dropped
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347928336">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get the dimension table specified by name
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347922656">http://localhost:8080/lens/metastore/facts/{factName}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347920368">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get the fact table specified by name
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347914944">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Update fact table definition
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347907264">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Drop the fact table, specified by name
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">cascade</td><td>
+                    unspecified type
+                </td><td>
+              If true, all the storage tables of the fact will also be dropped
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347899536">http://localhost:8080/lens/metastore/flattened/{tableName}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347897248">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get flattened list of columns reachable from a cube or a dimension
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">tableName</td><td>
+                    unspecified type
+                </td><td>
+          name of the table
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              session id
+            </td></tr><tr><td style="font-weight: bold">add_chains</td><td>
+                    unspecified type
+                </td><td>
+              whether columns accessed via chains should also be returned
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347890144">http://localhost:8080/lens/metastore/nativetables/{tableName}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347887856">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get the native table passed in name
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">tableName</td><td>
+                    unspecified type
+                </td><td>
+          The native table name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347882304">http://localhost:8080/lens/metastore/storages/{storageName}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347880016">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Update storage definition
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">storageName</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347872320">http://localhost:8080/lens/metastore/storages/{storage}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347870032">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get the storage specified by name
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347864608">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Drop the storage, specified by name
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347858480">http://localhost:8080/lens/queryapi/preparedqueries/{prepareHandle}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347856176">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get a prepared query specified by handle.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">prepareHandle</td><td>
+                    unspecified type
+                </td><td>
+          The prepare handle
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The user session handle
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>lensPreparedQuery</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347849968">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Destroy the prepared query specified by handle.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">prepareHandle</td><td>
+                    unspecified type
+                </td><td>
+          The prepare handle
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The user session handle
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347843360">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Modify prepared query's configuration. This would be picked up for subsequent runs of the prepared queries. The
+query wont be re-prepared with new configuration.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">prepareHandle</td><td>
+                    unspecified type
+                </td><td>
+          The prepare handle
+        </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347838352">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Submit prepared query for execution.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">prepareHandle</td><td>
+                    unspecified type
+                </td><td>
+          The prepare handle
+        </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>querySubmitResult</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347833392">http://localhost:8080/lens/queryapi/queries/{queryHandle}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347831104">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get lens query and its current status.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">queryHandle</td><td>
+                    unspecified type
+                </td><td>
+          The query handle
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The user session handle
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>lensQuery</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347824912">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Cancel the query specified by the handle.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">queryHandle</td><td>
+                    unspecified type
+                </td><td>
+          The query handle
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The user session handle
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347818368">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Modify query configuration if it is not running yet.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">queryHandle</td><td>
+                    unspecified type
+                </td><td>
+          The query handle
+        </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347813424">http://localhost:8080/lens/queryapi/savedqueries/health</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347812880">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p/><h6>request</h6><div style="margin-left: 2em">
+                        unspecified
+                    </div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">text/plain</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347811216">http://localhost:8080/lens/queryapi/savedqueries/parameters</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347810400">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Parses the query and returns parameters that are found in the query.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">query</td><td>
+                    unspecified type
+                </td><td>
+              The HQL query
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>parameterParserResponse</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347802832">http://localhost:8080/lens/queryapi/savedqueries/{id}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347800576">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Gets the saved query with the given id.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">id</td><td>
+                    unspecified type
+                </td><td>
+          id of the saved query
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>savedQuery</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347794928">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Deletes the saved query with the given id.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">id</td><td>
+                    unspecified type
+                </td><td>
+          id of the saved query
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>resourceModifiedResponse</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347789008">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Updates the saved query {id} with the new payload.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">id</td><td>
+                    unspecified type
+                </td><td>
+          id of the saved query
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>savedQuery</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>resourceModifiedResponse</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347781088">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Runs the saved query with the given id and returns a query handle.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">id</td><td>
+                    unspecified type
+                </td><td>
+          id of the saved query
+        </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>lensAPIResult</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347776400">http://localhost:8080/lens/session/resources/add</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347775872">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Add a resource to the session to all LensServices running in this Lens server
+<p></p>
+<p>
+The returned @{link APIResult} will have status SUCCEEDED <em>only if</em> the add operation was successful for all
+services running in this Lens server.
+</p>
+        </p><h6>request</h6><div style="margin-left: 2em"/><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347770720">http://localhost:8080/lens/session/resources/delete</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347770176">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Delete a resource from sesssion from all the @{link LensService}s running in this Lens server
+<p>
+Similar to addResource, this call is successful only if resource was deleted from all services.
+</p>
+        </p><h6>request</h6><div style="margin-left: 2em"/><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347765152">http://localhost:8080/lens/session/resources/list</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347764624">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Lists resources from the session for a given resource type.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              session handle object
+            </td></tr><tr><td style="font-weight: bold">type</td><td>
+                    unspecified type
+                </td><td>
+              resource type. It can be jar, file or null
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347756416">http://localhost:8080/lens/metastore/cubes/{cubeName}/facts</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347754112">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all facts that belong to a cube in the metastore
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">cubeName</td><td>
+                    unspecified type
+                </td><td>
+          name of the base cube or derived cube
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347748272">http://localhost:8080/lens/metastore/cubes/{cubeName}/latestdate</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347745984">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get the latest available date upto which data is available for the base cubes, for the time dimension.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">cubeName</td><td>
+                    unspecified type
+                </td><td>
+          name of the base cube
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">timeDimension</td><td>
+                    unspecified type
+                </td><td>
+              time dimension name
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>dateTime</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347738384">http://localhost:8080/lens/metastore/dimensions/{dimName}/dimtables</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347736080">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all dimtables that belong to a dimension in the metastore
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimName</td><td>
+                    unspecified type
+                </td><td>
+          name of the dimension
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347730304">http://localhost:8080/lens/metastore/dimtables/{dimTableName}/storages</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347727984">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all storages of the dimension table in the metastore
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td><td>
+          The dimension table name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347722320">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Add storage to dimension table
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td><td>
+          The dimension table name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347714576">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Drop all the storage tables of a dimension table
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td><td>
+          The dimension table name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347708432">http://localhost:8080/lens/metastore/facts/{factName}/storages</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347706144">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all storages of the fact table in the metastore
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347700416">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Drop all the storage tables of a fact table
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347694400">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Add storage to fact table
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347686528">http://localhost:8080/lens/metastore/facts/{factName}/timelines</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347684240">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get the partition timelines.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          name of the fact
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+              storage Name
+            </td></tr><tr><td style="font-weight: bold">updatePeriod</td><td>
+                    unspecified type
+                </td><td>
+              update period
+            </td></tr><tr><td style="font-weight: bold">timeDimension</td><td>
+                    unspecified type
+                </td><td>
+              time dimension name
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>stringList</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347673520">http://localhost:8080/lens/queryapi/queries/{queryHandle}/httpresultset</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347671216">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get the http endpoint for result set.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">queryHandle</td><td>
+                    unspecified type
+                </td><td>
+          The query handle
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The user session handle
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/octet-stream</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347666192">http://localhost:8080/lens/queryapi/queries/{queryHandle}/resultset</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347663888">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Fetch the result set.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">queryHandle</td><td>
+                    unspecified type
+                </td><td>
+          The query handle
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The user session handle
+            </td></tr><tr><td style="font-weight: bold">fromindex</td><td>
+                    unspecified type
+                </td><td>
+              start index of the result
+            </td></tr><tr><td style="font-weight: bold">fetchsize</td><td>
+                    unspecified type
+                </td><td>
+              fetch size
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>queryResult</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347654432">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Close the result set once fetching is done.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">queryHandle</td><td>
+                    unspecified type
+                </td><td>
+          The query handle
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The user session handle
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347647696">http://localhost:8080/lens/queryapi/queries/{queryHandle}/resultsetmetadata</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347645392">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get resultset metadata of the query.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">queryHandle</td><td>
+                    unspecified type
+                </td><td>
+          The query handle
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The user session handle
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>queryResultSetMetadata</td></tr><tr><td style="font-weight: bold">text/plain</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347639072">http://localhost:8080/lens/metastore/dimtables/{dimTableName}/storages/{storage}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347635136">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get the dim storage table
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347629696">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Drop the storage of a dimension table, specified by name
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347623616">http://localhost:8080/lens/metastore/facts/{factName}/storages/{storage}</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347619680">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Drop the storage of a fact, specified by name
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347613776">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get the fact storage table
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347608096">http://localhost:8080/lens/metastore/dimtables/{dimTableName}/storages/{storage}/partition</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347604208">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Drop the partitions in the storage of a dimension table, specified by exact values
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td><td>
+          The dimension table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">values</td><td>
+                    unspecified type
+                </td><td>
+              Comma separated values
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347596640">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Add a new partition for a storage of dimension
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td><td>
+          The dimension table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347588880">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Updates an existing partition for a storage of dimension
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td><td>
+          The dimension table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347581072">http://localhost:8080/lens/metastore/dimtables/{dimTableName}/storages/{storage}/partitions</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347577184">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all partition of the dimension table in the specified storage; can be filtered
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td><td>
+          The dimension table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">filter</td><td>
+                    unspecified type
+                </td><td>
+              The filter for partitions, string representation of the filter for ex: x &amp;lt; "xxx" and y &amp;gt;
+"yyy"
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347569968">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Drop the partitions in the storage of a dimension table; can specified filter as well
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td><td>
+          The dimension table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">filter</td><td>
+                    unspecified type
+                </td><td>
+              The filter for partitions, string representation of the filter for ex: x &amp;lt; 'xxx' and y &amp;gt;
+'yyy'
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347562128">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Add new partitions for a storage of dimension
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td><td>
+          The dimension table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347554352">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Add new partitions for a storage of dimension
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">dimTableName</td><td>
+                    unspecified type
+                </td><td>
+          The dimension table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347546464">http://localhost:8080/lens/metastore/facts/{factName}/storages/{storage}/partition</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347542592">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Add a new partition for a storage of fact
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          fact table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347534944">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          updates an existing partition for a storage of fact
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          fact table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347527200">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Drop the partitions in the storage of a fact table, specified by exact values
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          fact table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">values</td><td>
+                    unspecified type
+                </td><td>
+              Comma separated values
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div><h3><a name="idm45482347519392">http://localhost:8080/lens/metastore/facts/{factName}/storages/{storage}/partitions</a></h3><p/><h5>Methods</h5><div class="methods"><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347515520">GET</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Get all partitions of the fact table in the specified storage; can be filtered as well.
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">filter</td><td>
+                    unspecified type
+                </td><td>
+              The filter for partitions, string representation of the filter for ex: x &amp;lt; "xxx" and y &amp;gt;
+"yyy"
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td/></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347508304">DELETE</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Drop the partitions in the storage of a fact; can specified filter as well
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr><tr><td style="font-weight: bold">filter</td><td>
+                    unspecified type
+                </td><td>
+              The filter for partitions, string representation of the filter for ex: x &amp;lt; "xxx" and y &amp;gt;
+"yyy"
+            </td></tr></table><p/></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347500464">POST</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Batch Add partitions for a storage of fact
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div><div class="method"><table class="methodNameTable"><tr><td class="methodNameTd" style="font-weight: bold"><a name="idm45482347492688">PUT</a></td><td class="methodNameTd" style="text-align: right"/></tr></table><p>
+          Batch Update partitions for a storage of fact
+        </p><h6>request</h6><div style="margin-left: 2em"><div class="h7">template params</div><table><tr><td style="font-weight: bold">factName</td><td>
+                    unspecified type
+                </td><td>
+          The fact table name
+        </td></tr><tr><td style="font-weight: bold">storage</td><td>
+                    unspecified type
+                </td><td>
+          The storage name
+        </td></tr></table><p/><div class="h7">query params</div><table><tr><td style="font-weight: bold">sessionid</td><td>
+                    unspecified type
+                </td><td>
+              The sessionid in which user is working
+            </td></tr></table><p/><div class="h7">representations</div><table><tr><td style="font-weight: bold">*/*</td><td/></tr><tr><td style="font-weight: bold">application/xml</td><td/></tr></table></div><h6>responses</h6><div style="margin-left: 2em"><div class="h8">status: </div>
+                                    200 - OK
+                                
+                                    - 
+            <div style="margin-left: 2em"><div class="h7">representations</div><table><tr><td style="font-weight: bold">application/xml</td><td>result</td></tr><tr><td style="font-weight: bold">application/json</td><td/></tr></table></div></div></div></div></body></html>

@@ -1,0 +1,112 @@
+SEARCH: ls -1 ../wadl_schemata/*.wadl
+RESULT: ../wadl_schemata/bsdd.buildingsmart.org docs application.wadl ../wadl_schemata/e-object.com.wadl ../wadl_schemata/gw14.2.wadl ../wadl_schemata/lens.apache.org.wadl ../wadl_schemata/test.wadl
+SEARCH: ls -1 ../3rdparty/ipcsystems.wadl-stylesheet/*.xsl ../3rdparty/mnot.wadl_stylesheets/*.xsl
+RESULT: ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl
+
+START ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl with ../wadl_schemata/bsdd.buildingsmart.org docs application.wadl
+STYLESHEET ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl
+TRANSFORM ../wadl_schemata/bsdd.buildingsmart.org docs application.wadl
+END ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl with ../wadl_schemata/bsdd.buildingsmart.org docs application.wadl
+
+START ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl with ../wadl_schemata/e-object.com.wadl
+STYLESHEET ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl
+TRANSFORM ../wadl_schemata/e-object.com.wadl
+END ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl with ../wadl_schemata/e-object.com.wadl
+
+START ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl with ../wadl_schemata/gw14.2.wadl
+STYLESHEET ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl
+TRANSFORM ../wadl_schemata/gw14.2.wadl
+END ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl with ../wadl_schemata/gw14.2.wadl
+
+START ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl with ../wadl_schemata/lens.apache.org.wadl
+STYLESHEET ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl
+TRANSFORM ../wadl_schemata/lens.apache.org.wadl
+END ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl with ../wadl_schemata/lens.apache.org.wadl
+
+START ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl with ../wadl_schemata/test.wadl
+STYLESHEET ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl
+TRANSFORM ../wadl_schemata/test.wadl
+END ../3rdparty/ipcsystems.wadl-stylesheet/wadl.xsl with ../wadl_schemata/test.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl with ../wadl_schemata/bsdd.buildingsmart.org docs application.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl
+TRANSFORM ../wadl_schemata/bsdd.buildingsmart.org docs application.wadl
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl with ../wadl_schemata/bsdd.buildingsmart.org docs application.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl with ../wadl_schemata/e-object.com.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl
+TRANSFORM ../wadl_schemata/e-object.com.wadl
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl with ../wadl_schemata/e-object.com.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl with ../wadl_schemata/gw14.2.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl
+TRANSFORM ../wadl_schemata/gw14.2.wadl
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl with ../wadl_schemata/gw14.2.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl with ../wadl_schemata/lens.apache.org.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl
+TRANSFORM ../wadl_schemata/lens.apache.org.wadl
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl with ../wadl_schemata/lens.apache.org.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl with ../wadl_schemata/test.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl
+TRANSFORM ../wadl_schemata/test.wadl
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-07.xsl with ../wadl_schemata/test.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl with ../wadl_schemata/bsdd.buildingsmart.org docs application.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl
+TRANSFORM ../wadl_schemata/bsdd.buildingsmart.org docs application.wadl
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl with ../wadl_schemata/bsdd.buildingsmart.org docs application.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl with ../wadl_schemata/e-object.com.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl
+TRANSFORM ../wadl_schemata/e-object.com.wadl
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl with ../wadl_schemata/e-object.com.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl with ../wadl_schemata/gw14.2.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl
+TRANSFORM ../wadl_schemata/gw14.2.wadl
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl with ../wadl_schemata/gw14.2.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl with ../wadl_schemata/lens.apache.org.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl
+TRANSFORM ../wadl_schemata/lens.apache.org.wadl
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl with ../wadl_schemata/lens.apache.org.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl with ../wadl_schemata/test.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl
+TRANSFORM ../wadl_schemata/test.wadl
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2006-10.xsl with ../wadl_schemata/test.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl with ../wadl_schemata/bsdd.buildingsmart.org docs application.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl
+TRANSFORM ../wadl_schemata/bsdd.buildingsmart.org docs application.wadl
+PHP Warning:  XSLTProcessor::transformToXml(): I/O warning : failed to load external entity "/home/r0b/PHP-Projekte/wadl_abstraction/wadl_schemata/objects.xsd" in /home/r0b/PHP-Projekte/wadl_abstraction/tests/php-xslt.php on line 40
+PHP Warning:  XSLTProcessor::transformToXml(): I/O warning : failed to load external entity "/home/r0b/PHP-Projekte/wadl_abstraction/wadl_schemata/pset.xsd" in /home/r0b/PHP-Projekte/wadl_abstraction/tests/php-xslt.php on line 40
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl with ../wadl_schemata/bsdd.buildingsmart.org docs application.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl with ../wadl_schemata/e-object.com.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl
+TRANSFORM ../wadl_schemata/e-object.com.wadl
+PHP Warning:  XSLTProcessor::transformToXml(): I/O warning : failed to load external entity "/home/r0b/PHP-Projekte/wadl_abstraction/wadl_schemata/ns0.xsd" in /home/r0b/PHP-Projekte/wadl_abstraction/tests/php-xslt.php on line 40
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl with ../wadl_schemata/e-object.com.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl with ../wadl_schemata/gw14.2.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl
+TRANSFORM ../wadl_schemata/gw14.2.wadl
+PHP Warning:  XSLTProcessor::transformToXml(): I/O warning : failed to load external entity "/home/r0b/PHP-Projekte/wadl_abstraction/wadl_schemata/xsd1.xsd" in /home/r0b/PHP-Projekte/wadl_abstraction/tests/php-xslt.php on line 40
+PHP Warning:  XSLTProcessor::transformToXml(): I/O warning : failed to load external entity "/home/r0b/PHP-Projekte/wadl_abstraction/wadl_schemata/xsd0.xsd" in /home/r0b/PHP-Projekte/wadl_abstraction/tests/php-xslt.php on line 40
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl with ../wadl_schemata/gw14.2.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl with ../wadl_schemata/lens.apache.org.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl
+TRANSFORM ../wadl_schemata/lens.apache.org.wadl
+PHP Warning:  XSLTProcessor::transformToXml(): I/O warning : failed to load external entity "/home/r0b/PHP-Projekte/wadl_abstraction/wadl_schemata/ns0.xsd" in /home/r0b/PHP-Projekte/wadl_abstraction/tests/php-xslt.php on line 40
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl with ../wadl_schemata/lens.apache.org.wadl
+
+START ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl with ../wadl_schemata/test.wadl
+STYLESHEET ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl
+TRANSFORM ../wadl_schemata/test.wadl
+PHP Warning:  XSLTProcessor::transformToXml(): I/O warning : failed to load external entity "/home/r0b/PHP-Projekte/wadl_abstraction/wadl_schemata/xsd1.xsd" in /home/r0b/PHP-Projekte/wadl_abstraction/tests/php-xslt.php on line 40
+PHP Warning:  XSLTProcessor::transformToXml(): I/O warning : failed to load external entity "/home/r0b/PHP-Projekte/wadl_abstraction/wadl_schemata/xsd0.xsd" in /home/r0b/PHP-Projekte/wadl_abstraction/tests/php-xslt.php on line 40
+END ../3rdparty/mnot.wadl_stylesheets/wadl_documentation-2009-02.xsl with ../wadl_schemata/test.wadl
