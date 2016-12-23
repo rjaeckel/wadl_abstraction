@@ -20,8 +20,8 @@ use callByRegex,collection;
 
 error_reporting(E_ALL/*|E_STRICT*/);
 
-require_once ('includes/callByRegex.php');
-require_once ('includes/collection.php');
+require_once ('includes/t-callByRegex.php');
+require_once ('includes/t-collection.php');
 
 
 /**
