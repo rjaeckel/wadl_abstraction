@@ -1,15 +1,19 @@
 <?php
 
 namespace mlu\groupwise\abstractions\xsd;
-require '../common/config.php';
-require '../common/autoloader.php';
+require_once 'common/config.php';
+require_once 'common/autoloader.php';
 use mlu\common;
 
 /*
  * Generate walkable tree from xml-file
  */
 $reader = new \XMLReader();
-$reader->open(__gwApiServer.__gwApiBase.'xsd1.xsd');
+//$reader->open(implode('/',array(__gwApiServer,__gwApiBase,'xsd1.xsd')));
+$reader->xml(file_get_contents(
+    implode(array(__gwApiServer,__gwApiBase,'xsd1.xsd')), false,
+    stream_context_create(array('ssl'=>array ('verify_peer'=>false,'verify_peer_name'=>false)))
+));
 $tree = common::xml2assoc($reader);
 
 /**
@@ -20,12 +24,13 @@ $tree = common::xml2assoc($reader);
 
 // tags to search for
 $allowedTags=explode(' ',
-        'xs:schema xs:element xs:complexType xs:simpleType xs:simpleContent xs:extension xs:sequence xs:complexContent xs:attribute xs:restriction xs:enumeration');  //included grammar
+    'xs:schema xs:element xs:complexType xs:simpleType xs:simpleContent xs:extension xs:sequence '.
+    'xs:complexContent xs:attribute xs:restriction xs:enumeration');  //included grammar
 
 // attributes to read out
 $attrs=  explode(' ',
-        'name type base minOccurs maxOccurs ref abstract nillable'
-        );
+    'name type base minOccurs maxOccurs ref abstract nillable'
+);
 
 // the filter function
 $walker = function($node) use (&$walker,$allowedTags,$attrs) {
@@ -47,10 +52,10 @@ $walker = function($node) use (&$walker,$allowedTags,$attrs) {
                 if(is_array($v) && count($v)<2) $res->$k=$v[0];
             }
         }
-        
+
         return $res;
     } else {
-        trigger_error("Skipping xsd-node: $node->tag",E_USER_NOTICE);
+        __devmode&&common::logWrite("Skipping xsd-node by tag: $node->tag\n",STDERR);
     }
 };
 // generate the filtered tree
@@ -68,10 +73,10 @@ function readProperties($list,$target) {
                 $target->{$pName}=$elements[$prop->ref];
                 foreach($prop as $k=>$v) { $target->{$elements[$prop->ref]->name}->$k=$v; }
             } else {
-                trigger_error("Missing reference: $prop->ref",E_USER_WARNING);
+                common::logWrite(sprintf("Missing reference: %s\n",$prop->ref),STDERR);
             }
         } else {
-            trigger_error("Skipping: ".json_encode ($prop),E_USER_NOTICE);
+            __devmode&&common::logWrite("\nIgnoring: ".json_encode ($prop)."\n",STDERR);
         }
         if(isset($pName)) {
             switch ($target->$pName->type ) {
@@ -127,13 +132,13 @@ foreach ($classes as $k=>$v) {
 foreach ($subClasses as $c) { unset($classes[$c]); }
 
 shell_exec('rm '.__classpath.common::namespacePath(__gwXsdNamespace).'*');
-
-$headTxt=array('<?php','namespace '.__gwXsdNamespace.';',<<<header
+$xsdNamespace=__gwXsdNamespace;
+$headTxt=<<<header
+<?php namespace $xsdNamespace;
 /**
   * XSD-abstracted interfaces...
   */
-header
-);
+header;
 
 /*foreach($elements as $ele) {
     if(strtolower($ele->name)!=strtolower($ele->type) && $ele->name!="list") {
@@ -141,10 +146,12 @@ header
         fwrite(STDERR, "$ele->name $ele->type".PHP_EOL);
     }
 }
- * 
+ *
  */
 
 //$filetxt[]="abstract class xsd_restriction {}";
+
+common::def('xsdBase',__classpath.common::namespacePath(__gwXsdNamespace));
 
 foreach($selects as $vali) {
     $filetxt=array("abstract class $vali->name extends \\mlu\\rest\\xsd_restriction { ");
@@ -152,8 +159,7 @@ foreach($selects as $vali) {
         $filetxt[]="\tconst $c='$c';";
     }
     $filetxt[]='}';
-    echo 'Creating '.common::namespacePath(__gwXsdNamespace).$vali->name.'.cls.php'.PHP_EOL;
-    common::write2file(__classpath.common::namespacePath(__gwXsdNamespace).$vali->name.'.cls.php',$headTxt,$filetxt);
+    common::write2file(xsdBase.$vali->name.'.cls.php',$headTxt,implode(PHP_EOL,$filetxt));
 }
 
 function classCode($classes,$prepend) {
@@ -170,8 +176,7 @@ function classCode($classes,$prepend) {
             $codeLines[]="\tpublic \$$prop->name;";
         }
         $codeLines[]="}".PHP_EOL;
-        echo 'Creating '.common::namespacePath(__gwXsdNamespace).$class->name.'.cls.php'.PHP_EOL;
-        common::write2file(__classpath.common::namespacePath(__gwXsdNamespace).$class->name.'.cls.php',$prepend,$codeLines);
+        common::write2file(xsdBase.$class->name.'.cls.php',$prepend,implode(PHP_EOL,$codeLines));
         if(isset($class->_subClasses)) { classCode($class->_subClasses,$prepend); }
     }
 }

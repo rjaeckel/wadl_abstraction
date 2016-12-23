@@ -13,12 +13,12 @@ define('export_namespaces',[
 */
 namespace xs;
 use XMLReader as XML;
-use callByRegex,collectionIterator,wadl\XMLNode;
+use callByRegex,collection,wadl\XMLTree;
 
 error_reporting(E_ALL|E_STRICT);
 
 require_once ('includes/callByRegex.php');
-require_once ('includes/collectionIterator.php');
+require_once ('includes/collection.php');
 require_once ('wadlReader2.php');
 /**
  * Class schema
@@ -30,7 +30,7 @@ require_once ('wadlReader2.php');
  */
 
 
-class schema extends XMLNode
+class schema extends XMLTree
 {
 	protected static $rename = [ 'list' => 'list_' ];
 	protected static $ifNamespace;
@@ -47,7 +47,7 @@ class schema extends XMLNode
 		$absClass = $this->ifClass ( $this->xml->name );
 		if ( ! class_exists ( $absClass , false ) ) {
 			in_array ( $absClass , [ '\\#text' ] ) || trigger_error ( "Class $absClass not existent" , E_USER_WARNING );
-			$absClass = XMLNode::class;
+			$absClass = XMLTree::class;
 		}
 		return new $absClass ( $this->xml );
 	}
@@ -59,7 +59,7 @@ class schema extends XMLNode
 		return $res;
 	}
 
-	protected function appendChild ( XMLNode $child ) {
+	protected function appendChild (XMLTree $child ) {
 		if(0===strpos($child->tagName,'any')) return;
 		if ( $this->isRoot ) {
 			# named element: attribute, typedef
@@ -142,6 +142,6 @@ class schema extends XMLNode
 	}
 }
 
-require_once ( 'includes/xs_elements.php' );
+//require_once ( 'includes/xs_elements.php' );
 
 if(__FILE__===realpath($argv[0])) schema::__main(...$argv);

@@ -19,7 +19,7 @@ trait callByRegex
 	 *
 	 * @return $this;
 	 */
-	protected function addHandler ( string $regex , string $method ) {
+	protected function addHandler (string $regex , string $method ) {
 		$this->handlers[ $regex ] = $method;
 		return $this;
 	}
@@ -29,15 +29,18 @@ trait callByRegex
 	 * @param array  $args
 	 */
 	protected function handleRegex ( string $name , array $args ) {
-		foreach ( $this->handlers as $regEx => $cb ) {
+		$handled=false;
+        foreach ( $this->handlers as $regEx => $cb ) {
 			if (
-				preg_match ( "/$regEx/" , $name , $matches ) &&
+				preg_match ( "/^$regEx$/" , $name , $matches ) &&
 				#fwrite(STDOUT,"handle: $name $regEx \n") &&
-				$name == array_shift ( $matches ) &&
-				#($cb=[$this,$cb]) &&
-				( $res = $this->$cb( ...$matches , ...$args ) )
+				$name==array_shift ($matches)&&($handled=1)&&
+                    ( $res = $this->$cb( ...$matches , ...$args ) )
+
 			) return $res;
 		}
+		$handled||trigger_error(sprintf("Unhandled call %s -> %s",static::class,$name));
 	}
+	protected function addHandlers() { return $this;}
 }
 

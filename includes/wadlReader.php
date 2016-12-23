@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 
 /*
@@ -243,6 +244,7 @@ function __main() {
 	fwrite(STDERR,print_r($test,true));
 
 }
-if(__FILE__===realpath($argv[0]))__main(...$argv);
+
+(__FILE__==realpath($argv[0]))&&__main(...$argv);
 
 
