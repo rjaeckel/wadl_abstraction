@@ -144,4 +144,4 @@ class schema extends XMLTree
 
 //require_once ( 'includes/xs_elements.php' );
 
-if(__FILE__===realpath($argv[0])) schema::__main(...$argv);
+#if(__FILE__===realpath($argv[0])) schema::__main(...$argv);

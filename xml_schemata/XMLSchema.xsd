@@ -462,7 +462,7 @@
       <xs:extension base="xs:annotated">
         <xs:sequence>
           <xs:choice minOccurs="0">
-            
+
             <xs:sequence>
               <xs:element ref="xs:openContent" minOccurs="0"/>
               <xs:group ref="xs:typeDefParticle"/>
